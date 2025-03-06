@@ -1,0 +1,26 @@
+@prefix ex: <http://example.org/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ex:Country a rdfs:Class .
+
+ex:EducationMetric a rdfs:Class .
+
+ex:GeographicalLocation a rdfs:Class .
+
+ex:hasLatitude a rdf:Property ;
+    rdfs:domain ex:Country ;
+    rdfs:range rdfs:Literal .
+
+ex:hasLongitude a rdf:Property ;
+    rdfs:domain ex:Country ;
+    rdfs:range rdfs:Literal .
+
+ex:hasOutOfSchoolRateFemale a rdf:Property ;
+    rdfs:domain ex:Country ;
+    rdfs:range rdfs:Literal .
+
+ex:hasOutOfSchoolRateMale a rdf:Property ;
+    rdfs:domain ex:Country ;
+    rdfs:range rdfs:Literal .
+
