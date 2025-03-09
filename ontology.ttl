@@ -1,26 +1,163 @@
-@prefix ex: <http://example.org/ontology#> .
+@prefix ex: <http://example.org/education> .
+@prefix geo1: <http://www.geonames.org/ontology#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-ex:Country a rdfs:Class .
+ex:Continent a rdfs:Class ;
+    geo1:lat xsd:decimal ;
+    geo1:long xsd:decimal ;
+    rdfs:subClassOf geo1:Feature .
+
+ex:Country a rdfs:Class ;
+    geo1:lat xsd:decimal ;
+    geo1:long xsd:decimal ;
+    geo1:parentFeature ex:Continent ;
+    rdfs:subClassOf geo1:Feature .
+
+ex:EconomicIndicatorGDP a rdfs:Class .
 
 ex:EducationMetric a rdfs:Class .
 
+ex:FemalePopulation a rdfs:Class ;
+    rdfs:subClassOf ex:Population .
+
 ex:GeographicalLocation a rdfs:Class .
 
-ex:hasLatitude a rdf:Property ;
+ex:IncomeClass a rdfs:Class .
+
+ex:MalePopulation a rdfs:Class ;
+    rdfs:subClassOf ex:Population .
+
+ex:Population a rdfs:Class .
+
+ex:EducationExpenditureGDP a ex:EconomicIndicatorGDP .
+
+ex:HealthcareExpenditureGDP a ex:EconomicIndicatorGDP .
+
+ex:HighIncome a ex:IncomeClass .
+
+ex:LowIncome a ex:IncomeClass .
+
+ex:OtherIncome a ex:IncomeClass .
+
+ex:belongsTo a rdf:Property ;
     rdfs:domain ex:Country ;
-    rdfs:range rdfs:Literal .
+    rdfs:range ex:Continent .
+
+ex:hasAgricultureSectorRate a rdf:Property ;
+    rdfs:domain ex:Population ;
+    rdfs:range xsd:decimal .
+
+ex:hasCompletionRateLowerSecondary a rdf:Property ;
+    rdfs:domain ex:Population ;
+    rdfs:range xsd:decimal ;
+    rdfs:subPropertyOf ex:hasEducationalMetric .
+
+ex:hasCompletionRatePrimary a rdf:Property ;
+    rdfs:domain ex:Population ;
+    rdfs:range xsd:decimal ;
+    rdfs:subPropertyOf ex:hasEducationalMetric .
+
+ex:hasCompletionRateUpperSecondary a rdf:Property ;
+    rdfs:domain ex:Population ;
+    rdfs:range xsd:decimal ;
+    rdfs:subPropertyOf ex:hasEducationalMetric .
+
+ex:hasEducationExpenditureGDP a rdf:Property ;
+    rdfs:domain ex:Country ;
+    rdfs:range xsd:decimal ;
+    rdfs:subPropertyOf ex:hasEconomicIndicatorGDP .
+
+ex:hasGDP a rdf:Property ;
+    rdfs:domain ex:Country ;
+    rdfs:range xsd:decimal .
+
+ex:hasGDPpercent a rdf:Property ;
+    rdfs:domain ex:Country ;
+    rdfs:range xsd:decimal .
+
+ex:hasGeographicalLocation a rdf:Property ;
+    rdfs:domain ex:Country ;
+    rdfs:range ex:GeographicalLocation .
+
+ex:hasGrossPrimaryEnrollment a rdf:Property ;
+    rdfs:domain ex:Country ;
+    rdfs:range xsd:decimal ;
+    rdfs:subPropertyOf ex:hasEducationalMetric .
+
+ex:hasGrossTertiaryEnrollment a rdf:Property ;
+    rdfs:domain ex:Country ;
+    rdfs:range xsd:decimal ;
+    rdfs:subPropertyOf ex:hasEducationalMetric .
+
+ex:hasHealthcareExpenditureGDP a rdf:Property ;
+    rdfs:domain ex:Country ;
+    rdfs:range xsd:decimal ;
+    rdfs:subPropertyOf ex:hasEconomicIndicatorGDP .
+
+ex:hasIncomeClass a rdf:Property ;
+    rdfs:domain ex:Country ;
+    rdfs:range ex:IncomeClass .
+
+ex:hasIndustrySectorRate a rdf:Property ;
+    rdfs:domain ex:Population ;
+    rdfs:range xsd:decimal .
+
+ex:hasLatitude a rdf:Property ;
+    rdfs:domain ex:GeographicalLocation ;
+    rdfs:range xsd:decimal .
+
+ex:hasLiteracyRateAmong15_24 a rdf:Property ;
+    rdfs:domain ex:Population ;
+    rdfs:range xsd:decimal ;
+    rdfs:subPropertyOf ex:hasEducationalMetric .
 
 ex:hasLongitude a rdf:Property ;
-    rdfs:domain ex:Country ;
-    rdfs:range rdfs:Literal .
+    rdfs:domain ex:GeographicalLocation ;
+    rdfs:range xsd:decimal .
 
-ex:hasOutOfSchoolRateFemale a rdf:Property ;
-    rdfs:domain ex:Country ;
-    rdfs:range rdfs:Literal .
+ex:hasOutOfSchoolRateLowerSecodary a rdf:Property ;
+    rdfs:domain ex:Population ;
+    rdfs:range xsd:decimal ;
+    rdfs:subPropertyOf ex:hasEducationalMetric .
 
-ex:hasOutOfSchoolRateMale a rdf:Property ;
+ex:hasOutOfSchoolRatePrePrimary a rdf:Property ;
+    rdfs:domain ex:Population ;
+    rdfs:range xsd:decimal ;
+    rdfs:subPropertyOf ex:hasEducationalMetric .
+
+ex:hasOutOfSchoolRatePrimary a rdf:Property ;
+    rdfs:domain ex:Population ;
+    rdfs:range xsd:decimal ;
+    rdfs:subPropertyOf ex:hasEducationalMetric .
+
+ex:hasOutOfSchoolRateUpperSecodary a rdf:Property ;
+    rdfs:domain ex:Population ;
+    rdfs:range xsd:decimal ;
+    rdfs:subPropertyOf ex:hasEducationalMetric .
+
+ex:hasPopulation a rdf:Property ;
     rdfs:domain ex:Country ;
-    rdfs:range rdfs:Literal .
+    rdfs:range ex:Population .
+
+ex:hasServiceSectorRate a rdf:Property ;
+    rdfs:domain ex:Population ;
+    rdfs:range xsd:decimal .
+
+ex:hasUndernourishmentRate a rdf:Property ;
+    rdfs:domain ex:Country ;
+    rdfs:range xsd:decimal .
+
+ex:hasUnemploymentRate a rdf:Property ;
+    rdfs:domain ex:Country ;
+    rdfs:range xsd:decimal .
+
+ex:hasEconomicIndicatorGDP a rdf:Property ;
+    rdfs:domain ex:Country ;
+    rdfs:range ex:EconomicIndicatorGDP .
+
+ex:hasEducationalMetric a rdf:Property ;
+    rdfs:domain ex:Country ;
+    rdfs:range ex:EducationMetrics .
 

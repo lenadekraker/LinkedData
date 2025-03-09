@@ -1,21 +1,43 @@
 from rdflib import Graph, Namespace, RDF, RDFS , XSD
 
 
-EX = Namespace("http://example.org/ontology#")
+EX = Namespace("http://example.org/educationOntology#")
+GN = Namespace("http://www.geonames.org/ontology#")
+DPV = Namespace("https://w3id.org/dpv#")
+UNESCO = Namespace("http://www.unesco.org/ns/education#")
+GEOP = Namespace("http://aims.fao.org/aos/geopolitical.owl#")
+DBPEDIAOWL = Namespace("http://dbpedia.org/ontology/")
+ISO37120 = Namespace("http://ontology.eil.utoronto.ca/ISO37120.owl#")
 
 g = Graph()
 g.bind("ex", EX)
-
+g.bind("gn", GN)
+g.bind("dpv", DPV)
+g.bind("unesco", UNESCO)
+g.bind("geop", GEOP)
+g.bind("dbpediaOwl", DBPEDIAOWL)
+g.bind("iso37120", ISO37120)
 
 #---------------------------------------------
-g.add((EX.Country, RDF.type, RDFS.Class))
-g.add((EX.Continent, RDF.type, RDFS.Class))
-g.add((EX.GeographicalLocation, RDF.type, RDFS.Class))
-g.add((EX.EducationMetric, RDF.type, RDFS.Class))
-g.add((EX.Population, RDF.type, RDFS.Class))
-g.add((EX.FemalePopulation, RDF.type, RDFS.Class))
-g.add((EX.MalePopulation, RDF.type, RDFS.Class))
-g.add((EX.EconomicIndicatorGDP, RDF.type, RDFS.Class))
+with open ("Global_Education.csv", 'r', encoding ='utf-8') as csvfile:
+    g.add((EX.Country, RDF.type, GN.Class))
+    g.add((EX.Continent, RDF.type, RDFS.Class))
+
+    # Geonames ontology
+    g.add((EX.Country, RDFS.subClassOf, GN.Feature))
+    g.add((EX.Continent, RDFS.subClassOf, GN.Feature))
+    g.add((EX.Country, GN.parentFeature, EX.Continent))
+    g.add((EX.Country, GN.lat, XSD.decimal))
+    g.add((EX.Country, GN.long, XSD.decimal))
+    g.add((EX.Continent, GN.lat, XSD.decimal))
+    g.add((EX.Continent, GN.long, XSD.decimal))
+
+    g.add((EX.GeographicalLocation, RDF.type, RDFS.Class))
+    g.add((EX.EducationMetric, RDF.type, RDFS.Class))
+    g.add((EX.Population, RDF.type, g.add((EX.Population, RDFS.subClassOf, DBPEDIAOWL.Population))))
+    g.add((EX.FemalePopulation, RDF.type, RDFS.Class))
+    g.add((EX.MalePopulation, RDF.type, RDFS.Class))
+    g.add((EX.EconomicIndicatorGDP, RDF.type, RDFS.Class))
 #--------------------------------------------------
 
 g.add((EX.FemalePopulation, RDFS.subClassOf, EX.Population))
@@ -159,4 +181,6 @@ g.add((EX.hasServiceSectorRate, RDFS.range, XSD.decimal))
 
 
 
-print(g.serialize(format="turtle").decode("utf-8"))
+with open("ontology.ttl", "w", encoding="utf-8") as f:
+    f.write(g.serialize(format="turtle"))
+
