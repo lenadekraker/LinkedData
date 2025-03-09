@@ -2,8 +2,7 @@ from rdflib import Graph, Namespace, RDF, RDFS , XSD
 
 
 EX = Namespace("http://example.org/educationOntology#")
-GN = Namespace("http://www.geonames.org/ontology#country")
-GEO = Namespace("http://www.geonames.org/ontology#population")
+GN = Namespace("http://www.geonames.org/ontology#")
 DPV = Namespace("https://w3id.org/dpv#")
 UNESCO = Namespace("http://www.unesco.org/ns/education#")
 GEOP = Namespace("http://aims.fao.org/aos/geopolitical.owl#")
@@ -25,8 +24,7 @@ with open ("Global_Education.csv", 'r', encoding ='utf-8') as csvfile:
     g.add((EX.Country, RDF.type, GN.Class))
 
     # Geonames ontology
-    g.add((EX.Country, RDFS.subClassOf, GN.name))
-    g.add((EX.Country, GN.parentFeature, EX.Continent))
+    g.add((EX.Country, RDFS.subClassOf, GN.Country))
     g.add((EX.Country, GN.lat, XSD.decimal))
     g.add((EX.Country, GN.long, XSD.decimal))
     g.add((EX.Continent, GN.lat, XSD.decimal))
