@@ -1,15 +1,7 @@
 from rdflib import Graph, Namespace, RDF, RDFS , XSD
 
 
-EX = Namespace("http://example.org/educationOntology#")
-GN = Namespace("http://www.geonames.org/ontology#country")
-GEO = Namespace("http://www.geonames.org/ontology#population")
-DPV = Namespace("https://w3id.org/dpv#")
-UNESCO = Namespace("http://www.unesco.org/ns/education#")
-GEOP = Namespace("http://aims.fao.org/aos/geopolitical.owl#")
-DBPEDIA = Namespace("http://dbpedia.org/ontology/")
-DBPEDIAOWL = Namespace("http://dbpedia.org/ontology/owl#")
-ISO37120 = Namespace("http://ontology.eil.utoronto.ca/ISO37120.owl#")
+EX = Namespace("http://example.org/ontology#")
 
 g = Graph()
 g.bind("ex", EX)
@@ -22,22 +14,14 @@ g.bind("dbpediaOwl", DBPEDIAOWL)
 g.bind("iso37120", ISO37120)
 
 #---------------------------------------------
-with open ("Global_Education.csv", 'r', encoding ='utf-8') as csvfile:
-    g.add((GN.Country, RDF.type, RDFS.Class))
-    g.add((GN.name, RDF.type, RDF.Property))
-    g.add((GN.name, RDFS.domain, GN.Country))
-    g.add((GN.name, RDFS.range, XSD.string))
-    #-------------------------------------------------------------------
-    g.add((DBPEDIA.Population, RDF.type, RDFS.Class)) #make them class and the rest is propertiesssss
-    g.add((DBPEDIAOWL.populationTotal, RDF.type, RDF.Property))
-    g.add((DBPEDIAOWL.populationTotal, RDFS.domain, DBPEDIA.Population))
-    g.add((DBPEDIAOWL.populationTotal, RDFS.range, XSD.int)) 
-    g.add((DBPEDIA.populationPctWomen, RDF.type, RDF.Property))
-    g.add((DBPEDIA.populationPctWomen, RDFS.domain, DBPEDIA.Population))
-    g.add((DBPEDIA.populationPctWomen, RDFS.range, XSD.double))  
-    g.add((DBPEDIA.populationPctMen, RDF.type, RDF.Property))
-    g.add((DBPEDIA.populationPctMen, RDFS.domain, DBPEDIA.Population))
-    g.add((DBPEDIA.populationPctMen, RDFS.range, XSD.double)) 
+g.add((EX.Country, RDF.type, RDFS.Class))
+g.add((EX.Continent, RDF.type, RDFS.Class))
+g.add((EX.GeographicalLocation, RDF.type, RDFS.Class))
+g.add((EX.EducationMetric, RDF.type, RDFS.Class))
+g.add((EX.Population, RDF.type, RDFS.Class))
+g.add((EX.FemalePopulation, RDF.type, RDFS.Class))
+g.add((EX.MalePopulation, RDF.type, RDFS.Class))
+g.add((EX.EconomicIndicatorGDP, RDF.type, RDFS.Class))
 #--------------------------------------------------
     g.add((UNESCO.CompletionRate, RDF.type, RDFS.Class))
     g.add((UNESCO.completionRatePrimary, RDF.type, RDF.Property))
