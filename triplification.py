@@ -99,6 +99,12 @@ g.add((EX.hasUnemploymentRate, RDF.type, RDF.Property))
 g.add((EX.hasUnemploymentRate, RDFS.domain, EX.Country))
 g.add((EX.hasUnemploymentRate, RDFS.range, XSD.decimal))
 
+
+#just added this
+g.add((EX.hasCorruptionRate, RDF.type, RDF.Property))
+g.add((EX.hasCorruptionRate, RDFS.domain, EX.Country))
+g.add((EX.hasCorruptionRate, RDFS.range, XSD.decimal))
+
 #------------------------------------------------------------------------
 
 g.add((EX.hasGDP, RDF.type, RDF.Property))  
