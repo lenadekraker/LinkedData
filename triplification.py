@@ -1,60 +1,58 @@
 from rdflib import Graph, Namespace, RDF, RDFS , XSD
 
 
-EX = Namespace("http://example.org/ontology#")
+EX = Namespace("http://example.org/educationOntology#")
+GN = Namespace("http://www.geonames.org/ontology#country")
+GEO = Namespace("http://www.geonames.org/ontology#population")
+DPV = Namespace("https://w3id.org/dpv#")
+UNESCO = Namespace("http://www.unesco.org/ns/education#")
+GEOP = Namespace("http://aims.fao.org/aos/geopolitical.owl#")
+DBPEDIA = Namespace("http://dbpedia.org/ontology/")
+DBPEDIAOWL = Namespace("http://dbpedia.org/ontology/owl#")
+ISO37120 = Namespace("http://ontology.eil.utoronto.ca/ISO37120.owl#")
 
 g = Graph()
 g.bind("ex", EX)
-
+g.bind("gn", GN)
+g.bind("geo", GEO)
+g.bind("dpv", DPV)
+g.bind("unesco", UNESCO)
+g.bind("geop", GEOP)
+g.bind("dbpediaOwl", DBPEDIAOWL)
+g.bind("iso37120", ISO37120)
 
 #---------------------------------------------
-g.add((EX.Country, RDF.type, RDFS.Class))
-g.add((EX.Continent, RDF.type, RDFS.Class))
-g.add((EX.GeographicalLocation, RDF.type, RDFS.Class))
-g.add((EX.EducationMetric, RDF.type, RDFS.Class))
-g.add((EX.Population, RDF.type, RDFS.Class))
-g.add((EX.FemalePopulation, RDF.type, RDFS.Class))
-g.add((EX.MalePopulation, RDF.type, RDFS.Class))
-g.add((EX.EconomicIndicatorGDP, RDF.type, RDFS.Class))
+with open ("Global_Education.csv", 'r', encoding ='utf-8') as csvfile:
+    g.add((GN.Country, RDF.type, RDFS.Class))
+    g.add((GN.name, RDF.type, RDF.Property))
+    g.add((GN.name, RDFS.domain, GN.Country))
+    g.add((GN.name, RDFS.range, XSD.string))
+    #-------------------------------------------------------------------
+    g.add((DBPEDIA.Population, RDF.type, RDFS.Class)) #make them class and the rest is propertiesssss
+    g.add((DBPEDIAOWL.populationTotal, RDF.type, RDF.Property))
+    g.add((DBPEDIAOWL.populationTotal, RDFS.domain, DBPEDIA.Population))
+    g.add((DBPEDIAOWL.populationTotal, RDFS.range, XSD.int)) 
+    g.add((DBPEDIA.populationPctWomen, RDF.type, RDF.Property))
+    g.add((DBPEDIA.populationPctWomen, RDFS.domain, DBPEDIA.Population))
+    g.add((DBPEDIA.populationPctWomen, RDFS.range, XSD.double))  
+    g.add((DBPEDIA.populationPctMen, RDF.type, RDF.Property))
+    g.add((DBPEDIA.populationPctMen, RDFS.domain, DBPEDIA.Population))
+    g.add((DBPEDIA.populationPctMen, RDFS.range, XSD.double)) 
 #--------------------------------------------------
-
-g.add((EX.FemalePopulation, RDFS.subClassOf, EX.Population))
-g.add((EX.MalePopulation, RDFS.subClassOf, EX.Population))
-
-g.add((EX.hasGeographicalLocation , RDF.type, RDF.Property))
-g.add((EX.hasGeographicalLocation, RDFS.domain, EX.Country))
-g.add((EX.hasGeographicalLocation, RDFS.range, EX.GeographicalLocation))
-
-g.add((EX.hasPopulation , RDF.type, RDF.Property))
-g.add((EX.hasPopulation, RDFS.domain, EX.Country))
-g.add((EX.hasPopulation, RDFS.range, EX.Population))
-
-g.add((EX.hasLatitude, RDF.type, RDF.Property))
-g.add((EX.hasLatitude, RDFS.domain, EX.GeographicalLocation))
-g.add((EX.hasLatitude, RDFS.range, XSD.decimal))
-
-g.add((EX.hasLongitude, RDF.type, RDF.Property))
-g.add((EX.hasLongitude, RDFS.domain, EX.GeographicalLocation))
-g.add((EX.hasLongitude, RDFS.range, XSD.decimal))
-
-g.add((EX.hasEducationalMetric, RDF.type, RDF.Property))
-g.add((EX.hasEducationalMetric, RDFS.domain, EX.Country))   
-g.add((EX.hasEducationalMetric, RDFS.range, EX.EducationMetrics)) 
-
-g.add((EX.hasOutOfSchoolRatePrePrimary, RDFS.subPropertyOf, EX.hasEducationalMetric))  
-g.add((EX.hasOutOfSchoolRatePrimary,    RDFS.subPropertyOf, EX.hasEducationalMetric)) 
-g.add((EX.hasOutOfSchoolRateLowerSecodary, RDFS.subPropertyOf, EX.hasEducationalMetric))  
-g.add((EX.hasOutOfSchoolRateUpperSecodary, RDFS.subPropertyOf, EX.hasEducationalMetric)) 
-g.add((EX.hasCompletionRatePrimary, RDFS.subPropertyOf, EX.hasEducationalMetric)) 
-g.add((EX.hasCompletionRateLowerSecondary, RDFS.subPropertyOf, EX.hasEducationalMetric)) 
-g.add((EX.hasCompletionRateUpperSecondary, RDFS.subPropertyOf, EX.hasEducationalMetric)) 
-g.add((EX.hasLiteracyRateAmong15_24, RDFS.subPropertyOf, EX.hasEducationalMetric)) 
-g.add((EX.hasGrossTertiaryEnrollment, RDFS.subPropertyOf, EX.hasEducationalMetric)) 
-g.add((EX.hasGrossPrimaryEnrollment, RDFS.subPropertyOf, EX.hasEducationalMetric)) 
-g.add((EX.hasHealthcareExpenditureGDP, RDFS.subPropertyOf, EX.hasEconomicIndicatorGDP))
-g.add((EX.hasEducationExpenditureGDP, RDFS.subPropertyOf, EX.hasEconomicIndicatorGDP))
+    g.add((UNESCO.CompletionRate, RDF.type, RDFS.Class))
+    g.add((UNESCO.completionRatePrimary, RDF.type, RDF.Property))
+    g.add((UNESCO.completionRatePrimary, RDFS.domain, UNESCO.CompletionRate))
+    g.add((UNESCO.completionRatePrimary, RDFS.range, XSD.int)) 
+    g.add((UNESCO.completionRateLowerSecondary, RDF.type, RDF.Property))
+    g.add((UNESCO.completionRateLowerSecondary, RDFS.domain, UNESCO.CompletionRate))
+    g.add((UNESCO.completionRateLowerSecondary, RDFS.range, XSD.int)) 
+    g.add((UNESCO.completionRateUpperSecondary, RDF.type, RDF.Property))
+    g.add((UNESCO.completionRateUpperSecondary, RDFS.domain, UNESCO.CompletionRate))
+    g.add((UNESCO.completionRateUpperSecondary, RDFS.range, XSD.int)) 
 #------------------------------------------------------------------------
 
+
+#remove all of this
 g.add((EX.hasOutOfSchoolRatePrePrimary, RDF.type, RDF.Property)) 
 g.add((EX.hasOutOfSchoolRatePrePrimary, RDFS.domain, EX.Population))   
 g.add((EX.hasOutOfSchoolRatePrePrimary, RDFS.range, XSD.decimal))  
@@ -165,4 +163,6 @@ g.add((EX.hasServiceSectorRate, RDFS.range, XSD.decimal))
 
 
 
-print(g.serialize(format="turtle").decode("utf-8"))
+with open("ontology.ttl", "w", encoding="utf-8") as f:
+    f.write(g.serialize(format="turtle"))
+
