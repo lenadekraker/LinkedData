@@ -24,6 +24,8 @@ g.bind("dbpediaOwl", DBPEDIAOWL)
 g.bind("iso37120", ISO37120)
 #---------------------------------------------
 
+
+#here
 g.add((GN.name, RDF.type, RDF.Property))
 g.add((GN.name, RDFS.domain, GN.Country))
 g.add((GN.name, RDFS.range, XSD.string))
