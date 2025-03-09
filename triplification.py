@@ -2,7 +2,8 @@ from rdflib import Graph, Namespace, RDF, RDFS , XSD
 
 
 EX = Namespace("http://example.org/educationOntology#")
-GN = Namespace("http://www.geonames.org/ontology#")
+GN = Namespace("http://www.geonames.org/ontology#country")
+GEO = Namespace("http://www.geonames.org/ontology#population")
 DPV = Namespace("https://w3id.org/dpv#")
 UNESCO = Namespace("http://www.unesco.org/ns/education#")
 GEOP = Namespace("http://aims.fao.org/aos/geopolitical.owl#")
@@ -12,6 +13,7 @@ ISO37120 = Namespace("http://ontology.eil.utoronto.ca/ISO37120.owl#")
 g = Graph()
 g.bind("ex", EX)
 g.bind("gn", GN)
+g.bind("geo", GEO)
 g.bind("dpv", DPV)
 g.bind("unesco", UNESCO)
 g.bind("geop", GEOP)
@@ -21,11 +23,9 @@ g.bind("iso37120", ISO37120)
 #---------------------------------------------
 with open ("Global_Education.csv", 'r', encoding ='utf-8') as csvfile:
     g.add((EX.Country, RDF.type, GN.Class))
-    g.add((EX.Continent, RDF.type, RDFS.Class))
 
     # Geonames ontology
-    g.add((EX.Country, RDFS.subClassOf, GN.Feature))
-    g.add((EX.Continent, RDFS.subClassOf, GN.Feature))
+    g.add((EX.Country, RDFS.subClassOf, GN.name))
     g.add((EX.Country, GN.parentFeature, EX.Continent))
     g.add((EX.Country, GN.lat, XSD.decimal))
     g.add((EX.Country, GN.long, XSD.decimal))
