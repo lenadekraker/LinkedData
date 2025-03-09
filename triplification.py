@@ -41,6 +41,7 @@ g.add((DBPEDIA.populationPctMen, RDFS.domain, DBPEDIA.Population))
 g.add((DBPEDIA.populationPctMen, RDFS.range, XSD.double)) 
 #--------------------------------------------------
 g.add((UNESCO.CompletionRate, RDF.type, RDFS.Class))
+
 g.add((UNESCO.completionRatePrimary, RDF.type, RDF.Property))
 g.add((UNESCO.completionRatePrimary, RDFS.domain, UNESCO.CompletionRate))
 g.add((UNESCO.completionRatePrimary, RDFS.range, XSD.int)) 
@@ -52,101 +53,24 @@ g.add((UNESCO.completionRateUpperSecondary, RDFS.domain, UNESCO.CompletionRate))
 g.add((UNESCO.completionRateUpperSecondary, RDFS.range, XSD.int)) 
 #------------------------------------------------------------------------
 
+g.add((UNESCO.OutOfSchoolRate, RDF.type, RDFS.Class))
+g.add((UNESCO.OutOfSchoolRatePrimary, RDF.type, RDF.Property))
+g.add((UNESCO.OutOfSchoolRatePrimary, RDFS.domain, UNESCO.OutOfSchoolRate))
+g.add((UNESCO.OutOfSchoolRatePrePrimary, RDFS.range, XSD.int)) 
 
-#remove all of this
-g.add((EX.hasOutOfSchoolRatePrePrimary, RDF.type, RDF.Property)) 
-g.add((EX.hasOutOfSchoolRatePrePrimary, RDFS.domain, EX.Population))   
-g.add((EX.hasOutOfSchoolRatePrePrimary, RDFS.range, XSD.decimal))  
+g.add((UNESCO.OutOfSchoolRatePrePrimary, RDF.type, RDF.Property))
+g.add((UNESCO.OutOfSchoolRatePrePrimary, RDFS.domain, UNESCO.OutOfSchoolRate))
+g.add((UNESCO.OutOfSchoolRatePrePrimary, RDFS.range, XSD.int)) 
 
-g.add((EX.hasOutOfSchoolRatePrimary, RDF.type, RDF.Property))  
-g.add((EX.hasOutOfSchoolRatePrimary, RDFS.domain, EX.Population))   
-g.add((EX.hasOutOfSchoolRatePrimary, RDFS.range, XSD.decimal))  
+g.add((UNESCO.OutOfSchoolRateLowerSecondary, RDF.type, RDF.Property))
+g.add((UNESCO.OutOfSchoolRateLowerSecondary, RDFS.domain, UNESCO.OutOfSchoolRate))
+g.add((UNESCO.OutOfSchoolRateLowerSecondary, RDFS.range, XSD.int)) 
 
-g.add((EX.hasOutOfSchoolRateLowerSecodary, RDF.type, RDF.Property))  
-g.add((EX.hasOutOfSchoolRateLowerSecodary, RDFS.domain, EX.Population))   
-g.add((EX.hasOutOfSchoolRateLowerSecodary, RDFS.range, XSD.decimal))
+g.add((UNESCO.OutOfSchoolRateUpperSecondary, RDF.type, RDF.Property))
+g.add((UNESCO.OutOfSchoolRateUpperSecondary, RDFS.domain, UNESCO.OutOfSchoolRate))
+g.add((UNESCO.OutOfSchoolRateUpperSecondary, RDFS.range, XSD.int)) 
+#--------------------------------------------------------------------
 
-g.add((EX.hasOutOfSchoolRateUpperSecodary, RDF.type, RDF.Property))  
-g.add((EX.hasOutOfSchoolRateUpperSecodary, RDFS.domain, EX.Population))  
-g.add((EX.hasOutOfSchoolRateUpperSecodary, RDFS.range, XSD.decimal))
-
-g.add((EX.hasCompletionRatePrimary, RDF.type, RDF.Property))  
-g.add((EX.hasCompletionRatePrimary, RDFS.domain, EX.Population))  
-g.add((EX.hasCompletionRatePrimary, RDFS.range, XSD.decimal))
-
-g.add((EX.hasCompletionRateLowerSecondary, RDF.type, RDF.Property))  
-g.add((EX.hasCompletionRateLowerSecondary, RDFS.domain, EX.Population))  
-g.add((EX.hasCompletionRateLowerSecondary, RDFS.range, XSD.decimal))
-
-g.add((EX.hasCompletionRateUpperSecondary, RDF.type, RDF.Property))  
-g.add((EX.hasCompletionRateUpperSecondary, RDFS.domain, EX.Population))  
-g.add((EX.hasCompletionRateUpperSecondary, RDFS.range, XSD.decimal))
-
-g.add((EX.hasLiteracyRateAmong15_24, RDF.type, RDF.Property))
-g.add((EX.hasLiteracyRateAmong15_24, RDFS.domain, EX.Population))
-g.add((EX.hasLiteracyRateAmong15_24, RDFS.range, XSD.decimal))
-
-g.add((EX.hasGrossTertiaryEnrollment, RDF.type, RDF.Property))  
-g.add((EX.hasGrossTertiaryEnrollment, RDFS.domain, EX.Country))  
-g.add((EX.hasGrossTertiaryEnrollment, RDFS.range, XSD.decimal))
-
-g.add((EX.hasGrossPrimaryEnrollment, RDF.type, RDF.Property))  
-g.add((EX.hasGrossPrimaryEnrollment, RDFS.domain, EX.Country))  
-g.add((EX.hasGrossPrimaryEnrollment, RDFS.range, XSD.decimal))
-
-g.add((EX.hasUnemploymentRate, RDF.type, RDF.Property))
-g.add((EX.hasUnemploymentRate, RDFS.domain, EX.Country))
-g.add((EX.hasUnemploymentRate, RDFS.range, XSD.decimal))
-
-
-#just added this
-g.add((EX.hasCorruptionRate, RDF.type, RDF.Property))
-g.add((EX.hasCorruptionRate, RDFS.domain, EX.Country))
-g.add((EX.hasCorruptionRate, RDFS.range, XSD.decimal))
-
-#------------------------------------------------------------------------
-
-g.add((EX.hasGDP, RDF.type, RDF.Property))  
-g.add((EX.hasGDP, RDFS.domain, EX.Country))  
-g.add((EX.hasGDP, RDFS.range, XSD.decimal))
-
-g.add((EX.hasGDPpercent, RDF.type,    RDF.Property))  
-g.add((EX.hasGDPpercent, RDFS.domain, EX.Country))  
-g.add((EX.hasGDPpercent, RDFS.range, XSD.decimal))
-
-g.add((EX.belongsTo, RDF.type,    RDF.Property))  
-g.add((EX.belongsTo, RDFS.domain, EX.Country))  
-g.add((EX.belongsTo, RDFS.range, EX.Continent))
-
-g.add((EX.IncomeClass, RDF.type, RDFS.Class))
-g.add((EX.hasIncomeClass, RDF.type, RDF.Property))
-g.add((EX.hasIncomeClass, RDFS.domain, EX.Country))
-g.add((EX.hasIncomeClass, RDFS.range, EX.IncomeClass))
-
-g.add((EX.HighIncome, RDF.type, EX.IncomeClass))
-g.add((EX.LowIncome, RDF.type, EX.IncomeClass))
-g.add((EX.OtherIncome, RDF.type, EX.IncomeClass))
-
-g.add((EX.hasEconomicIndicatorGDP, RDF.type, RDF.Property))
-g.add((EX.hasEconomicIndicatorGDP, RDFS.domain, EX.Country))
-g.add((EX.hasEconomicIndicatorGDP, RDFS.range,  EX.EconomicIndicatorGDP))
-
-g.add((EX.HealthcareExpenditureGDP, RDF.type,  EX.EconomicIndicatorGDP))
-g.add((EX.EducationExpenditureGDP,  RDF.type,  EX.EconomicIndicatorGDP))
-
-g.add((EX.hasHealthcareExpenditureGDP, RDF.type, RDF.Property))
-g.add((EX.hasHealthcareExpenditureGDP, RDFS.domain, EX.Country))
-g.add((EX.hasHealthcareExpenditureGDP, RDFS.range,  XSD.decimal))
-
-g.add((EX.hasEducationExpenditureGDP, RDF.type, RDF.Property))
-g.add((EX.hasEducationExpenditureGDP, RDFS.domain, EX.Country))
-g.add((EX.hasEducationExpenditureGDP, RDFS.range,  XSD.decimal))
-
-g.add((EX.hasUndernourishmentRate, RDF.type, RDF.Property))
-g.add((EX.hasUndernourishmentRate, RDFS.domain, EX.Country))
-g.add((EX.hasUndernourishmentRate, RDFS.range, XSD.decimal))
-
-#---------------------------------------------------------------------------------------------------
 g.add((EX.hasAgricultureSectorRate, RDF.type, RDF.Property))
 g.add((EX.hasAgricultureSectorRate, RDFS.domain, EX.Population))
 g.add((EX.hasAgricultureSectorRate, RDFS.range, XSD.decimal))
@@ -159,6 +83,32 @@ g.add((EX.hasServiceSectorRate, RDF.type, RDF.Property))
 g.add((EX.hasServiceSectorRate, RDFS.domain, EX.Population))
 g.add((EX.hasServiceSectorRate, RDFS.range, XSD.decimal))
 
+#------------------------------------------------------------------------
+g.add((ISO37120.Economy, RDF.type, RDFS.Class))
+g.add((ISO37120.EconomyIndicator_5_1, RDF.type, RDF.Property))
+g.add((ISO37120.EconomyIndicator_5_1, RDFS.domain, ISO37120.Economy))
+g.add((ISO37120.EconomyIndicator_5_1, RDFS.range, XSD.decimal))
+
+
+g.add((EX.unemploymentRate, RDF.type, RDF.Property))
+g.add((EX.unemploymentRate, RDFS.domain, ISO37120.Economy))
+g.add((EX.unemploymentRate, RDFS.range, XSD.decimal))
+
+g.add((EX.corruptionRate, RDF.type, RDF.Property))
+g.add((EX.corruptionRate, RDFS.domain, ISO37120.Economy))
+g.add((EX.corruptionRate, RDFS.range, XSD.decimal))
+
+g.add((GEOP.GDP, RDF.type, RDF.Property))
+g.add((GEOP.GDP, RDFS.domain, ISO37120.Economy))
+g.add((GEOP.GDP, RDFS.range, XSD.decimal))
+
+g.add((EX.expenditureOnHealth, RDF.type, RDF.Property))
+g.add((EX.expenditureOnHealth, RDFS.domain, ISO37120.Economy))
+g.add((EX.expenditureOnHealth, RDFS.range, XSD.decimal))
+
+g.add((EX.expenditureOnEducation, RDF.type, RDF.Property))
+g.add((EX.expenditureOnEducation, RDFS.domain, ISO37120.Economy))
+g.add((EX.expenditureOnEducation, RDFS.range, XSD.decimal))
 #_------------------------------------------------------------------------------------------------------------
 
 
