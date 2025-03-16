@@ -1,8 +1,16 @@
-from rdflib import Graph, Namespace, RDF, RDFS , XSD
+from rdflib import Graph, Namespace, RDF, RDFS , XSD, literal
+import pandas as pd
+
+# Loading in csv's
+agri = pd.read_csv("agricultureSector.csv")
+gdp = pd.read_csv("GDP.csv")
+globalEdu = pd.read_csv("Global_Education.csv")
+indu = pd.read_csv("industrySector.csv")
+lifeExp = pd.read_csv("life expectancy.csv")
+serv = pd.read_csv("serviceSector.csv")
 
 
-EX = Namespace("http://example.org/ontology#")
-
+# Defining Namespaces
 EX = Namespace("http://example.org/educationOntology#")
 GN = Namespace("http://www.geonames.org/ontology#")
 GEO = Namespace("http://www.geonames.org/ontology#population")

@@ -1,0 +1,214 @@
+@prefix : <ex:Education/> .
+@prefix dp: <http://dbpedia.org/ontology#> .
+@prefix ex: <http://example.org/educationOntology/> .
+@prefix gn: <http://www.geonames.org/ontology#> .
+@prefix dpv: <https://w3id.org/dpv#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix iso3: <http://ontology.eil.utoronto.ca/ISO37120.owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix unesco: <http://www.unesco.org/ns/education#> .
+@base <http://example.org/educationOntology/> .
+
+<ex:Education> rdf:type owl:Ontology ;
+                owl:versionIRI <http://example.org/educationOntology/> ;
+                owl:imports dp: ,
+                            <http://ontology.eil.utoronto.ca/ISO37120.owl> ,
+                            <http://www.geonames.org/ontology> ,
+                            <https://w3id.org/dpv/2.1> .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://example.org/educationOntology/hasPopulation
+ex:hasPopulation rdf:type owl:ObjectProperty ;
+                 rdfs:domain <https://schema.org/Country> ;
+                 rdfs:range <http://dbpedia.org/resource/Population> .
+
+
+###  http://example.org/educationOntology/hasSector
+ex:hasSector rdf:type owl:ObjectProperty ;
+             rdfs:domain <https://schema.org/Country> ;
+             rdfs:range dpv:Sector .
+
+
+###  http://example.org/educationOntology/reportedCompletionSchoolRate
+ex:reportedCompletionSchoolRate rdf:type owl:ObjectProperty ;
+                                rdfs:domain <https://schema.org/Country> ;
+                                rdfs:range <ex#CompletionRate> .
+
+
+###  http://example.org/educationOntology/reportedEconomicDetails
+ex:reportedEconomicDetails rdf:type owl:ObjectProperty ;
+                           rdfs:domain <https://schema.org/Country> ;
+                           rdfs:range iso3:Economy .
+
+
+###  http://example.org/educationOntology/reportedOutOfSchoolRate
+ex:reportedOutOfSchoolRate rdf:type owl:ObjectProperty ;
+                           rdfs:domain <https://schema.org/Country> ;
+                           rdfs:range </http://example.org/educationOntology/OutOfSchoolRate> .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://dbpedia.org/ontology/Population
+dp:Population rdf:type owl:DatatypeProperty ;
+              rdfs:domain <http://dbpedia.org/resource/Population> ;
+              rdfs:range xsd:integer .
+
+
+###  http://dbpedia.org/ontology/grossDomesticProduct
+dp:grossDomesticProduct rdf:type owl:DatatypeProperty ;
+                        rdfs:domain iso3:Economy ;
+                        rdfs:range xsd:double .
+
+
+###  http://dbpedia.org/ontology/populationPctMen
+dp:populationPctMen rdf:type owl:DatatypeProperty ;
+                    rdfs:domain <http://dbpedia.org/resource/Population> ;
+                    rdfs:range xsd:double .
+
+
+###  http://dbpedia.org/ontology/populationPctWomen
+dp:populationPctWomen rdf:type owl:DatatypeProperty ;
+                      rdfs:domain <http://dbpedia.org/resource/Population> ;
+                      rdfs:range xsd:double .
+
+
+###  http://example.org/educationOntology/agricultureRate
+ex:agricultureRate rdf:type owl:DatatypeProperty ;
+                   rdfs:domain dpv:Sector ;
+                   rdfs:range xsd:double .
+
+
+###  http://example.org/educationOntology/completionRateLowerSecondary
+ex:completionRateLowerSecondary rdf:type owl:DatatypeProperty ;
+                                rdfs:domain <ex#CompletionRate> ;
+                                rdfs:range xsd:double .
+
+
+###  http://example.org/educationOntology/completionRatePrimary
+ex:completionRatePrimary rdf:type owl:DatatypeProperty ;
+                         rdfs:domain <ex#CompletionRate> ;
+                         rdfs:range xsd:double .
+
+
+###  http://example.org/educationOntology/completionRateUpperSecondary
+ex:completionRateUpperSecondary rdf:type owl:DatatypeProperty ;
+                                rdfs:domain <ex#CompletionRate> ;
+                                rdfs:range xsd:double .
+
+
+###  http://example.org/educationOntology/expenditureOnEducation
+ex:expenditureOnEducation rdf:type owl:DatatypeProperty ;
+                          rdfs:domain iso3:Economy ;
+                          rdfs:range xsd:double .
+
+
+###  http://example.org/educationOntology/expenditureonHealth
+ex:expenditureonHealth rdf:type owl:DatatypeProperty ;
+                       rdfs:domain iso3:Economy ;
+                       rdfs:range xsd:double .
+
+
+###  http://example.org/educationOntology/industryRate
+ex:industryRate rdf:type owl:DatatypeProperty ;
+                rdfs:domain dpv:Sector ;
+                rdfs:range xsd:double .
+
+
+###  http://example.org/educationOntology/outOfSchoolRateLowerSecondary
+ex:outOfSchoolRateLowerSecondary rdf:type owl:DatatypeProperty ;
+                                 rdfs:domain </http://example.org/educationOntology#OutOfSchoolRate> ;
+                                 rdfs:range xsd:double .
+
+
+###  http://example.org/educationOntology/outOfSchoolRatePrePrimary
+ex:outOfSchoolRatePrePrimary rdf:type owl:DatatypeProperty ;
+                             rdfs:domain </http://example.org/educationOntology#OutOfSchoolRate> ;
+                             rdfs:range xsd:double .
+
+
+###  http://example.org/educationOntology/outOfSchoolRatePrimary
+ex:outOfSchoolRatePrimary rdf:type owl:DatatypeProperty ;
+                          rdfs:domain </http://example.org/educationOntology#OutOfSchoolRate> ;
+                          rdfs:range xsd:double .
+
+
+###  http://example.org/educationOntology/outOfSchoolRateUpperSecondary
+ex:outOfSchoolRateUpperSecondary rdf:type owl:DatatypeProperty ;
+                                 rdfs:domain </http://example.org/educationOntology#OutOfSchoolRate> ;
+                                 rdfs:range xsd:double .
+
+
+###  http://example.org/educationOntology/serviceRate
+ex:serviceRate rdf:type owl:DatatypeProperty ;
+               rdfs:domain dpv:Sector ;
+               rdfs:range xsd:double .
+
+
+###  http://ontology.eil.utoronto.ca/ISO37120.owl#11.4
+<http://ontology.eil.utoronto.ca/ISO37120.owl#11.4> rdf:type owl:DatatypeProperty ;
+                                                    rdfs:domain iso3:Economy ;
+                                                    rdfs:range xsd:double .
+
+
+###  http://ontology.eil.utoronto.ca/ISO37120.owl#5.1
+<http://ontology.eil.utoronto.ca/ISO37120.owl#5.1> rdf:type owl:DatatypeProperty ;
+                                                   rdfs:domain iso3:Economy ;
+                                                   rdfs:range xsd:double .
+
+
+###  http://www.geonames.org/ontology#lat
+gn:lat rdf:type owl:DatatypeProperty ;
+       rdfs:domain <https://schema.org/Country> ;
+       rdfs:range xsd:double .
+
+
+###  http://www.geonames.org/ontology#long
+gn:long rdf:type owl:DatatypeProperty ;
+        rdfs:domain <https://schema.org/Country> ;
+        rdfs:range xsd:double .
+
+
+###  http://www.geonames.org/ontology#name
+gn:name rdf:type owl:DatatypeProperty ;
+        rdfs:domain <https://schema.org/Country> ;
+        rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  /http://example.org/educationOntology/OutOfSchoolRate
+</http://example.org/educationOntology/OutOfSchoolRate> rdf:type owl:Class .
+
+
+###  ex#CompletionRate
+<ex#CompletionRate> rdf:type owl:Class .
+
+
+###  http://dbpedia.org/resource/Population
+<http://dbpedia.org/resource/Population> rdf:type owl:Class .
+
+
+###  http://ontology.eil.utoronto.ca/ISO37120.owl#Economy
+iso3:Economy rdf:type owl:Class .
+
+
+###  https://schema.org/Country
+<https://schema.org/Country> rdf:type owl:Class .
+
+
+###  https://w3id.org/dpv#Sector
+dpv:Sector rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
