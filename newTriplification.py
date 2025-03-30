@@ -3,7 +3,7 @@ import pandas as pd
 
 # Loading in Turtle file, from Protégé
 g = Graph()
-g.parse("New Ontology.ttl", format = "turtle")
+g.parse("New.ttl", format = "turtle")
 
 # Loading in the data in different csv's
 agri = pd.read_csv("agricultureSector.csv", delimiter=",", skiprows=4)

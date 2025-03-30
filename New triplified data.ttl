@@ -1411,6 +1411,10 @@ ex:Cook_Islands ex:completionRateLowerSecondaryFemale 0e+00 ;
     gn:long 1.597777e+02 ;
     gn:name "Cook_Islands"^^xsd:string .
 
+ex:Corruption a owl:DatatypeProperty ;
+    rdfs:domain iso3:Economy ;
+    rdfs:range xsd:int .
+
 ex:Costa_Rica dp1:grossDomesticProduct 6.152067e+10 ;
     ex:agricultureRate 1.341197e+01 ;
     ex:completionRateLowerSecondaryFemale 7.6e+01 ;
@@ -6691,6 +6695,10 @@ ex:Ukraine dp1:grossDomesticProduct 1.55582e+11 ;
     gn:long 3.116558e+01 ;
     gn:name "Ukraine"^^xsd:string .
 
+ex:UnemploymentRate a owl:DatatypeProperty ;
+    rdfs:domain iso3:Economy ;
+    rdfs:range xsd:double .
+
 ex:United_Arab_Emirates dp1:grossDomesticProduct 4.211423e+11 ;
     ex:agricultureRate 1.346468e+00 ;
     ex:completionRateLowerSecondaryFemale 0e+00 ;
@@ -7098,9 +7106,15 @@ ex:Zimbabwe dp1:grossDomesticProduct 1.676851e+10 ;
     gn:long 2.915486e+01 ;
     gn:name "Zimbabwe"^^xsd:string .
 
-ex:agricultureRate a owl:DatatypeProperty ;
-    rdfs:domain <http://dbpedia.org/resource/Population> ;
-    rdfs:range xsd:double .
+ex:agricultureRateFemale a owl:DatatypeProperty ;
+    rdfs:domain dpv:Sector ;
+    rdfs:range xsd:double ;
+    rdfs:subPropertyOf ex:agricultureRate .
+
+ex:agricultureRateMale a owl:DatatypeProperty ;
+    rdfs:domain dpv:Sector ;
+    rdfs:range xsd:double ;
+    rdfs:subPropertyOf ex:agricultureRate .
 
 ex:completionRateLowerSecondaryFemale a owl:DatatypeProperty ;
     rdfs:domain ex:CompletionRate ;
@@ -7144,9 +7158,27 @@ ex:hasPopulation a owl:ObjectProperty ;
     rdfs:domain schema:Country ;
     rdfs:range <http://dbpedia.org/resource/Population> .
 
-ex:industryRate a owl:DatatypeProperty ;
-    rdfs:domain <http://dbpedia.org/resource/Population> ;
-    rdfs:range xsd:double .
+ex:hasSchoolFemalePopulationSize a owl:DatatypeProperty,
+        owl:ObjectProperty ;
+    rdfs:domain ex:SchoolPopulation ;
+    rdfs:range xsd:integer ;
+    rdfs:subPropertyOf ex:hasSchoolPopulation .
+
+ex:hasSchoolMalePopulation a owl:DatatypeProperty,
+        owl:ObjectProperty ;
+    rdfs:domain ex:SchoolPopulation ;
+    rdfs:range xsd:integer ;
+    rdfs:subPropertyOf ex:hasSchoolPopulation .
+
+ex:industryRateFemale a owl:DatatypeProperty ;
+    rdfs:domain dpv:Sector ;
+    rdfs:range xsd:double ;
+    rdfs:subPropertyOf ex:industryRate .
+
+ex:industryRateMale a owl:DatatypeProperty ;
+    rdfs:domain dpv:Sector ;
+    rdfs:range xsd:double ;
+    rdfs:subPropertyOf ex:industryRate .
 
 ex:outOfSchoolRateLowerSecondaryFemale a owl:DatatypeProperty ;
     rdfs:domain ex:OutOfSchoolRate ;
@@ -7188,13 +7220,27 @@ ex:outOfSchoolRateUpperSecondaryMale a owl:DatatypeProperty ;
     rdfs:range xsd:double ;
     rdfs:subPropertyOf ex:outOfSchoolRateUpperSecondary .
 
+ex:reportedCompletionSchoolRate a owl:ObjectProperty ;
+    rdfs:domain <http://dbpedia.org/resource/Population> ;
+    rdfs:range ex:CompletionRate .
+
 ex:reportedEconomicDetails a owl:ObjectProperty ;
     rdfs:domain schema:Country ;
     rdfs:range iso3:Economy .
 
-ex:serviceRate a owl:DatatypeProperty ;
+ex:reportedOutOfSchoolRate a owl:ObjectProperty ;
+    rdfs:domain <http://dbpedia.org/resource/Population> ;
+    rdfs:range ex:OutOfSchoolRate .
+
+ex:serviceRateFemale a owl:DatatypeProperty ;
     rdfs:domain dpv:Sector ;
-    rdfs:range xsd:double .
+    rdfs:range xsd:double ;
+    rdfs:subPropertyOf ex:serviceRate .
+
+ex:serviceRateMale a owl:DatatypeProperty ;
+    rdfs:domain dpv:Sector ;
+    rdfs:range xsd:double ;
+    rdfs:subPropertyOf ex:serviceRate .
 
 ex:the_United_States dp1:grossDomesticProduct 2.09366e+13 .
 
@@ -7207,26 +7253,6 @@ ex:hasPopulationMaleSize a owl:DatatypeProperty ;
     rdfs:domain <http://dbpedia.org/resource/Population> ;
     rdfs:range xsd:double ;
     rdfs:subPropertyOf ex:hasPopulationSize .
-
-ex:hasSchoolFemalePopulationSize a owl:DatatypeProperty,
-        owl:ObjectProperty ;
-    rdfs:domain ex:SchoolPopulation ;
-    rdfs:range xsd:double ;
-    rdfs:subPropertyOf ex:hasSchoolPopulation .
-
-ex:hasSchoolMalePopulation a owl:DatatypeProperty,
-        owl:ObjectProperty ;
-    rdfs:domain ex:SchoolPopulation ;
-    rdfs:range xsd:double ;
-    rdfs:subPropertyOf ex:hasSchoolPopulation .
-
-ex:reportedCompletionSchoolRate a owl:ObjectProperty ;
-    rdfs:domain <http://dbpedia.org/resource/Population> ;
-    rdfs:range ex:CompletionRate .
-
-ex:reportedOutOfSchoolRate a owl:ObjectProperty ;
-    rdfs:domain <http://dbpedia.org/resource/Population> ;
-    rdfs:range ex:OutOfSchoolRate .
 
 ex:worksInSector a owl:ObjectProperty ;
     rdfs:domain <http://dbpedia.org/resource/Population> ;
@@ -7244,20 +7270,35 @@ gn:name a owl:DatatypeProperty ;
     rdfs:domain schema:Country ;
     rdfs:range xsd:string .
 
+ex:agricultureRate a owl:DatatypeProperty ;
+    rdfs:domain dpv:Sector ;
+    rdfs:range xsd:double .
+
 ex:completionRateLowerSecondary a owl:DatatypeProperty ;
-    rdfs:domain ex:SchoolPopulation ;
+    rdfs:domain ex:CompletionRate ;
     rdfs:range xsd:double .
 
 ex:completionRatePrimary a owl:DatatypeProperty ;
-    rdfs:domain ex:SchoolPopulation ;
+    rdfs:domain ex:CompletionRate ;
     rdfs:range xsd:double .
 
 ex:completionRateUpperSecondary a owl:DatatypeProperty ;
     rdfs:domain ex:CompletionRate ;
     rdfs:range xsd:double .
 
+ex:hasSchoolPopulation a owl:DatatypeProperty,
+        owl:ObjectProperty ;
+    rdfs:domain ex:SchoolPopulation,
+        schema:Country ;
+    rdfs:range ex:SchoolPopulation,
+        xsd:integer .
+
+ex:industryRate a owl:DatatypeProperty ;
+    rdfs:domain dpv:Sector ;
+    rdfs:range xsd:double .
+
 ex:outOfSchoolRateLowerSecondary a owl:DatatypeProperty ;
-    rdfs:domain ex:SchoolPopulation ;
+    rdfs:domain ex:OutOfSchoolRate ;
     rdfs:range xsd:double .
 
 ex:outOfSchoolRatePrePrimary a owl:DatatypeProperty ;
@@ -7272,16 +7313,15 @@ ex:outOfSchoolRateUpperSecondary a owl:DatatypeProperty ;
     rdfs:domain ex:OutOfSchoolRate ;
     rdfs:range xsd:double .
 
-ex:hasPopulationSize a owl:DatatypeProperty .
+ex:serviceRate a owl:DatatypeProperty ;
+    rdfs:domain dpv:Sector ;
+    rdfs:range xsd:double .
 
-ex:hasSchoolPopulation a owl:DatatypeProperty,
-        owl:ObjectProperty ;
-    rdfs:domain ex:SchoolPopulation,
-        schema:Country ;
-    rdfs:range ex:SchoolPopulation,
-        xsd:double .
+ex:hasPopulationSize a owl:DatatypeProperty ;
+    rdfs:domain <http://dbpedia.org/resource/Population> ;
+    rdfs:range xsd:integer .
 
-dpv:Sector a owl:Class .
+ex:SchoolPopulation a owl:Class .
 
 iso3:Economy a owl:Class .
 
@@ -7299,16 +7339,6 @@ schema:Country a owl:Class ;
             owl:onProperty gn:name ;
             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] .
 
-ex:SchoolPopulation a owl:Class ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality "6"^^xsd:nonNegativeInteger ;
-            owl:onClass ex:CompletionRate ;
-            owl:onProperty ex:reportedCompletionSchoolRate ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality "8"^^xsd:nonNegativeInteger ;
-            owl:onClass ex:OutOfSchoolRate ;
-            owl:onProperty ex:reportedOutOfSchoolRate ] .
-
 <http://dbpedia.org/resource/Population> a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality "3"^^xsd:nonNegativeInteger ;
@@ -7325,21 +7355,11 @@ ex:SchoolPopulation a owl:Class ;
         [ a owl:Restriction ;
             owl:onDataRange xsd:double ;
             owl:onProperty ex:hasPopulationSize ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
-        [ a owl:Restriction ;
-            owl:onDataRange xsd:double ;
-            owl:onProperty ex:hasSchoolFemalePopulationSize ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
-        [ a owl:Restriction ;
-            owl:onDataRange xsd:double ;
-            owl:onProperty ex:hasSchoolMalePopulation ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
-        [ a owl:Restriction ;
-            owl:onDataRange xsd:double ;
-            owl:onProperty ex:hasSchoolPopulation ;
             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] .
 
 ex:CompletionRate a owl:Class .
+
+dpv:Sector a owl:Class .
 
 ex:OutOfSchoolRate a owl:Class .
 
