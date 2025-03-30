@@ -1,0 +1,322 @@
+@prefix : <ex:Education#> .
+@prefix dp: <http://dbpedia.org/ontology/> .
+@prefix ex: <http://example.org/educationOntology#> .
+@prefix gn: <http://www.geonames.org/ontology#> .
+@prefix dpv: <https://w3id.org/dpv#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix iso3: <http://ontology.eil.utoronto.ca/ISO37120.owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix unesco: <http://www.unesco.org/ns/education#> .
+@base <ex:Education#> .
+
+<ex:Education> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://example.org/educationOntology#hasPopulation
+ex:hasPopulation rdf:type owl:ObjectProperty ;
+                 rdfs:domain <https://schema.org/Country> ;
+                 rdfs:range <http://dbpedia.org/resource/Population> .
+
+
+###  http://example.org/educationOntology#hasSchoolPopulation
+ex:hasSchoolPopulation rdf:type owl:ObjectProperty ;
+                       rdfs:domain <https://schema.org/Country> ;
+                       rdfs:range ex:SchoolPopulation .
+
+
+###  http://example.org/educationOntology#reportedCompletionSchoolRate
+ex:reportedCompletionSchoolRate rdf:type owl:ObjectProperty ;
+                                rdfs:domain ex:SchoolPopulation ;
+                                rdfs:range ex:CompletionRate .
+
+
+###  http://example.org/educationOntology#reportedEconomicDetails
+ex:reportedEconomicDetails rdf:type owl:ObjectProperty ;
+                           rdfs:domain <https://schema.org/Country> ;
+                           rdfs:range iso3:Economy .
+
+
+###  http://example.org/educationOntology#reportedOutOfSchoolRate
+ex:reportedOutOfSchoolRate rdf:type owl:ObjectProperty ;
+                           rdfs:domain ex:SchoolPopulation ;
+                           rdfs:range ex:OutOfSchoolRate .
+
+
+###  http://example.org/educationOntology#worksInSector
+ex:worksInSector rdf:type owl:ObjectProperty ;
+                 rdfs:domain <http://dbpedia.org/resource/Population> ;
+                 rdfs:range dpv:Sector .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://dbpedia.org/ontology/grossDomesticProduct
+dp:grossDomesticProduct rdf:type owl:DatatypeProperty ;
+                        rdfs:domain iso3:Economy ;
+                        rdfs:range xsd:double .
+
+
+###  http://example.org/educationOntology#Corruption
+ex:Corruption rdf:type owl:DatatypeProperty ;
+              rdfs:domain iso3:Economy ;
+              rdfs:range xsd:int .
+
+
+###  http://example.org/educationOntology#UnemploymentRate
+ex:UnemploymentRate rdf:type owl:DatatypeProperty ;
+                    rdfs:domain iso3:Economy ;
+                    rdfs:range xsd:double .
+
+
+###  http://example.org/educationOntology#agricultureRate
+ex:agricultureRate rdf:type owl:DatatypeProperty ;
+                   rdfs:domain dpv:Sector ;
+                   rdfs:range xsd:double .
+
+
+###  http://example.org/educationOntology#completionRateLowerSecondaryFemale
+ex:completionRateLowerSecondaryFemale rdf:type owl:DatatypeProperty ;
+                                      rdfs:subPropertyOf owl:topDataProperty ;
+                                      rdfs:domain ex:CompletionRate ;
+                                      rdfs:range xsd:double .
+
+
+###  http://example.org/educationOntology#completionRateLowerSecondaryMale
+ex:completionRateLowerSecondaryMale rdf:type owl:DatatypeProperty ;
+                                    rdfs:subPropertyOf owl:topDataProperty ;
+                                    rdfs:domain ex:CompletionRate ;
+                                    rdfs:range xsd:double .
+
+
+###  http://example.org/educationOntology#completionRatePrimaryFemale
+ex:completionRatePrimaryFemale rdf:type owl:DatatypeProperty ;
+                               rdfs:subPropertyOf owl:topDataProperty ;
+                               rdfs:domain ex:CompletionRate ;
+                               rdfs:range xsd:double .
+
+
+###  http://example.org/educationOntology#completionRatePrimaryMale
+ex:completionRatePrimaryMale rdf:type owl:DatatypeProperty ;
+                             rdfs:subPropertyOf owl:topDataProperty ;
+                             rdfs:domain ex:CompletionRate ;
+                             rdfs:range xsd:double .
+
+
+###  http://example.org/educationOntology#completionRateUpperSecondaryFemale
+ex:completionRateUpperSecondaryFemale rdf:type owl:DatatypeProperty ;
+                                      rdfs:subPropertyOf owl:topDataProperty ;
+                                      rdfs:domain ex:CompletionRate ;
+                                      rdfs:range xsd:double .
+
+
+###  http://example.org/educationOntology#completionRateUpperSecondaryMale
+ex:completionRateUpperSecondaryMale rdf:type owl:DatatypeProperty ;
+                                    rdfs:subPropertyOf owl:topDataProperty ;
+                                    rdfs:domain ex:CompletionRate ;
+                                    rdfs:range xsd:double .
+
+
+###  http://example.org/educationOntology#expenditureOnEducation
+ex:expenditureOnEducation rdf:type owl:DatatypeProperty ;
+                          rdfs:domain iso3:Economy ;
+                          rdfs:range xsd:double .
+
+
+###  http://example.org/educationOntology#expenditureonHealth
+ex:expenditureonHealth rdf:type owl:DatatypeProperty ;
+                       rdfs:domain iso3:Economy ;
+                       rdfs:range xsd:double .
+
+
+###  http://example.org/educationOntology#hasPopulationFemaleSize
+ex:hasPopulationFemaleSize rdf:type owl:DatatypeProperty ;
+                           rdfs:subPropertyOf ex:hasPopulationSize ;
+                           rdfs:domain <http://dbpedia.org/resource/Population> ;
+                           rdfs:range xsd:double .
+
+
+###  http://example.org/educationOntology#hasPopulationMaleSize
+ex:hasPopulationMaleSize rdf:type owl:DatatypeProperty ;
+                         rdfs:subPropertyOf ex:hasPopulationSize ;
+                         rdfs:domain <http://dbpedia.org/resource/Population> ;
+                         rdfs:range xsd:double .
+
+
+###  http://example.org/educationOntology#hasPopulationSize
+ex:hasPopulationSize rdf:type owl:DatatypeProperty ;
+                     rdfs:domain <http://dbpedia.org/resource/Population> ;
+                     rdfs:range xsd:integer .
+
+
+###  http://example.org/educationOntology#hasSchoolFemalePopulationSize
+ex:hasSchoolFemalePopulationSize rdf:type owl:DatatypeProperty ;
+                                 rdfs:range xsd:integer .
+
+
+###  http://example.org/educationOntology#hasSchoolMalePopulation
+ex:hasSchoolMalePopulation rdf:type owl:DatatypeProperty ;
+                           rdfs:range xsd:integer .
+
+
+###  http://example.org/educationOntology#industryRate
+ex:industryRate rdf:type owl:DatatypeProperty ;
+                rdfs:domain dpv:Sector ;
+                rdfs:range xsd:double .
+
+
+###  http://example.org/educationOntology#outOfSchoolRateLowerSecondaryFemale
+ex:outOfSchoolRateLowerSecondaryFemale rdf:type owl:DatatypeProperty ;
+                                       rdfs:subPropertyOf owl:topDataProperty ;
+                                       rdfs:domain ex:OutOfSchoolRate ;
+                                       rdfs:range xsd:double .
+
+
+###  http://example.org/educationOntology#outOfSchoolRateLowerSecondaryMale
+ex:outOfSchoolRateLowerSecondaryMale rdf:type owl:DatatypeProperty ;
+                                     rdfs:subPropertyOf owl:topDataProperty ;
+                                     rdfs:domain ex:OutOfSchoolRate ;
+                                     rdfs:range xsd:double .
+
+
+###  http://example.org/educationOntology#outOfSchoolRatePrePrimaryFemale
+ex:outOfSchoolRatePrePrimaryFemale rdf:type owl:DatatypeProperty ;
+                                   rdfs:subPropertyOf owl:topDataProperty ;
+                                   rdfs:domain ex:OutOfSchoolRate ;
+                                   rdfs:range xsd:double .
+
+
+###  http://example.org/educationOntology#outOfSchoolRatePrePrimaryMale
+ex:outOfSchoolRatePrePrimaryMale rdf:type owl:DatatypeProperty ;
+                                 rdfs:subPropertyOf owl:topDataProperty ;
+                                 rdfs:domain ex:OutOfSchoolRate ;
+                                 rdfs:range xsd:double .
+
+
+###  http://example.org/educationOntology#outOfSchoolRatePrimaryFemale
+ex:outOfSchoolRatePrimaryFemale rdf:type owl:DatatypeProperty ;
+                                rdfs:subPropertyOf owl:topDataProperty ;
+                                rdfs:domain ex:OutOfSchoolRate ;
+                                rdfs:range xsd:double .
+
+
+###  http://example.org/educationOntology#outOfSchoolRatePrimaryMale
+ex:outOfSchoolRatePrimaryMale rdf:type owl:DatatypeProperty ;
+                              rdfs:subPropertyOf owl:topDataProperty ;
+                              rdfs:domain ex:OutOfSchoolRate ;
+                              rdfs:range xsd:double .
+
+
+###  http://example.org/educationOntology#outOfSchoolRateUpperSecondaryFemale
+ex:outOfSchoolRateUpperSecondaryFemale rdf:type owl:DatatypeProperty ;
+                                       rdfs:subPropertyOf owl:topDataProperty ;
+                                       rdfs:domain ex:OutOfSchoolRate ;
+                                       rdfs:range xsd:double .
+
+
+###  http://example.org/educationOntology#outOfSchoolRateUpperSecondaryMale
+ex:outOfSchoolRateUpperSecondaryMale rdf:type owl:DatatypeProperty ;
+                                     rdfs:subPropertyOf owl:topDataProperty ;
+                                     rdfs:domain ex:OutOfSchoolRate ;
+                                     rdfs:range xsd:double .
+
+
+###  http://example.org/educationOntology#serviceRate
+ex:serviceRate rdf:type owl:DatatypeProperty ;
+               rdfs:domain dpv:Sector ;
+               rdfs:range xsd:double .
+
+
+###  http://www.geonames.org/ontology#lat
+gn:lat rdf:type owl:DatatypeProperty ;
+       rdfs:domain <https://schema.org/Country> ;
+       rdfs:range xsd:double .
+
+
+###  http://www.geonames.org/ontology#long
+gn:long rdf:type owl:DatatypeProperty ;
+        rdfs:domain <https://schema.org/Country> ;
+        rdfs:range xsd:double .
+
+
+###  http://www.geonames.org/ontology#name
+gn:name rdf:type owl:DatatypeProperty ;
+        rdfs:domain <https://schema.org/Country> ;
+        rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://dbpedia.org/resource/Population
+<http://dbpedia.org/resource/Population> rdf:type owl:Class ;
+                                         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                           owl:onProperty ex:worksInSector ;
+                                                           owl:maxQualifiedCardinality "3"^^xsd:nonNegativeInteger ;
+                                                           owl:onClass dpv:Sector
+                                                         ] ,
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty ex:hasPopulationFemaleSize ;
+                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                           owl:onDataRange xsd:double
+                                                         ] ,
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty ex:hasPopulationMaleSize ;
+                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                           owl:onDataRange xsd:double
+                                                         ] ,
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty ex:hasPopulationSize ;
+                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                           owl:onDataRange xsd:double
+                                                         ] .
+
+
+###  http://example.org/educationOntology#CompletionRate
+ex:CompletionRate rdf:type owl:Class .
+
+
+###  http://example.org/educationOntology#OutOfSchoolRate
+ex:OutOfSchoolRate rdf:type owl:Class .
+
+
+###  http://example.org/educationOntology#SchoolPopulation
+ex:SchoolPopulation rdf:type owl:Class .
+
+
+###  http://ontology.eil.utoronto.ca/ISO37120.owl#Economy
+iso3:Economy rdf:type owl:Class .
+
+
+###  https://schema.org/Country
+<https://schema.org/Country> rdf:type owl:Class ;
+                             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                               owl:onProperty gn:lat ;
+                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                               owl:onDataRange xsd:double
+                                             ] ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty gn:long ;
+                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                               owl:onDataRange xsd:double
+                                             ] ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty gn:name ;
+                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                               owl:onDataRange xsd:string
+                                             ] .
+
+
+###  https://w3id.org/dpv#Sector
+dpv:Sector rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

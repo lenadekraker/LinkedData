@@ -3,7 +3,7 @@ import pandas as pd
 
 # Loading in Turtle file, from Protégé
 g = Graph()
-g.parse("New.ttl", format = "turtle")
+g.parse("Final.ttl", format = "turtle")
 
 # Loading in the data in different csv's
 agri = pd.read_csv("agricultureSector.csv", delimiter=",", skiprows=4)
@@ -15,7 +15,7 @@ lifeExp = pd.read_csv("life expectancy.csv", delimiter=",")
 lifeExp = lifeExp.drop_duplicates(subset = "Country Name", keep = "last")
 serv = pd.read_csv("serviceSector.csv", delimiter=",", skiprows = 4)
 popu = pd.read_csv("Population.csv", delimiter = "," )
-popu = popu.iloc[:-5]  # Remove the last 5 rows
+popu = popu.iloc[:-6]  # Remove the last 6 rows
 
 
 # Get namespaces from the ontology 
@@ -43,7 +43,10 @@ country_name_corrections = {
 
 def normalize_country_name(name):
     name = name.strip()  # Remove extra spaces
-    return country_name_corrections.get(name, name).replace(" ", "_").replace(",", "")
+    return country_name_corrections.get(name, name).replace(",", "")
+
+globalEdu["Countries and areas"] = globalEdu["Countries and areas"].apply(normalize_country_name)
+valid_countries = set(globalEdu["Countries and areas"])  # Only allow these countries
 
 
 # Loop through CSV Global Education and add triples
@@ -76,10 +79,11 @@ for _, row in globalEdu.iterrows():
 gdp["country"] = gdp["country"].apply(normalize_country_name)
 for _,row in gdp.iterrows():
     country_name = row["country"].replace(" ", "_").replace(",", "")
-    country_uri = URIRef(EX + country_name)
-    
-    # Adding GDP
-    g.add((country_uri, DP.grossDomesticProduct, Literal(row["gdp"], datatype = XSD.double)))
+    if country_name in valid_countries:
+        country_uri = URIRef(EX + country_name)
+        
+        # Adding GDP
+        g.add((country_uri, DP.grossDomesticProduct, Literal(row["gdp"], datatype = XSD.double)))
 
 
 # Loop through csv life expectancy + convertion to doubles (were strings before)
@@ -89,57 +93,62 @@ lifeExp["Corruption"] = pd.to_numeric(lifeExp["Corruption"], errors="coerce")
 lifeExp["Country Name"] = lifeExp["Country Name"].apply(normalize_country_name)
 for _,row in lifeExp.iterrows():
     country_name = row["Country Name"].replace(" ", "_").replace(",", "")
-    country_uri = URIRef(EX + country_name)
+    if country_name in valid_countries:
+        country_uri = URIRef(EX + country_name)
 
-    # Adding Health Expenditure, Education Expenditure and Corruption 
-    g.add((country_uri, EX.exependitureOnHealth, Literal(row["Health Expenditure %"], datatype = XSD.double)))
-    g.add((country_uri, EX.exependitureOnEducation, Literal(row["Education Expenditure %"], datatype = XSD.double)))
-    g.add((country_uri, ISO3["11.4"] , Literal(row["Corruption"], datatype = XSD.double)))
+        # Adding Health Expenditure, Education Expenditure and Corruption 
+        g.add((country_uri, EX.exependitureOnHealth, Literal(row["Health Expenditure %"], datatype = XSD.double)))
+        g.add((country_uri, EX.exependitureOnEducation, Literal(row["Education Expenditure %"], datatype = XSD.double)))
+        g.add((country_uri, ISO3["11.4"] , Literal(row["Corruption"], datatype = XSD.double)))
 
 
 # Loop trough CSV agriculture sector
 agri["Country Name"] = agri["Country Name"].apply(normalize_country_name)
 for _, row in agri.iterrows():
     country_name = row["Country Name"].replace(" ", "_").replace(",", "")
-    country_uri = URIRef(EX + country_name)
+    if country_name in valid_countries:
+        country_uri = URIRef(EX + country_name)
 
-    # Adding Industry Rate
-    g.add((country_uri, EX.agricultureRate, Literal(row["2023"], datatype = XSD.double)))     
+        # Adding Industry Rate
+        g.add((country_uri, EX.agricultureRate, Literal(row["2023"], datatype = XSD.double)))     
 
 
 # Loop trough CSV industry sector
 indu["Country Name"] = indu["Country Name"].apply(normalize_country_name)
 for _, row in indu.iterrows():
     country_name = row["Country Name"].replace(" ", "_").replace(",", "")
-    country_uri = URIRef(EX + country_name)
+    if country_name in valid_countries:
+        country_uri = URIRef(EX + country_name)
 
-    # Adding Industry Rate
-    g.add((country_uri, EX.industryeRate, Literal(row["2023"], datatype = XSD.double))) 
+        # Adding Industry Rate
+        g.add((country_uri, EX.industryeRate, Literal(row["2023"], datatype = XSD.double))) 
 
 
 # Loop trough CSV service sector
 serv["Country Name"] = serv["Country Name"].apply(normalize_country_name)
 for _, row in serv.iterrows():
     country_name = row["Country Name"].replace(" ", "_").replace(",", "")
-    country_uri = URIRef(EX + country_name)
+    if country_name in valid_countries:
+        country_uri = URIRef(EX + country_name)
 
-    # Adding Industry Rate
-    g.add((country_uri, EX.serviceRate, Literal(row["2023"], datatype = XSD.double)))        
+        # Adding Industry Rate
+        g.add((country_uri, EX.serviceRate, Literal(row["2023"], datatype = XSD.double)))        
 
 
 # Loop through the CSV Population
 popu["Country Name"] = popu["Country Name"].apply(normalize_country_name)
 for _, row in popu.iterrows():
     country_name = row["Country Name"].replace(",", "").replace(" ", "_")
-    country_uri = URIRef(EX + country_name)   
+    if country_name in valid_countries:
+        country_uri = URIRef(EX + country_name)   
 
-    # Adding population information
-    g.add((country_uri, EX.hasPopulationSize, Literal(row.loc["Population, total [SP.POP.TOTL]"], datatype = XSD.int)))
-    g.add((country_uri, EX.hasPopulationMaleSize, Literal(row.loc["Population, male (% of total population) [SP.POP.TOTL.MA.ZS]"], datatype = XSD.double)))
-    g.add((country_uri, EX.hasPopulationFemaleSize, Literal(row.loc["Population, female (% of total population) [SP.POP.TOTL.FE.ZS]"], datatype = XSD.double)))                                
-    g.add((country_uri, EX.hasSchoolPopulation, Literal(row.loc["Population ages 0-14, total [SP.POP.0014.TO]"], datatype = XSD.double)))
-    g.add((country_uri, EX.hasSchoolMalePopulation, Literal(row.loc["Population, male (% of population, ages 0-14)"], datatype = XSD.double)))
-    g.add((country_uri, EX.hasSchoolFemalePopulation, Literal(row.loc["Population, female (% of population, ages 0-14)"], datatype = XSD.double)))
+        # Adding population information
+        g.add((country_uri, EX.hasPopulationSize, Literal(row.loc["Population, total [SP.POP.TOTL]"], datatype = XSD.int)))
+        g.add((country_uri, EX.hasPopulationMaleSize, Literal(row.loc["Population, male (% of total population) [SP.POP.TOTL.MA.ZS]"], datatype = XSD.double)))
+        g.add((country_uri, EX.hasPopulationFemaleSize, Literal(row.loc["Population, female (% of total population) [SP.POP.TOTL.FE.ZS]"], datatype = XSD.double)))                                
+        g.add((country_uri, EX.hasSchoolPopulation, Literal(row.loc["Population ages 0-14, total [SP.POP.0014.TO]"], datatype = XSD.double)))
+        g.add((country_uri, EX.hasSchoolMalePopulation, Literal(row.loc["Population, male (% of population, ages 0-14)"], datatype = XSD.double)))
+        g.add((country_uri, EX.hasSchoolFemalePopulation, Literal(row.loc["Population, female (% of population, ages 0-14)"], datatype = XSD.double)))
 
 # Save the updated RDF graph
 output_ttl = "New triplified data.ttl"
