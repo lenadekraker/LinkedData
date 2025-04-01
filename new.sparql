@@ -1,0 +1,912 @@
+
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX geo: <http://www.geonames.org/ontology#> 
+PREFIX ex: <http://example.org/educationOntology#>
+PREFIX gn: <http://www.geonames.org/ontology#>
+PREFIX schema: <http://schema.org/>
+PREFIX sdo: <http://schema.org/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX db: <http://dbpedia.org/>
+PREFIX iso3: <http://ontology.eil.utoronto.ca/ISO37120.owl#>
+
+
+
+# SELECT (ROUND(AVG(?completionRatePrimaryFemale)) AS ?avgCompletionRatePrimaryFemale) WHERE {
+#   ?country a schema:Country ;
+#            ex:hasCompletionRate ?completionRateNode .
+  
+#   ?completionRateNode ex:completionRatePrimaryFemale ?completionRatePrimaryFemale .
+# }
+
+# SELECT (ROUND(AVG(?completionRatePrimaryMale)) AS ?avgCompletionRatePrimaryMale) WHERE {
+#   ?country a schema:Country ;
+#            ex:hasCompletionRate ?completionRateNode .
+  
+#   ?completionRateNode ex:completionRatePrimaryMale ?completionRatePrimaryMale .
+# }
+
+# SELECT (ROUND(AVG(?completionRateUpperSecondaryFemale)) AS ?avgcompletionRateUpperSecondaryFemale) WHERE {
+#   ?country a schema:Country ;
+#            ex:hasCompletionRate ?completionRateNode .
+  
+#   ?completionRateNode ex:completionRateUpperSecondaryFemale ?completionRateUpperSecondaryFemale .
+# }
+
+# SELECT (ROUND(AVG(?completionRateUpperSecondaryMale)) AS ?avgcompletionRateUpperSecondaryMale) WHERE {
+#   ?country a schema:Country ;
+#            ex:hasCompletionRate ?completionRateNode .
+  
+#   ?completionRateNode ex:completionRateUpperSecondaryMale ?completionRateUpperSecondaryMale .
+# }
+
+# SELECT (ROUND(AVG(?completionRateLowerSecondaryFemale)) AS ?avgcompletionRateLowerSecondaryFemale) WHERE {
+#   ?country a schema:Country ;
+#            ex:hasCompletionRate ?completionRateNode .
+  
+#   ?completionRateNode ex:completionRateLowerSecondaryFemale ?completionRateLowerSecondaryFemale .
+# }
+
+# SELECT (ROUND(AVG(?completionRateLowerSecondaryMale)) AS ?avgcompletionRateLowerSecondaryMale) WHERE {
+#   ?country a schema:Country ;
+#            ex:hasCompletionRate ?completionRateNode .
+  
+#   ?completionRateNode ex:completionRateLowerSecondaryMale ?completionRateLowerSecondaryMale .
+# }
+
+# SELECT ?country WHERE {
+#   ?country a schema:Country ;
+#            ex:hasCompletionRate ?completionRateNode .
+#   ?completionRateNode ex:completionRateLowerSecondaryMale ?completionRateLowerSecondaryMale .
+# }
+# ORDER BY DESC(?completionRateLowerSecondaryMale)
+# LIMIT 1
+
+# SELECT ?country WHERE {
+#   ?country a schema:Country ;
+#            ex:hasCompletionRate ?completionRateNode .
+#   ?completionRateNode ex:completionRateLowerSecondaryMale ?completionRateLowerSecondaryMale .
+# }
+# ORDER BY DESC(?completionRateLowerSecondaryMale)
+# LIMIT 10
+
+# SELECT ?country WHERE {
+#   ?country a schema:Country ;
+#            ex:hasCompletionRate ?completionRateNode .
+#   ?completionRateNode ex:completionRateUpperSecondaryMale ?completionRateUpperSecondaryMale .
+# }
+# ORDER BY DESC(?completionRateUpperSecondaryMale)
+# LIMIT 10
+
+# SELECT ?country WHERE {
+#   ?country a schema:Country ;
+#            ex:hasOutOfSchoolRate ?OutOfSchoolRateNode .
+#   ?OutOfSchoolRateNode ex:outOfSchoolRatePrePrimaryMale ?outOfSchoolRatePrePrimaryMale .
+# }
+# ORDER BY DESC(?outOfSchoolRatePrePrimaryMale)
+# LIMIT 10
+
+# SELECT ?country WHERE {
+#   ?country a schema:Country ;
+#            ex:hasOutOfSchoolRate ?OutOfSchoolRateNode .
+#   ?OutOfSchoolRateNode ex:outOfSchoolRatePrePrimaryFemale ?outOfSchoolRatePrePrimaryFemale.
+# }
+# ORDER BY DESC(?outOfSchoolRatePrePrimaryFemale)
+# LIMIT 10
+
+# SELECT ?country WHERE {
+#   ?country a schema:Country ;
+#            ex:hasOutOfSchoolRate ?OutOfSchoolRateNode .
+#   ?OutOfSchoolRateNode ex:outOfSchoolRatePrimaryFemale ?outOfSchoolRatePrimaryFemale.
+# }
+# ORDER BY DESC(?outOfSchoolRatePrimaryFemale)
+# LIMIT 5
+
+# SELECT ?country WHERE {
+#   ?country a schema:Country ;
+#            ex:hasOutOfSchoolRate ?OutOfSchoolRateNode .
+#   ?OutOfSchoolRateNode ex:outOfSchoolRatePrimaryMale ?outOfSchoolRatePrimaryMale.
+# }
+# ORDER BY DESC(?outOfSchoolRatePrimaryMale)
+# LIMIT 10
+
+
+# SELECT ?country WHERE {
+#   ?country a schema:Country ;
+#            ex:hasOutOfSchoolRate ?OutOfSchoolRateNode .
+#   ?OutOfSchoolRateNode ex:outOfSchoolRatePrimaryFemale ?outOfSchoolRatePrimaryFemale.
+# }
+# ORDER BY DESC(?outOfSchoolRatePrimaryFemale)
+# LIMIT 10
+
+# SELECT ?country WHERE {
+#   ?country a schema:Country ;
+#            ex:hasOutOfSchoolRate ?OutOfSchoolRateNode .
+#   ?OutOfSchoolRateNode ex:outOfSchoolRateLowerSecondaryMale ?outOfSchoolRateLowerSecondaryMale.
+# }
+# ORDER BY DESC(?outOfSchoolRateLowerSecondaryMale)
+# LIMIT 10
+
+
+
+# SELECT ?country WHERE {
+#   ?country a schema:Country ;
+#            ex:hasOutOfSchoolRate ?OutOfSchoolRateNode .
+#   ?OutOfSchoolRateNode ex:outOfSchoolRateLowerSecondaryFemale ?outOfSchoolRateLowerSecondaryFemale.
+# }
+# ORDER BY DESC(?outOfSchoolRateLowerSecondaryFemale)
+# LIMIT 10
+
+
+
+# SELECT ?country WHERE {
+#   ?country a schema:Country ;
+#            ex:hasOutOfSchoolRate ?OutOfSchoolRateNode .
+#   ?OutOfSchoolRateNode ex:outOfSchoolRateUpperSecondaryMale ?outOfSchoolRateUpperSecondaryMale.
+# }
+# ORDER BY DESC(?outOfSchoolRateUpperSecondaryMale)
+# LIMIT 10
+
+# SELECT ?country WHERE {
+#   ?country a schema:Country ;
+#            ex:hasOutOfSchoolRate ?OutOfSchoolRateNode .
+#   ?OutOfSchoolRateNode ex:outOfSchoolRateUpperSecondaryFemale ?outOfSchoolRateUpperSecondaryFemale.
+# }
+# ORDER BY DESC(?outOfSchoolRateUpperSecondaryFemale)
+# LIMIT 10
+
+
+# SELECT (ROUND(AVG(?outOfSchoolRateUpperSecondaryFemale)) AS ?avgoutOfSchoolRateUpperSecondaryFemale) WHERE {
+#   ?country a schema:Country ;
+#            ex:hasOutOfSchoolRate?completionRateNode .
+  
+#   ?completionRateNode ex:outOfSchoolRateUpperSecondaryFemale ?outOfSchoolRateUpperSecondaryFemale .
+# }
+
+# SELECT (ROUND(AVG(?outOfSchoolRateUpperSecondaryMale)) AS ?avgoutOfSchoolRateUpperSecondaryMale) WHERE {
+#   ?country a schema:Country ;
+#            ex:hasOutOfSchoolRate?completionRateNode .
+  
+#   ?completionRateNode ex:outOfSchoolRateUpperSecondaryMale ?outOfSchoolRateUpperSecondaryMale .
+# }
+
+# SELECT (ROUND(AVG(?outOfSchoolRateLowerSecondaryMale)) AS ?avgoutOfSchoolRateLowerSecondaryMale) WHERE {
+#   ?country a schema:Country ;
+#            ex:hasOutOfSchoolRate?completionRateNode .
+  
+#   ?completionRateNode ex:outOfSchoolRateLowerSecondaryMale ?outOfSchoolRateLowerSecondaryMale .
+# }
+
+# SELECT (ROUND(AVG(?outOfSchoolRateLowerSecondaryFemale)) AS ?avgoutOfSchoolRateLowerSecondaryFemale) WHERE {
+#   ?country a schema:Country ;
+#            ex:hasOutOfSchoolRate?completionRateNode .
+  
+#   ?completionRateNode ex:outOfSchoolRateLowerSecondaryFemale ?outOfSchoolRateLowerSecondaryFemale .
+# }
+
+
+# SELECT (ROUND(AVG(?outOfSchoolRatePrimaryMale)) AS ?avgoutOfSchoolRatePrimaryMale) WHERE {
+#   ?country a schema:Country ;
+#            ex:hasOutOfSchoolRate?completionRateNode .
+  
+#   ?completionRateNode ex:outOfSchoolRatePrimaryMale ?outOfSchoolRatePrimaryMale.
+# }
+
+# SELECT (ROUND(AVG(?outOfSchoolRatePrimaryFemale)) AS ?avgoutOfSchoolRatePrimaryFemale) WHERE {
+#   ?country a schema:Country ;
+#            ex:hasOutOfSchoolRate?completionRateNode .
+  
+#   ?completionRateNode ex:outOfSchoolRatePrimaryFemale ?outOfSchoolRatePrimaryFemale.
+# }
+
+#DOES NOT WORK
+# SELECT (MAX(?corruption) AS ?averageCorruption)
+# WHERE {
+#   ?country a schema:Country .
+#   ?economy ex:hasEconomy ?economy_data .
+#   ?economy_data iso3:11.4 ?corruption .
+#   FILTER(isNumeric(?corruption))  
+# }
+
+# does not work
+# SELECT (AVG(?gdp) AS ?averagegdp)
+# WHERE {
+#   ?country ex:hasEconomy ?economy_data .
+#   ?economy_data db:grossDomesticProduct ?gdp.
+# }
+
+# does not work
+# SELECT ?country (MIN(?gdp) AS ?mingdp)
+# WHERE {
+#   ?country a schema:Country .
+#   ?country ex:hasEconomy ?economy_data .
+#   ?economy_data db:grossDomesticProduct ?gdp .
+# }
+# GROUP BY ?country
+
+#does not work
+# SELECT ?country_uri ?unemployment_rate
+# WHERE {
+#   ?country a schema:Country .
+#   ?country ex:hasEconomy ?economy_data.
+#   ?economy iso3:5_1 ?unemployment_rate .
+# }
+
+#only returns for afghanistan
+# SELECT ?country ?lat ?long
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:lat ?lat .
+#   ?economy gn:long ?long .
+# }
+
+# SELECT ?name
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name.
+# }
+
+# fix this because country_uri haseconomy
+# SELECT ?country ?economy
+# WHERE {
+#   ?country a schema:Country .
+#   ?country ex:hasEconomy ?economy .
+# }
+
+
+# SELECT ?country ?agRate
+# WHERE {
+#   ?country a schema:Country .
+#   ?country ex:hasSector ?sector .
+#   ?sector  ex:agricultureRate ?agRate
+
+# }
+
+# SELECT(MAX(?agRate) AS ?minAG)
+# WHERE {
+#   ?country a schema:Country .
+#   ?country ex:hasSector ?sector .
+#   ?sector  ex:agricultureRate ?agRate
+
+# # }
+
+# SELECT(MIN(?agRate) AS ?minAG)
+# WHERE {
+#   ?country a schema:Country .
+#   ?country ex:hasSector ?sector .
+#   ?sector  ex:agricultureRate ?agRate
+
+# }
+# SELECT (AVG(xsd:double(?agRate)) AS ?avgAG)
+# WHERE {
+#   ?country a schema:Country .
+#   ?country ex:hasSector ?sector .
+#   ?sector ex:agricultureRate ?agRate .
+#   FILTER(isNumeric(?agRate) && ?agRate != "NaN"^^xsd:double && ?agRate != "Infinity"^^xsd:double)  
+# }
+
+
+
+#FILTERING EVERYTHING BASED ON AVERAGE
+
+
+# SELECT ?name ?agRate ?avgAG
+# WHERE {
+#   {
+#     SELECT (AVG(xsd:double(?agRate)) AS ?avgAG)
+#     WHERE {
+#       ?country a schema:Country .
+#       ?country ex:hasSector ?sector .
+#       ?sector ex:agricultureRate ?agRate .
+#       FILTER(isNumeric(?agRate) && ?agRate != "NaN"^^xsd:double && ?agRate != "Infinity"^^xsd:double)
+#     }
+#   }
+#   ?country a schema:Country .
+#   ?country gn:name ?name.
+#   ?country ex:hasSector ?sector .
+#   ?sector ex:agricultureRate ?agRate .
+#   FILTER(isNumeric(?agRate) && ?agRate != "NaN"^^xsd:double && ?agRate != "Infinity"^^xsd:double)
+#   FILTER (?agRate > ?avgAG)
+# }
+# ORDER BY DESC(?agRate)
+
+
+# SELECT ?name ?agRate ?avgAG
+# WHERE {
+#   {
+#     SELECT (AVG(xsd:double(?agRate)) AS ?avgAG)
+#     WHERE {
+#       ?country a schema:Country .
+#       ?country ex:hasSector ?sector .
+#       ?sector ex:agricultureRate ?agRate .
+#       FILTER(isNumeric(?agRate) && ?agRate != "NaN"^^xsd:double && ?agRate != "Infinity"^^xsd:double)
+#     }
+#   }
+#   ?country a schema:Country .
+#   ?country gn:name ?name.
+#   ?country ex:hasSector ?sector .
+#   ?sector ex:agricultureRate ?agRate .
+#   FILTER(isNumeric(?agRate) && ?agRate != "NaN"^^xsd:double && ?agRate != "Infinity"^^xsd:double)
+#   FILTER (?agRate <= ?avgAG)
+# }
+# ORDER BY DESC(?agRate)
+
+
+# SELECT ?name ?indRate ?avgind
+# WHERE {
+#   {
+#     SELECT (AVG(xsd:double(?indRate)) AS ?avgind)
+#     WHERE {
+#       ?country a schema:Country .
+#       ?country ex:hasSector ?sector .
+#       ?sector ex:industryeRate?indRate .
+#       FILTER(isNumeric(?indRate) && ?indRate != "NaN"^^xsd:double && ?indRate != "Infinity"^^xsd:double)
+#     }
+#   }
+#   ?country a schema:Country .
+#   ?country gn:name ?name.
+#   ?country ex:hasSector ?sector .
+#   ?sector ex:industryeRate ?indRate .
+#   FILTER(isNumeric(?indRate) && ?indRate != "NaN"^^xsd:double && ?indRate != "Infinity"^^xsd:double)
+#   FILTER (?indRate > ?avgind)
+# }
+# ORDER BY DESC(?indRate)
+
+
+
+
+# SELECT ?name ?indRate ?avgind
+# WHERE {
+#   {
+#     SELECT (AVG(xsd:double(?indRate)) AS ?avgind)
+#     WHERE {
+#       ?country a schema:Country .
+#       ?country ex:hasSector ?sector .
+#       ?sector ex:industryeRate?indRate .
+#       FILTER(isNumeric(?indRate) && ?indRate != "NaN"^^xsd:double && ?indRate != "Infinity"^^xsd:double)
+#     }
+#   }
+#   ?country a schema:Country .
+#   ?country gn:name ?name.
+#   ?country ex:hasSector ?sector .
+#   ?sector ex:industryeRate ?indRate .
+#   FILTER(isNumeric(?indRate) && ?indRate != "NaN"^^xsd:double && ?indRate != "Infinity"^^xsd:double)
+#   FILTER (?indRate <= ?avgind)
+# }
+# ORDER BY DESC(?indRate)
+
+
+# SELECT ?name ?indRate ?avgind
+# WHERE {
+#   {
+#     SELECT (AVG(xsd:double(?indRate)) AS ?avgind)
+#     WHERE {
+#       ?country a schema:Country .
+#       ?country ex:hasSector ?sector .
+#       ?sector ex:industryeRate?indRate .
+#       FILTER(isNumeric(?indRate) && ?indRate != "NaN"^^xsd:double && ?indRate != "Infinity"^^xsd:double)
+#     }
+#   }
+#   ?country a schema:Country .
+#   ?country gn:name ?name.
+#   ?country ex:hasSector ?sector .
+#   ?sector ex:industryeRate ?indRate .
+#   FILTER(isNumeric(?indRate) && ?indRate != "NaN"^^xsd:double && ?indRate != "Infinity"^^xsd:double)
+#   FILTER (?indRate > ?avgind)
+# }
+# ORDER BY DESC(?indRate)
+
+
+# SELECT ?name ?serviceRate ?avgservice
+# WHERE {
+#   {
+#     SELECT (AVG(xsd:double(?serviceRate)) AS ?avgservice)
+#     WHERE {
+#       ?country a schema:Country .
+#       ?country ex:hasSector ?sector .
+#       ?sector ex:serviceRate?serviceRate .
+#       FILTER(isNumeric(?serviceRate) && ?serviceRate != "NaN"^^xsd:double && ?serviceRate != "Infinity"^^xsd:double)
+#     }
+#   }
+#   ?country a schema:Country .
+#   ?country gn:name ?name.
+#   ?country ex:hasSector ?sector .
+#   ?sector ex:serviceRate ?serviceRate .
+#   FILTER(isNumeric(?serviceRate) && ?serviceRate!= "NaN"^^xsd:double && ?serviceRate != "Infinity"^^xsd:double)
+#   FILTER (?serviceRate > ?avgservice)
+# }
+# ORDER BY DESC(?serviceRate)
+
+
+# SELECT ?name ?serviceRate ?avgservice
+# WHERE {
+#   {
+#     SELECT (AVG(xsd:double(?serviceRate)) AS ?avgservice)
+#     WHERE {
+#       ?country a schema:Country .
+#       ?country ex:hasSector ?sector .
+#       ?sector ex:serviceRate?serviceRate .
+#       FILTER(isNumeric(?serviceRate) && ?serviceRate != "NaN"^^xsd:double && ?serviceRate != "Infinity"^^xsd:double)
+#     }
+#   }
+#   ?country a schema:Country .
+#   ?country gn:name ?name.
+#   ?country ex:hasSector ?sector .
+#   ?sector ex:serviceRate ?serviceRate .
+#   FILTER(isNumeric(?serviceRate) && ?serviceRate!= "NaN"^^xsd:double && ?serviceRate != "Infinity"^^xsd:double)
+#   FILTER (?serviceRate <= ?avgservice)
+# }
+# ORDER BY DESC(?serviceRate)
+
+
+# outOfSchoolRatePrimaryFemale > ?avgoutOfSchoolRatePrimaryFemale
+# SELECT ?country ?outOfSchoolRatePrimaryFemale WHERE {
+#   ?country a schema:Country ;
+#            ex:hasOutOfSchoolRate ?completionRateNode .
+#   ?completionRateNode ex:outOfSchoolRatePrimaryFemale ?outOfSchoolRatePrimaryFemale.
+  
+#   {
+#     SELECT (ROUND(AVG(?outOfSchoolRatePrimaryFemale)) AS ?avgoutOfSchoolRatePrimaryFemale) WHERE {
+#       ?country a schema:Country ;
+#                ex:hasOutOfSchoolRate ?completionRateNode .
+#       ?completionRateNode ex:outOfSchoolRatePrimaryFemale ?outOfSchoolRatePrimaryFemale.
+#     }
+#   }
+  
+#   # Filter countries with out-of-school rate less than the average
+#   FILTER (?outOfSchoolRatePrimaryFemale > ?avgoutOfSchoolRatePrimaryFemale)
+# }
+
+
+# outOfSchoolRatePrimaryFemale < ?avgoutOfSchoolRatePrimaryFemale
+# SELECT ?country ?outOfSchoolRatePrimaryFemale WHERE {
+#   ?country a schema:Country ;
+#            ex:hasOutOfSchoolRate ?completionRateNode .
+#   ?completionRateNode ex:outOfSchoolRatePrimaryFemale ?outOfSchoolRatePrimaryFemale.
+  
+#   {
+#     SELECT (ROUND(AVG(?outOfSchoolRatePrimaryFemale)) AS ?avgoutOfSchoolRatePrimaryFemale) WHERE {
+#       ?country a schema:Country ;
+#                ex:hasOutOfSchoolRate ?completionRateNode .
+#       ?completionRateNode ex:outOfSchoolRatePrimaryFemale ?outOfSchoolRatePrimaryFemale.
+#     }
+#   }
+  
+#   # Filter countries with out-of-school rate less than the average
+#   FILTER (?outOfSchoolRatePrimaryFemale < ?avgoutOfSchoolRatePrimaryFemale)
+# }
+
+
+
+# outOfSchoolRatePrimaryMale > ?avgoutOfSchoolRatePrimaryMale
+# SELECT ?country ?outOfSchoolRatePrimaryMale WHERE {
+#   ?country a schema:Country ;
+#            ex:hasOutOfSchoolRate ?completionRateNode .
+#   ?completionRateNode ex:outOfSchoolRatePrimaryMale ?outOfSchoolRatePrimaryMale.
+  
+#   {
+#     SELECT (ROUND(AVG(?outOfSchoolRatePrimaryMale)) AS ?avgoutOfSchoolRatePrimaryMale) WHERE {
+#       ?country a schema:Country ;
+#                ex:hasOutOfSchoolRate ?completionRateNode .
+#       ?completionRateNode ex:outOfSchoolRatePrimaryMale ?outOfSchoolRatePrimaryMale.
+#     }
+#   }
+  
+#   # Filter countries with out-of-school rate less than the average
+#   FILTER (?outOfSchoolRatePrimaryMale > ?avgoutOfSchoolRatePrimaryMale)
+# }
+
+# outOfSchoolRatePrimaryMale < ?avgoutOfSchoolRatePrimaryMale
+# SELECT ?country ?outOfSchoolRatePrimaryMale WHERE {
+#   ?country a schema:Country ;
+#            ex:hasOutOfSchoolRate ?completionRateNode .
+#   ?completionRateNode ex:outOfSchoolRatePrimaryMale ?outOfSchoolRatePrimaryMale.
+  
+#   {
+#     SELECT (ROUND(AVG(?outOfSchoolRatePrimaryMale)) AS ?avgoutOfSchoolRatePrimaryMale) WHERE {
+#       ?country a schema:Country ;
+#                ex:hasOutOfSchoolRate ?completionRateNode .
+#       ?completionRateNode ex:outOfSchoolRatePrimaryMale ?outOfSchoolRatePrimaryMale.
+#     }
+#   }
+  
+#   # Filter countries with out-of-school rate less than the average
+#   FILTER (?outOfSchoolRatePrimaryMale < ?avgoutOfSchoolRatePrimaryMale)
+# }
+
+
+
+
+#outOfSchoolRatePrePrimaryMale < ?avgoutOfSchoolRatePrePrimaryMale
+# SELECT ?country ?outOfSchoolRatePrimaryMale WHERE {
+#   ?country a schema:Country ;
+#            ex:hasOutOfSchoolRate ?completionRateNode .
+#   ?completionRateNode ex:outOfSchoolRatePrePrimaryMale ?outOfSchoolRatePrePrimaryMale.
+  
+#   {
+#     SELECT (ROUND(AVG(?outOfSchoolRatePrePrimaryMale)) AS ?avgoutOfSchoolRatePrePrimaryMale) WHERE {
+#       ?country a schema:Country ;
+#                ex:hasOutOfSchoolRate ?completionRateNode .
+#       ?completionRateNode ex:outOfSchoolRatePrePrimaryMale ?outOfSchoolRatePrePrimaryMale.
+#     }
+#   }
+  
+#   # Filter countries with out-of-school rate less than the average
+#   FILTER (?outOfSchoolRatePrePrimaryMale < ?avgoutOfSchoolRatePrePrimaryMale)
+# }
+
+
+#outOfSchoolRatePrePrimaryMale < ?avgoutOfSchoolRatePrePrimaryMale
+# SELECT ?country ?outOfSchoolRatePrimaryFemale WHERE {
+#   ?country a schema:Country ;
+#            ex:hasOutOfSchoolRate ?completionRateNode .
+#   ?completionRateNode ex:outOfSchoolRatePrePrimaryFemale ?outOfSchoolRatePrePrimaryFemale.
+  
+#   {
+#     SELECT (ROUND(AVG(?outOfSchoolRatePrePrimaryFemale)) AS ?avgoutOfSchoolRatePrePrimaryFemale) WHERE {
+#       ?country a schema:Country ;
+#                ex:hasOutOfSchoolRate ?completionRateNode .
+#       ?completionRateNode ex:outOfSchoolRatePrePrimaryFemale ?outOfSchoolRatePrePrimaryFemale.
+#     }
+#   }
+  
+#   # Filter countries with out-of-school rate less than the average
+#   FILTER (?outOfSchoolRatePrePrimaryFemale < ?avgoutOfSchoolRatePrePrimaryFemale)
+# }
+
+
+#outOfSchoolRatePrePrimaryMale < ?avgoutOfSchoolRatePrePrimaryMale
+# SELECT ?country ?outOfSchoolRatePrimaryFemale WHERE {
+#   ?country a schema:Country ;
+#            ex:hasOutOfSchoolRate ?completionRateNode .
+#   ?completionRateNode ex:outOfSchoolRatePrePrimaryFemale ?outOfSchoolRatePrePrimaryFemale.
+  
+#   {
+#     SELECT (ROUND(AVG(?outOfSchoolRatePrePrimaryFemale)) AS ?avgoutOfSchoolRatePrePrimaryFemale) WHERE {
+#       ?country a schema:Country ;
+#                ex:hasOutOfSchoolRate ?completionRateNode .
+#       ?completionRateNode ex:outOfSchoolRatePrePrimaryFemale ?outOfSchoolRatePrePrimaryFemale.
+#     }
+#   }
+  
+#   # Filter countries with out-of-school rate less than the average
+#   FILTER (?outOfSchoolRatePrePrimaryFemale > ?avgoutOfSchoolRatePrePrimaryFemale)
+# }
+
+#outOfSchoolRatePrePrimaryMale > ?avgoutOfSchoolRatePrePrimaryMale
+# SELECT ?country ?outOfSchoolRatePrimaryMale WHERE {
+#   ?country a schema:Country ;
+#            ex:hasOutOfSchoolRate ?completionRateNode .
+#   ?completionRateNode ex:outOfSchoolRatePrePrimaryMale ?outOfSchoolRatePrePrimaryMale.
+  
+#   {
+#     SELECT (ROUND(AVG(?outOfSchoolRatePrePrimaryMale)) AS ?avgoutOfSchoolRatePrePrimaryMale) WHERE {
+#       ?country a schema:Country ;
+#                ex:hasOutOfSchoolRate ?completionRateNode .
+#       ?completionRateNode ex:outOfSchoolRatePrePrimaryMale ?outOfSchoolRatePrePrimaryMale.
+#     }
+#   }
+  
+#   # Filter countries with out-of-school rate less than the average
+#   FILTER (?outOfSchoolRatePrePrimaryMale > ?avgoutOfSchoolRatePrePrimaryMale)
+# }
+
+#outOfSchoolRateUpperSecondaryMale > ?avgoutOfSchoolRateUpperSecondaryMale
+# SELECT ?country ?outOfSchoolRateUpperSecondaryMale WHERE {
+#   ?country a schema:Country ;
+#            ex:hasOutOfSchoolRate ?completionRateNode .
+#   ?completionRateNode ex:outOfSchoolRateUpperSecondaryMale ?outOfSchoolRateUpperSecondaryMale.
+  
+#   {
+#     SELECT (ROUND(AVG(?outOfSchoolRateUpperSecondaryMale)) AS ?avgoutOfSchoolRateUpperSecondaryMale) WHERE {
+#       ?country a schema:Country ;
+#                ex:hasOutOfSchoolRate ?completionRateNode .
+#       ?completionRateNode ex:outOfSchoolRateUpperSecondaryMale ?outOfSchoolRateUpperSecondaryMale.
+#     }
+#   }
+  
+#   # Filter countries with out-of-school rate less than the average
+#   FILTER (?outOfSchoolRateUpperSecondaryMale > ?avgoutOfSchoolRateUpperSecondaryMale)
+# }
+
+#?outOfSchoolRateUpperSecondaryMale < ?avgoutOfSchoolRateUpperSecondaryMale
+# SELECT ?country ?outOfSchoolRateUpperSecondaryMale WHERE {
+#   ?country a schema:Country ;
+#            ex:hasOutOfSchoolRate ?completionRateNode .
+#   ?completionRateNode ex:outOfSchoolRateUpperSecondaryMale ?outOfSchoolRateUpperSecondaryMale.
+  
+#   {
+#     SELECT (ROUND(AVG(?outOfSchoolRateUpperSecondaryMale)) AS ?avgoutOfSchoolRateUpperSecondaryMale) WHERE {
+#       ?country a schema:Country ;
+#                ex:hasOutOfSchoolRate ?completionRateNode .
+#       ?completionRateNode ex:outOfSchoolRateUpperSecondaryMale ?outOfSchoolRateUpperSecondaryMale.
+#     }
+#   }
+  
+#   # Filter countries with out-of-school rate less than the average
+#   FILTER (?outOfSchoolRateUpperSecondaryMale < ?avgoutOfSchoolRateUpperSecondaryMale)
+# }
+
+#?outOfSchoolRateLowerSecondaryMale > ?avgoutOfSchoolRateLowerSecondaryMale
+# SELECT ?country ?outOfSchoolRateLowerSecondaryMale WHERE {
+#   ?country a schema:Country ;
+#            ex:hasOutOfSchoolRate ?completionRateNode .
+#   ?completionRateNode ex:outOfSchoolRateLowerSecondaryMale ?outOfSchoolRateLowerSecondaryMale.
+  
+#   {
+#     SELECT (ROUND(AVG(?outOfSchoolRateLowerSecondaryMale)) AS ?avgoutOfSchoolRateLowerSecondaryMale) WHERE {
+#       ?country a schema:Country ;
+#                ex:hasOutOfSchoolRate ?completionRateNode .
+#       ?completionRateNode ex:outOfSchoolRateLowerSecondaryMale ?outOfSchoolRateLowerSecondaryMale.
+#     }
+#   }
+  
+#   # Filter countries with out-of-school rate less than the average
+#   FILTER (?outOfSchoolRateLowerSecondaryMale > ?avgoutOfSchoolRateLowerSecondaryMale)
+# }
+
+# ?outOfSchoolRateLowerSecondaryMale < ?avgoutOfSchoolRateLowerSecondaryMale
+# SELECT ?country ?outOfSchoolRateLowerSecondaryMale WHERE {
+#   ?country a schema:Country ;
+#            ex:hasOutOfSchoolRate ?completionRateNode .
+#   ?completionRateNode ex:outOfSchoolRateLowerSecondaryMale ?outOfSchoolRateLowerSecondaryMale.
+  
+#   {
+#     SELECT (ROUND(AVG(?outOfSchoolRateLowerSecondaryMale)) AS ?avgoutOfSchoolRateLowerSecondaryMale) WHERE {
+#       ?country a schema:Country ;
+#                ex:hasOutOfSchoolRate ?completionRateNode .
+#       ?completionRateNode ex:outOfSchoolRateLowerSecondaryMale ?outOfSchoolRateLowerSecondaryMale.
+#     }
+#   }
+  
+#   # Filter countries with out-of-school rate less than the average
+#   FILTER (?outOfSchoolRateLowerSecondaryMale < ?avgoutOfSchoolRateLowerSecondaryMale)
+# }
+
+
+##?outOfSchoolRateUpperSecondaryFemale < ?avgoutOfSchoolRateUpperSecondaryFemale
+# SELECT ?country ?outOfSchoolRateLowerSecondaryFemale WHERE {
+#   ?country a schema:Country ;
+#            ex:hasOutOfSchoolRate ?completionRateNode .
+#   ?completionRateNode ex:outOfSchoolRateLowerSecondaryFemale ?outOfSchoolRateLowerSecondaryFemale.
+  
+#   {
+#     SELECT (ROUND(AVG(?outOfSchoolRateLowerSecondaryFemale)) AS ?avgoutOfSchoolRateLowerSecondaryFemale) WHERE {
+#       ?country a schema:Country ;
+#                ex:hasOutOfSchoolRate ?completionRateNode .
+#       ?completionRateNode ex:outOfSchoolRateLowerSecondaryFemale ?outOfSchoolRateLowerSecondaryFemale.
+#     }
+#   }
+  
+#   # Filter countries with out-of-school rate less than the average
+#   FILTER (?outOfSchoolRateLowerSecondaryFemale < ?avgoutOfSchoolRateLowerSecondaryFemale)
+# }
+
+#?outOfSchoolRateUpperSecondaryFemale > ?avgoutOfSchoolRateUpperSecondaryFemale
+# SELECT ?country ?outOfSchoolRateLowerSecondaryFemale WHERE {
+#   ?country a schema:Country ;
+#            ex:hasOutOfSchoolRate ?completionRateNode .
+#   ?completionRateNode ex:outOfSchoolRateLowerSecondaryFemale ?outOfSchoolRateLowerSecondaryFemale.
+  
+#   {
+#     SELECT (ROUND(AVG(?outOfSchoolRateLowerSecondaryFemale)) AS ?avgoutOfSchoolRateLowerSecondaryFemale) WHERE {
+#       ?country a schema:Country ;
+#                ex:hasOutOfSchoolRate ?completionRateNode .
+#       ?completionRateNode ex:outOfSchoolRateLowerSecondaryFemale ?outOfSchoolRateLowerSecondaryFemale.
+#     }
+#   }
+  
+#   # Filter countries with out-of-school rate less than the average
+#   FILTER (?outOfSchoolRateUpperSecondaryFemale > ?avgoutOfSchoolRateUpperSecondaryFemale)
+# }
+
+#?outOfSchoolRateUpperSecondaryFemale < ?avgoutOfSchoolRateUpperSecondaryFemale
+# SELECT ?country ?outOfSchoolRateUpperSecondaryFemale WHERE {
+#   ?country a schema:Country ;
+#            ex:hasOutOfSchoolRate ?completionRateNode .
+#   ?completionRateNode ex:outOfSchoolRateUpperSecondaryFemale ?outOfSchoolRateUpperSecondaryFemale.
+  
+#   {
+#     SELECT (ROUND(AVG(?outOfSchoolRateUpperSecondaryFemale)) AS ?avgoutOfSchoolRateUpperSecondaryFemale) WHERE {
+#       ?country a schema:Country ;
+#                ex:hasOutOfSchoolRate ?completionRateNode .
+#       ?completionRateNode ex:outOfSchoolRateUpperSecondaryFemale ?outOfSchoolRateUpperSecondaryFemale.
+#     }
+#   }
+  
+#   # Filter countries with out-of-school rate less than the average
+#   FILTER (?outOfSchoolRateUpperSecondaryFemale < ?avgoutOfSchoolRateUpperSecondaryFemale)
+# }
+
+
+#?outOfSchoolRateUpperSecondaryFemale > ?avgoutOfSchoolRateUpperSecondaryFemale
+# SELECT ?country ?outOfSchoolRateUpperSecondaryFemale WHERE {
+#   ?country a schema:Country ;
+#            ex:hasOutOfSchoolRate ?completionRateNode .
+#   ?completionRateNode ex:outOfSchoolRateUpperSecondaryFemale ?outOfSchoolRateUpperSecondaryFemale.
+  
+#   {
+#     SELECT (ROUND(AVG(?outOfSchoolRateUpperSecondaryFemale)) AS ?avgoutOfSchoolRateUpperSecondaryFemale) WHERE {
+#       ?country a schema:Country ;
+#                ex:hasOutOfSchoolRate ?completionRateNode .
+#       ?completionRateNode ex:outOfSchoolRateUpperSecondaryFemale ?outOfSchoolRateUpperSecondaryFemale.
+#     }
+#   }
+  
+#   # Filter countries with out-of-school rate less than the average
+#   FILTER (?outOfSchoolRateUpperSecondaryFemale > ?avgoutOfSchoolRateUpperSecondaryFemale)
+# }
+
+
+#?completionRateUpperSecondaryFemale > ?avgcompletionRateUpperSecondaryFemale
+# SELECT ?country ?completionRateUpperSecondaryFemale WHERE {
+#   ?country a schema:Country ;
+#            ex:hasCompletionRate ?completionRateNode .
+#   ?completionRateNode ex:completionRateUpperSecondaryFemale ?completionRateUpperSecondaryFemale.
+  
+#   {
+#     SELECT (ROUND(AVG(?completionRateUpperSecondaryFemale)) AS ?avgcompletionRateUpperSecondaryFemale) WHERE {
+#       ?country a schema:Country ;
+#                ex:hasCompletionRate ?completionRateNode .
+#       ?completionRateNode ex:completionRateUpperSecondaryFemale ?completionRateUpperSecondaryFemale.
+#     }
+#   }
+
+#   FILTER (?completionRateUpperSecondaryFemale > ?avgcompletionRateUpperSecondaryFemale)
+# }
+
+#?completionRateLowerSecondaryFemale < ?avgcompletionRateLowerSecondaryFemale
+# SELECT ?country ?completionRateLowerSecondaryFemale WHERE {
+#   ?country a schema:Country ;
+#            ex:hasCompletionRate ?completionRateNode .
+#   ?completionRateNode ex:completionRateLowerSecondaryFemale ?completionRateLowerSecondaryFemale.
+  
+#   {
+#     SELECT (ROUND(AVG(?completionRateLowerSecondaryFemale)) AS ?avgcompletionRateLowerSecondaryFemale) WHERE {
+#       ?country a schema:Country ;
+#                ex:hasCompletionRate ?completionRateNode .
+#       ?completionRateNode ex:completionRateLowerSecondaryFemale ?completionRateLowerSecondaryFemale.
+#     }
+#   }
+
+#   FILTER (?completionRateLowerSecondaryFemale < ?avgcompletionRateLowerSecondaryFemale)
+# }
+
+
+#?completionRatePrimaryFemale > ?avgcompletionRatePrimaryFemale
+# SELECT ?country ?completionRatePrimaryFemale WHERE {
+#   ?country a schema:Country ;
+#            ex:hasCompletionRate ?completionRateNode .
+#   ?completionRateNode ex:completionRatePrimaryFemale ?completionRatePrimaryFemale.
+  
+#   {
+#     SELECT (ROUND(AVG(?completionRatePrimaryFemale)) AS ?avgcompletionRatePrimaryFemale) WHERE {
+#       ?country a schema:Country ;
+#                ex:hasCompletionRate ?completionRateNode .
+#       ?completionRateNode ex:completionRatePrimaryFemale ?completionRatePrimaryFemale.
+#     }
+#   }
+
+#   FILTER (?completionRatePrimaryFemale > ?avgcompletionRatePrimaryFemale)
+# }
+
+#?completionRatePrimaryFemale > ?avgcompletionRatePrimaryFemale
+# SELECT ?country ?completionRatePrimaryFemale WHERE {
+#   ?country a schema:Country ;
+#            ex:hasCompletionRate ?completionRateNode .
+#   ?completionRateNode ex:completionRatePrimaryFemale ?completionRatePrimaryFemale.
+  
+#   {
+#     SELECT (ROUND(AVG(?completionRatePrimaryFemale)) AS ?avgcompletionRatePrimaryFemale) WHERE {
+#       ?country a schema:Country ;
+#                ex:hasCompletionRate ?completionRateNode .
+#       ?completionRateNode ex:completionRatePrimaryFemale ?completionRatePrimaryFemale.
+#     }
+#   }
+
+#   FILTER (?completionRatePrimaryFemale < ?avgcompletionRatePrimaryFemale)
+# }
+
+#completionRatePrimaryMale < ?avgcompletionRatePrimaryMale
+# SELECT ?country ?completionRatePrimaryMale WHERE {
+#   ?country a schema:Country ;
+#            ex:hasCompletionRate ?completionRateNode .
+#   ?completionRateNode ex:completionRatePrimaryMale ?completionRatePrimaryMale.
+  
+#   {
+#     SELECT (ROUND(AVG(?completionRatePrimaryMale)) AS ?avgcompletionRatePrimaryMale) WHERE {
+#       ?country a schema:Country ;
+#                ex:hasCompletionRate ?completionRateNode .
+#       ?completionRateNode ex:completionRatePrimaryMale ?completionRatePrimaryMale.
+#     }
+#   }
+
+#   FILTER (?completionRatePrimaryMale < ?avgcompletionRatePrimaryMale)
+# }
+
+#completionRatePrimaryMale < ?avgcompletionRatePrimaryMale
+# SELECT ?country ?completionRatePrimaryMale WHERE {
+#   ?country a schema:Country ;
+#            ex:hasCompletionRate ?completionRateNode .
+#   ?completionRateNode ex:completionRatePrimaryMale ?completionRatePrimaryMale.
+  
+#   {
+#     SELECT (ROUND(AVG(?completionRatePrimaryMale)) AS ?avgcompletionRatePrimaryMale) WHERE {
+#       ?country a schema:Country ;
+#                ex:hasCompletionRate ?completionRateNode .
+#       ?completionRateNode ex:completionRatePrimaryMale ?completionRatePrimaryMale.
+#     }
+#   }
+
+#   FILTER (?completionRatePrimaryMale < ?avgcompletionRatePrimaryMale)
+# }
+
+# SELECT ?country ?completionRateUpperSecondaryMale WHERE {
+#   ?country a schema:Country ;
+#            ex:hasCompletionRate ?completionRateNode .
+#   ?completionRateNode ex:completionRateUpperSecondaryMale ?completionRateUpperSecondaryMale.
+  
+#   {
+#     SELECT (ROUND(AVG(?completionRateUpperSecondaryMale)) AS ?avgcompletionRateUpperSecondaryMale) WHERE {
+#       ?country a schema:Country ;
+#                ex:hasCompletionRate ?completionRateNode .
+#       ?completionRateNode ex:completionRateUpperSecondaryMale ?completionRateUpperSecondaryMale.
+#     }
+#   }
+
+#   FILTER (?completionRateUpperSecondaryMale < ?avgcompletionRateUpperSecondaryMale)
+# }
+
+
+# SELECT ?country ?completionRateUpperSecondaryMale WHERE {
+#   ?country a schema:Country ;
+#            ex:hasCompletionRate ?completionRateNode .
+#   ?completionRateNode ex:completionRateUpperSecondaryMale ?completionRateUpperSecondaryMale.
+  
+#   {
+#     SELECT (ROUND(AVG(?completionRateUpperSecondaryMale)) AS ?avgcompletionRateUpperSecondaryMale) WHERE {
+#       ?country a schema:Country ;
+#                ex:hasCompletionRate ?completionRateNode .
+#       ?completionRateNode ex:completionRateUpperSecondaryMale ?completionRateUpperSecondaryMale.
+#     }
+#   }
+
+#   FILTER (?completionRateUpperSecondaryMale > ?avgcompletionRateUpperSecondaryMale)
+# }
+
+#?completionRateLowerSecondaryMale > ?avgcompletionRateLowerSecondaryMale
+# SELECT ?country ?completionRateLowerSecondaryMale WHERE {
+#   ?country a schema:Country ;
+#            ex:hasCompletionRate ?completionRateNode .
+#   ?completionRateNode ex:completionRateLowerSecondaryMale ?completionRateLowerSecondaryMale.
+  
+#   {
+#     SELECT (ROUND(AVG(?completionRateLowerSecondaryMale)) AS ?avgcompletionRateLowerSecondaryMale) WHERE {
+#       ?country a schema:Country ;
+#                ex:hasCompletionRate ?completionRateNode .
+#       ?completionRateNode ex:completionRateLowerSecondaryMale ?completionRateLowerSecondaryMale.
+#     }
+#   }
+
+#   FILTER (?completionRateLowerSecondaryMale < ?avgcompletionRateLowerSecondaryMale)
+# }
+
+
+#?completionRateLowerSecondaryMale > ?avgcompletionRateLowerSecondaryMale
+# SELECT ?country ?completionRateLowerSecondaryMale WHERE {
+#   ?country a schema:Country ;
+#            ex:hasCompletionRate ?completionRateNode .
+#   ?completionRateNode ex:completionRateLowerSecondaryMale ?completionRateLowerSecondaryMale.
+  
+#   {
+#     SELECT (ROUND(AVG(?completionRateLowerSecondaryMale)) AS ?avgcompletionRateLowerSecondaryMale) WHERE {
+#       ?country a schema:Country ;
+#                ex:hasCompletionRate ?completionRateNode .
+#       ?completionRateNode ex:completionRateLowerSecondaryMale ?completionRateLowerSecondaryMale.
+#     }
+#   }
+
+#   FILTER (?completionRateLowerSecondaryMale > ?avgcompletionRateLowerSecondaryMale)
+# }
+
+
+
