@@ -74,7 +74,7 @@ for _, row in globalEdu.iterrows():
 
     economy_uri = URIRef(EX + country_name + "_Economy")
     g.add((economy_uri, RDF.type, EX.Economy))
-    g.add((economy_uri, EX.hasEconomy, economy_uri))
+    g.add((country_uri, EX.hasEconomy, economy_uri))
     g.add((economy_uri, ISO3["5.1"], Literal(row["Unemployment_Rate"], datatype=XSD.double)))
     
     completion_uri = URIRef(EX + country_name + "_CompletionRate")
