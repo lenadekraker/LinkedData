@@ -1,0 +1,325 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix gn: <http://www.geonames.org/ontology#> .
+@prefix geo: <http://www.geonames.org/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex: <http://example.org/educationOntology> .
+@prefix dp: <http://dbpedia.org/ontology/> .
+@prefix iso: <http://ontology.eil.utoronto.ca/ISO37120.owl#> .
+@prefix schema: <http://schema.org/> .
+
+ex:PopulationShape a sh:NodeShape ;
+    sh:targetClass dp:Population ;
+    sh:property [
+        sh:path ex:hasPopulationSize ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:double ;
+        sh:minInclusive 0 ;
+    ] ;
+    sh:property [
+        sh:path ex:hasPopulationFemaleSize ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:double ;
+        sh:minInclusive 0 ;
+    ] ;
+    sh:property [
+        sh:path ex:hasPopulationMaleSize ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:double ;
+        sh:minInclusive 0 ;
+    ] .
+
+ex:SchoolPopulationShape a sh:NodeShape ;
+    sh:targetClass ex:SchoolPopulation ;
+    sh:property [
+        sh:path ex:hasSchoolPopulation ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:double ;
+        sh:minInclusive 0 ;
+    ] ;
+
+     sh:property [
+        sh:path ex:hasSchoolPopulation ;
+        sh:lessThan [
+            sh:path ex:hasSchoolFemalePopulationSize ;
+        ] ;
+        sh:lessThan [
+            sh:path ex:hasSchoolMalePopulation ;
+        ] ;
+    ] ; 
+    
+    sh:property [
+        sh:path ex:hasSchoolFemalePopulationSize ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:double ;
+        sh:minInclusive 0 ;
+    ] ;
+    sh:property [
+        sh:path ex:hasSchoolMalePopulation ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:double ;
+        sh:minInclusive 0 ;
+    ] .
+
+ex:EconomyShape a sh:NodeShape ;
+    sh:targetClass iso:Economy ;
+    sh:property [
+        sh:path ex:Corruption ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:int ;
+        sh:minInclusive 0 ;
+    ] ;
+    sh:property [
+        sh:path ex:expenditureOnHealth ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:double ;
+        sh:minInclusive 0 ;
+    ] ;
+    sh:property [
+        sh:path ex:expenditureOnEducation ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:double ;
+        sh:minInclusive 0 ;
+    ] ;
+    sh:property [
+        sh:path iso:UnemploymentRate ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:double ;
+        sh:minInclusive 0 ;
+    ] ;
+    sh:property [
+        sh:path dp:grossDomesticProduct ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:double ;
+        sh:minInclusive 0 ;
+    ] .
+
+ex:SectorShape a sh:NodeShape ;
+    sh:targetClass ex:Sector ;
+    sh:property [
+        sh:path ex:agricultureRate ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:double ;
+        sh:minInclusive 0 ;
+    ] ;
+    sh:property [
+        sh:path ex:agricultureRateFemale ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:double ;
+        sh:minInclusive 0 ;
+    ] ;
+    sh:property [
+        sh:path ex:agricultureRateMale ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:double ;
+        sh:minInclusive 0 ;
+    ] ;
+    sh:property [
+        sh:path ex:IndustryRate ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:double ;
+        sh:minInclusive 0 ;
+    ] ;
+    sh:property [
+        sh:path ex:IndustryRateFemale ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:double ;
+        sh:minInclusive 0 ;
+    ] ;
+    sh:property [
+        sh:path ex:IndustryRateMale ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:double ;
+        sh:minInclusive 0 ;
+    ] ;
+    sh:property [
+        sh:path ex:ServiceRate ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:double ;
+        sh:minInclusive 0 ;
+    ] ;
+    sh:property [
+        sh:path ex:ServiceRateMale ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:double ;
+        sh:minInclusive 0 ;
+    ] ;
+    sh:property [
+        sh:path ex:ServiceRateFemale ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:double ;
+        sh:minInclusive 0 ;
+    ] .
+
+ex:CountryShape a sh:NodeShape ;
+    sh:targetClass schema:Country ;
+    sh:property [
+        sh:path gn:name ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+    ] ;
+    sh:property [
+        sh:path geo:lat ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:float ;
+    ] ;
+    sh:property [
+        sh:path geo:long ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:float ;
+    ] .
+
+ex:CompletionRateShape a sh:NodeShape ;
+    sh:targetClass ex:CompletionRate ;
+    sh:property [
+        sh:path ex:CompletionRateLowerSecondary ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:double ;
+    ] ;
+    sh:property [
+        sh:path ex:CompletionRateLowerSecondaryFemale ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:double ;
+    ] ;
+    sh:property [
+        sh:path ex:CompletionRateLowerSecondaryMale ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:double ;
+    ] ;
+    sh:property [
+        sh:path ex:CompletionRateLowerPrimary ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:double ;
+    ] ;
+    sh:property [
+        sh:path ex:CompletionRateLowerPrimaryFemale ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:double ;
+    ] ;
+    sh:property [
+        sh:path ex:CompletionRateLowerPrimaryMale ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:double ;
+    ] ;
+    sh:property [
+        sh:path ex:CompletionRateUpperSecondary ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:double ;
+    ] ;
+    sh:property [
+        sh:path ex:CompletionRateUpperSecondaryFemale ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:double ;
+    ] ;
+    sh:property [
+        sh:path ex:CompletionRateUpperSecondaryMale ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:double ;
+    ] .
+
+ex:OutofSchoolRateShape a sh:NodeShape ;
+    sh:targetClass ex:OutofSchoolRate ;
+    sh:property [
+        sh:path ex:outOfSchoolRateLowerSecondaryFemale ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:double ;
+    ] ;
+    sh:property [
+        sh:path ex:outOfSchoolRateLowerSecondaryMale ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:double ;
+    ] ;
+    sh:property [
+        sh:path ex:outOfSchoolRateLowerSecondary ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:double ;
+    ] ;
+    sh:property [
+        sh:path ex:outOfSchoolRatePrePrimary ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:double ;
+    ] ;
+    sh:property [
+        sh:path ex:outOfSchoolRatePrePrimaryMale ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:double ;
+    ] ;
+    sh:property [
+        sh:path ex:outOfSchoolRatePrePrimaryFemale ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:double ;
+    ] ;
+    sh:property [
+        sh:path ex:outOfSchoolRatePrimary ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:double ;
+    ] ;
+    sh:property [
+        sh:path ex:outOfSchoolRatePrimaryMale ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:double ;
+    ] ;
+    sh:property [
+        sh:path ex:outOfSchoolRatePrimaryFemale ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:double ;
+    ] ;
+    sh:property [
+        sh:path ex:outOfSchoolRateUpperSecondary ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:double ;
+    ] ;
+    sh:property [
+        sh:path ex:outOfSchoolRateUpperSecondaryMale ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:double ;
+    ] ;
+    sh:property [
+        sh:path ex:outOfSchoolRateUpperSecondaryFemale ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:double ;
+    ] .
+
