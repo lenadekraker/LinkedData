@@ -61,13 +61,18 @@ ex:worksInSector rdf:type owl:ObjectProperty ;
 ###  http://dbpedia.org/ontology/grossDomesticProduct
 dp:grossDomesticProduct rdf:type owl:DatatypeProperty ;
                         rdfs:domain iso3:Economy ;
-                        rdfs:range xsd:long .
+                        rdfs:range [ rdf:type rdfs:Datatype ;
+                                     owl:onDatatype xsd:long ;
+                                     owl:withRestrictions ( [ xsd:minInclusive "0"^^xsd:long
+                                                            ]
+                                                          )
+                                   ] .
 
 
 ###  http://example.org/educationOntology#Corruption
 ex:Corruption rdf:type owl:DatatypeProperty ;
               rdfs:domain iso3:Economy ;
-              rdfs:range xsd:int .
+              rdfs:range xsd:nonNegativeInteger .
 
 
 ###  http://example.org/educationOntology#UnemploymentRate
@@ -127,13 +132,23 @@ ex:completionRateUpperSecondaryMale rdf:type owl:DatatypeProperty ;
 ###  http://example.org/educationOntology#expenditureOnEducation
 ex:expenditureOnEducation rdf:type owl:DatatypeProperty ;
                           rdfs:domain iso3:Economy ;
-                          rdfs:range xsd:double .
+                          rdfs:range [ rdf:type rdfs:Datatype ;
+                                       owl:onDatatype xsd:double ;
+                                       owl:withRestrictions ( [ xsd:minInclusive "0.0"^^xsd:double
+                                                              ]
+                                                            )
+                                     ] .
 
 
 ###  http://example.org/educationOntology#expenditureonHealth
 ex:expenditureonHealth rdf:type owl:DatatypeProperty ;
                        rdfs:domain iso3:Economy ;
-                       rdfs:range xsd:double .
+                       rdfs:range [ rdf:type rdfs:Datatype ;
+                                    owl:onDatatype xsd:double ;
+                                    owl:withRestrictions ( [ xsd:minInclusive "0.0"^^xsd:double
+                                                           ]
+                                                         )
+                                  ] .
 
 
 ###  http://example.org/educationOntology#hasPopulationFemaleSize
@@ -287,7 +302,44 @@ iso3:Economy rdf:type owl:Class .
 
 
 ###  https://schema.org/Country
-<https://schema.org/Country> rdf:type owl:Class .
+<https://schema.org/Country> rdf:type owl:Class ;
+                             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                               owl:onProperty gn:lat ;
+                                               owl:allValuesFrom owl:rational
+                                             ] ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty gn:long ;
+                                               owl:allValuesFrom owl:rational
+                                             ] ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty gn:name ;
+                                               owl:allValuesFrom owl:rational
+                                             ] ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty ex:hasPopulationSize ;
+                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                               owl:onDataRange owl:rational
+                                             ] ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty iso3:hasSchoolPopulation ;
+                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                               owl:onDataRange owl:rational
+                                             ] ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty ex:agricultureRate ;
+                                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                               owl:onDataRange owl:rational
+                                             ] ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty ex:industryRate ;
+                                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                               owl:onDataRange owl:rational
+                                             ] ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty ex:serviceRate ;
+                                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                               owl:onDataRange owl:rational
+                                             ] .
 
 
 ###  https://w3id.org/dpv#Sector

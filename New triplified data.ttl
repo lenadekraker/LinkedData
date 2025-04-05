@@ -5,6 +5,7 @@
 @prefix gn: <http://www.geonames.org/ontology#> .
 @prefix iso3: <http://ontology.eil.utoronto.ca/ISO37120.owl#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 @prefix schema1: <http://schema.org/> .
@@ -14,7 +15,9 @@
 
 dp:grossDomesticProduct a owl:DatatypeProperty ;
     rdfs:domain iso3:Economy ;
-    rdfs:range xsd:long .
+    rdfs:range [ a rdfs:Datatype ;
+            owl:onDatatype xsd:long ;
+            owl:withRestrictions ( [ xsd:minInclusive "0"^^xsd:long ] ) ] .
 
 ex:Afghanistan a schema1:Country ;
     ex:hasCompletionRate ex:Afghanistan_CompletionRate ;
@@ -431,7 +434,7 @@ ex:Cook_Islands a schema1:Country ;
 
 ex:Corruption a owl:DatatypeProperty ;
     rdfs:domain iso3:Economy ;
-    rdfs:range xsd:int .
+    rdfs:range xsd:nonNegativeInteger .
 
 ex:Costa_Rica a schema1:Country ;
     ex:hasCompletionRate ex:Costa_Rica_CompletionRate ;
@@ -2065,10 +2068,6 @@ ex:Zimbabwe a schema1:Country ;
     gn:long 2.915486e+01 ;
     gn:name "Zimbabwe"^^xsd:string .
 
-ex:agricultureRate a owl:DatatypeProperty ;
-    rdfs:domain dpv:Sector ;
-    rdfs:range xsd:double .
-
 ex:completionRateLowerSecondaryFemale a owl:DatatypeProperty ;
     rdfs:domain ex:CompletionRate ;
     rdfs:range xsd:double ;
@@ -2101,11 +2100,15 @@ ex:completionRateUpperSecondaryMale a owl:DatatypeProperty ;
 
 ex:expenditureOnEducation a owl:DatatypeProperty ;
     rdfs:domain iso3:Economy ;
-    rdfs:range xsd:double .
+    rdfs:range [ a rdfs:Datatype ;
+            owl:onDatatype xsd:double ;
+            owl:withRestrictions ( [ xsd:minInclusive 0e+00 ] ) ] .
 
 ex:expenditureonHealth a owl:DatatypeProperty ;
     rdfs:domain iso3:Economy ;
-    rdfs:range xsd:double .
+    rdfs:range [ a rdfs:Datatype ;
+            owl:onDatatype xsd:double ;
+            owl:withRestrictions ( [ xsd:minInclusive 0e+00 ] ) ] .
 
 ex:hasPopulation a owl:ObjectProperty ;
     rdfs:domain schema:Country ;
@@ -2134,10 +2137,6 @@ ex:hasSchoolMalePopulation a owl:DatatypeProperty ;
 ex:hasSchoolPopulation a owl:ObjectProperty ;
     rdfs:domain schema:Country ;
     rdfs:range ex:SchoolPopulation .
-
-ex:industryRate a owl:DatatypeProperty ;
-    rdfs:domain dpv:Sector ;
-    rdfs:range xsd:double .
 
 ex:outOfSchoolRateLowerSecondaryFemale a owl:DatatypeProperty ;
     rdfs:domain ex:OutOfSchoolRate ;
@@ -2191,25 +2190,9 @@ ex:reportedOutOfSchoolRate a owl:ObjectProperty ;
     rdfs:domain ex:SchoolPopulation ;
     rdfs:range ex:OutOfSchoolRate .
 
-ex:serviceRate a owl:DatatypeProperty ;
-    rdfs:domain dpv:Sector ;
-    rdfs:range xsd:double .
-
 ex:worksInSector a owl:ObjectProperty ;
     rdfs:domain <http://dbpedia.org/resource/Population> ;
     rdfs:range dpv:Sector .
-
-gn:lat a owl:DatatypeProperty ;
-    rdfs:domain schema:Country ;
-    rdfs:range xsd:double .
-
-gn:long a owl:DatatypeProperty ;
-    rdfs:domain schema:Country ;
-    rdfs:range xsd:double .
-
-gn:name a owl:DatatypeProperty ;
-    rdfs:domain schema:Country ;
-    rdfs:range xsd:string .
 
 ex:Afghanistan_CompletionRate a ex:CompletionRate ;
     ex:completionRateLowerSecondaryFemale 2.6e+01 ;
@@ -8096,6 +8079,30 @@ ex:Zimbabwe_Sector a ex:Sector ;
     ex:industryeRate 1.234906e+01 ;
     ex:serviceRate 3.511755e+01 .
 
+ex:agricultureRate a owl:DatatypeProperty ;
+    rdfs:domain dpv:Sector ;
+    rdfs:range xsd:double .
+
+ex:industryRate a owl:DatatypeProperty ;
+    rdfs:domain dpv:Sector ;
+    rdfs:range xsd:double .
+
+ex:serviceRate a owl:DatatypeProperty ;
+    rdfs:domain dpv:Sector ;
+    rdfs:range xsd:double .
+
+gn:lat a owl:DatatypeProperty ;
+    rdfs:domain schema:Country ;
+    rdfs:range xsd:double .
+
+gn:long a owl:DatatypeProperty ;
+    rdfs:domain schema:Country ;
+    rdfs:range xsd:double .
+
+gn:name a owl:DatatypeProperty ;
+    rdfs:domain schema:Country ;
+    rdfs:range xsd:string .
+
 ex:Afghanistan_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.980707e+10 ;
     ex:exependitureOnEducation 3.21378e+00 ;
@@ -9300,7 +9307,36 @@ dpv:Sector a owl:Class .
 
 iso3:Economy a owl:Class .
 
-schema:Country a owl:Class .
+schema:Country a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom owl:rational ;
+            owl:onProperty gn:lat ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom owl:rational ;
+            owl:onProperty gn:long ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom owl:rational ;
+            owl:onProperty gn:name ],
+        [ a owl:Restriction ;
+            owl:onDataRange owl:rational ;
+            owl:onProperty ex:hasPopulationSize ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onDataRange owl:rational ;
+            owl:onProperty iso3:hasSchoolPopulation ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange owl:rational ;
+            owl:onProperty ex:agricultureRate ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange owl:rational ;
+            owl:onProperty ex:industryRate ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange owl:rational ;
+            owl:onProperty ex:serviceRate ] .
 
 ex:Population a schema1:Class .
 
