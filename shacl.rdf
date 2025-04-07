@@ -182,13 +182,13 @@ ex:CountryShape a sh:NodeShape ;
         sh:path geo:lat ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:datatype xsd:float ;
+        sh:datatype xsd:double ;
     ] ;
     sh:property [
         sh:path geo:long ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:datatype xsd:float ;
+        sh:datatype xsd:double ;
     ] .
 
 ex:CompletionRateShape a sh:NodeShape ;

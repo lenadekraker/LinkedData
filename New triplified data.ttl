@@ -2368,7 +2368,7 @@ ex:Anguilla_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 0e+00 .
 
 ex:Anguilla_Economy a ex:Economy ;
-    iso3:5.1 0e+00 .
+    iso3:UnemploymentRate 0e+00 .
 
 ex:Anguilla_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 0e+00 ;
@@ -2389,7 +2389,7 @@ ex:Antigua_and_Barbuda_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 0e+00 .
 
 ex:Antigua_and_Barbuda_Economy a ex:Economy ;
-    iso3:5.1 0e+00 .
+    iso3:UnemploymentRate "0e+00"^^xsd:double .
 
 ex:Antigua_and_Barbuda_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 2e+00 ;
@@ -2872,7 +2872,7 @@ ex:Bosnia_and_Herzegovina_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 9.2e+01 .
 
 ex:Bosnia_and_Herzegovina_Economy a ex:Economy ;
-    iso3:5.1 1.842e+01 .
+    iso3:UnemploymentRate 1.842e+01 .
 
 ex:Bosnia_and_Herzegovina_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 0e+00 ;
@@ -2959,7 +2959,7 @@ ex:British_Virgin_Islands_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 0e+00 .
 
 ex:British_Virgin_Islands_Economy a ex:Economy ;
-    iso3:5.1 0e+00 .
+    iso3:UnemploymentRate 0e+00 .
 
 ex:British_Virgin_Islands_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 7e+00 ;
@@ -3031,7 +3031,7 @@ ex:Burkina_Faso_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 6e+00 .
 
 ex:Burkina_Faso_Economy a ex:Economy ;
-    iso3:5.1 6.26e+00 .
+    iso3:UnemploymentRate 6.26e+00 .
 
 ex:Burkina_Faso_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 4.4e+01 ;
@@ -3184,7 +3184,7 @@ ex:Cape_Verde_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 0e+00 .
 
 ex:Cape_Verde_Economy a ex:Economy ;
-    iso3:5.1 1.225e+01 .
+    iso3:UnemploymentRate 1.225e+01 .
 
 ex:Cape_Verde_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 1.3e+01 ;
@@ -3205,7 +3205,7 @@ ex:Central_African_Republic_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 8e+00 .
 
 ex:Central_African_Republic_Economy a ex:Economy ;
-    iso3:5.1 3.68e+00 .
+    iso3:UnemploymentRate 3.68e+00 .
 
 ex:Central_African_Republic_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 0e+00 ;
@@ -3391,7 +3391,7 @@ ex:Cook_Islands_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 0e+00 .
 
 ex:Cook_Islands_Economy a ex:Economy ;
-    iso3:5.1 0e+00 .
+    iso3:UnemploymentRate 0e+00 .
 
 ex:Cook_Islands_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 6e+00 ;
@@ -3412,7 +3412,7 @@ ex:Costa_Rica_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 5.6e+01 .
 
 ex:Costa_Rica_Economy a ex:Economy ;
-    iso3:5.1 1.185e+01 .
+    iso3:UnemploymentRate 1.185e+01 .
 
 ex:Costa_Rica_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 1e+00 ;
@@ -3532,7 +3532,7 @@ ex:Czech_Republic_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 0e+00 .
 
 ex:Czech_Republic_Economy a ex:Economy ;
-    iso3:5.1 1.93e+00 .
+    iso3:UnemploymentRate 1.93e+00 .
 
 ex:Czech_Republic_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 2e+00 ;
@@ -3553,7 +3553,7 @@ ex:Democratic_Republic_of_the_Congo_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 3.6e+01 .
 
 ex:Democratic_Republic_of_the_Congo_Economy a ex:Economy ;
-    iso3:5.1 4.24e+00 .
+    iso3:UnemploymentRate 4.24e+00 .
 
 ex:Democratic_Republic_of_the_Congo_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 0e+00 ;
@@ -3673,7 +3673,7 @@ ex:Dominican_Republic_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 4.8e+01 .
 
 ex:Dominican_Republic_Economy a ex:Economy ;
-    iso3:5.1 5.84e+00 .
+    iso3:UnemploymentRate 5.84e+00 .
 
 ex:Dominican_Republic_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 6e+00 ;
@@ -3694,7 +3694,7 @@ ex:East_Timor_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 4.9e+01 .
 
 ex:East_Timor_Economy a ex:Economy ;
-    iso3:5.1 4.55e+00 .
+    iso3:UnemploymentRate 4.55e+00 .
 
 ex:East_Timor_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 9e+00 ;
@@ -3766,7 +3766,7 @@ ex:El_Salvador_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 3.4e+01 .
 
 ex:El_Salvador_Economy a ex:Economy ;
-    iso3:5.1 4.11e+00 .
+    iso3:UnemploymentRate 4.11e+00 .
 
 ex:El_Salvador_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 1.7e+01 ;
@@ -3787,7 +3787,7 @@ ex:Equatorial_Guinea_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 0e+00 .
 
 ex:Equatorial_Guinea_Economy a ex:Economy ;
-    iso3:5.1 6.43e+00 .
+    iso3:UnemploymentRate 6.43e+00 .
 
 ex:Equatorial_Guinea_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 0e+00 ;
@@ -3940,7 +3940,7 @@ ex:Federated_States_of_Micronesia_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 0e+00 .
 
 ex:Federated_States_of_Micronesia_Economy a ex:Economy ;
-    iso3:5.1 0e+00 .
+    iso3:UnemploymentRate 0e+00 .
 
 ex:Federated_States_of_Micronesia_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 1e+01 ;
@@ -4309,7 +4309,7 @@ ex:Guinea0Bissau_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 1.4e+01 .
 
 ex:Guinea0Bissau_Economy a ex:Economy ;
-    iso3:5.1 2.47e+00 .
+    iso3:UnemploymentRate 2.47e+00 .
 
 ex:Guinea0Bissau_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 0e+00 ;
@@ -4711,7 +4711,7 @@ ex:Ivory_Coast_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 1.7e+01 .
 
 ex:Ivory_Coast_Economy a ex:Economy ;
-    iso3:5.1 3.32e+00 .
+    iso3:UnemploymentRate 3.32e+00 .
 
 ex:Ivory_Coast_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 4.8e+01 ;
@@ -5461,7 +5461,7 @@ ex:Marshall_Islands_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 0e+00 .
 
 ex:Marshall_Islands_Economy a ex:Economy ;
-    iso3:5.1 0e+00 .
+    iso3:UnemploymentRate 0e+00 .
 
 ex:Marshall_Islands_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 2.9e+01 ;
@@ -5713,7 +5713,7 @@ ex:Montserrat_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 0e+00 .
 
 ex:Montserrat_Economy a ex:Economy ;
-    iso3:5.1 0e+00 .
+    iso3:UnemploymentRate 0e+00 .
 
 ex:Montserrat_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 0e+00 ;
@@ -5965,7 +5965,7 @@ ex:New_Zealand_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 0e+00 .
 
 ex:New_Zealand_Economy a ex:Economy ;
-    iso3:5.1 4.07e+00 .
+    iso3:UnemploymentRate 4.07e+00 .
 
 ex:New_Zealand_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 1e+00 ;
@@ -6085,7 +6085,7 @@ ex:Niue_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 0e+00 .
 
 ex:Niue_Economy a ex:Economy ;
-    iso3:5.1 0e+00 .
+    iso3:UnemploymentRate 0e+00 .
 
 ex:Niue_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 0e+00 ;
@@ -6106,7 +6106,7 @@ ex:North_Korea_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 1e+02 .
 
 ex:North_Korea_Economy a ex:Economy ;
-    iso3:5.1 2.74e+00 .
+    iso3:UnemploymentRate 2.74e+00 .
 
 ex:North_Korea_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 0e+00 ;
@@ -6127,7 +6127,7 @@ ex:North_Macedonia_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 8.6e+01 .
 
 ex:North_Macedonia_Economy a ex:Economy ;
-    iso3:5.1 0e+00 .
+    iso3:UnemploymentRate 0e+00 .
 
 ex:North_Macedonia_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 0e+00 ;
@@ -6280,7 +6280,7 @@ ex:Palestinian_National_Authority_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 5.2e+01 .
 
 ex:Palestinian_National_Authority_Economy a ex:Economy ;
-    iso3:5.1 0e+00 .
+    iso3:UnemploymentRate 0e+00 .
 
 ex:Palestinian_National_Authority_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 1e+00 ;
@@ -6334,7 +6334,7 @@ ex:Papua_New_Guinea_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 0e+00 .
 
 ex:Papua_New_Guinea_Economy a ex:Economy ;
-    iso3:5.1 2.46e+00 .
+    iso3:UnemploymentRate 2.46e+00 .
 
 ex:Papua_New_Guinea_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 1.9e+01 ;
@@ -6553,7 +6553,7 @@ ex:Republic_of_Ireland_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 0e+00 .
 
 ex:Republic_of_Ireland_Economy a ex:Economy ;
-    iso3:5.1 4.93e+00 .
+    iso3:UnemploymentRate 4.93e+00 .
 
 ex:Republic_of_Ireland_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 0e+00 ;
@@ -6574,7 +6574,7 @@ ex:Republic_of_the_Congo_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 2.8e+01 .
 
 ex:Republic_of_the_Congo_Economy a ex:Economy ;
-    iso3:5.1 9.47e+00 .
+    iso3:UnemploymentRate 9.47e+00 .
 
 ex:Republic_of_the_Congo_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 0e+00 ;
@@ -6679,7 +6679,7 @@ ex:Saint_Kitts_and_Nevis_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 0e+00 .
 
 ex:Saint_Kitts_and_Nevis_Economy a ex:Economy ;
-    iso3:5.1 0e+00 .
+    iso3:UnemploymentRate 0e+00 .
 
 ex:Saint_Kitts_and_Nevis_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 0e+00 ;
@@ -6700,7 +6700,7 @@ ex:Saint_Lucia_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 7e+01 .
 
 ex:Saint_Lucia_Economy a ex:Economy ;
-    iso3:5.1 2.071e+01 .
+    iso3:UnemploymentRate 2.071e+01 .
 
 ex:Saint_Lucia_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 1e+01 ;
@@ -6721,7 +6721,7 @@ ex:Saint_Vincent_and_the_Grenadines_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 0e+00 .
 
 ex:Saint_Vincent_and_the_Grenadines_Economy a ex:Economy ;
-    iso3:5.1 1.888e+01 .
+    iso3:UnemploymentRate 1.888e+01 .
 
 ex:Saint_Vincent_and_the_Grenadines_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 2e+00 ;
@@ -6775,7 +6775,7 @@ ex:San_Marino_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 0e+00 .
 
 ex:San_Marino_Economy a ex:Economy ;
-    iso3:5.1 0e+00 .
+    iso3:UnemploymentRate 0e+00 .
 
 ex:San_Marino_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 0e+00 ;
@@ -6796,7 +6796,7 @@ ex:Saudi_Arabia_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 0e+00 .
 
 ex:Saudi_Arabia_Economy a ex:Economy ;
-    iso3:5.1 5.93e+00 .
+    iso3:UnemploymentRate 5.93e+00 .
 
 ex:Saudi_Arabia_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 3e+00 ;
@@ -6916,7 +6916,7 @@ ex:Sierra_Leone_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 2.7e+01 .
 
 ex:Sierra_Leone_Economy a ex:Economy ;
-    iso3:5.1 4.43e+00 .
+    iso3:UnemploymentRate 4.43e+00 .
 
 ex:Sierra_Leone_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 4.9e+01 ;
@@ -7021,7 +7021,7 @@ ex:Solomon_Islands_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 0e+00 .
 
 ex:Solomon_Islands_Economy a ex:Economy ;
-    iso3:5.1 5.8e-01 .
+    iso3:UnemploymentRate 5.8e-01 .
 
 ex:Solomon_Islands_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 0e+00 ;
@@ -7075,7 +7075,7 @@ ex:South_Africa_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 4.5e+01 .
 
 ex:South_Africa_Economy a ex:Economy ;
-    iso3:5.1 2.818e+01 .
+    iso3:UnemploymentRate 2.818e+01 .
 
 ex:South_Africa_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 1.3e+01 ;
@@ -7096,7 +7096,7 @@ ex:South_Korea_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 0e+00 .
 
 ex:South_Korea_Economy a ex:Economy ;
-    iso3:5.1 4.15e+00 .
+    iso3:UnemploymentRate 4.15e+00 .
 
 ex:South_Korea_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 3e+00 ;
@@ -7117,7 +7117,7 @@ ex:South_Sudan_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 1.2e+01 .
 
 ex:South_Sudan_Economy a ex:Economy ;
-    iso3:5.1 1.224e+01 .
+    iso3:UnemploymentRate 1.224e+01 .
 
 ex:South_Sudan_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 6.3e+01 ;
@@ -7171,7 +7171,7 @@ ex:Sri_Lanka_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 3.2e+01 .
 
 ex:Sri_Lanka_Economy a ex:Economy ;
-    iso3:5.1 4.2e+00 .
+    iso3:UnemploymentRate 4.2e+00 .
 
 ex:Sri_Lanka_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 0e+00 ;
@@ -7342,7 +7342,7 @@ ex:Syria_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:completionRateUpperSecondaryMale 4e+00 .
 
 <http://example.org/educationOntology#Sï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿_Economy> a ex:Economy ;
-    iso3:5.1 1.337e+01 .
+    iso3:UnemploymentRate 1.337e+01 .
 
 <http://example.org/educationOntology#Sï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿_OutOfSchoolRate> a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 7e+00 ;
@@ -7462,7 +7462,7 @@ ex:The_Bahamas_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 0e+00 .
 
 ex:The_Bahamas_Economy a ex:Economy ;
-    iso3:5.1 1.036e+01 .
+    iso3:UnemploymentRate 1.036e+01 .
 
 ex:The_Bahamas_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 2.1e+01 ;
@@ -7516,7 +7516,7 @@ ex:Tokelau_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 0e+00 .
 
 ex:Tokelau_Economy a ex:Economy ;
-    iso3:5.1 0e+00 .
+    iso3:UnemploymentRate 0e+00 .
 
 ex:Tokelau_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 0e+00 ;
@@ -7570,7 +7570,7 @@ ex:Trinidad_and_Tobago_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 0e+00 .
 
 ex:Trinidad_and_Tobago_Economy a ex:Economy ;
-    iso3:5.1 2.69e+00 .
+    iso3:UnemploymentRate 2.69e+00 .
 
 ex:Trinidad_and_Tobago_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 0e+00 ;
@@ -7675,7 +7675,7 @@ ex:Turks_and_Caicos_Islands_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 0e+00 .
 
 ex:Turks_and_Caicos_Islands_Economy a ex:Economy ;
-    iso3:5.1 0e+00 .
+    iso3:UnemploymentRate 0e+00 .
 
 ex:Turks_and_Caicos_Islands_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 1.7e+01 ;
@@ -7795,7 +7795,7 @@ ex:United_Arab_Emirates_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 0e+00 .
 
 ex:United_Arab_Emirates_Economy a ex:Economy ;
-    iso3:5.1 2.35e+00 .
+    iso3:UnemploymentRate 2.35e+00 .
 
 ex:United_Arab_Emirates_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 3e+00 ;
@@ -7816,7 +7816,7 @@ ex:United_Kingdom_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 0e+00 .
 
 ex:United_Kingdom_Economy a ex:Economy ;
-    iso3:5.1 3.85e+00 .
+    iso3:UnemploymentRate 3.85e+00 .
 
 ex:United_Kingdom_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 2e+00 ;
@@ -7837,7 +7837,7 @@ ex:United_States_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 0e+00 .
 
 ex:United_States_Economy a ex:Economy ;
-    iso3:5.1 1.47e+01 .
+    iso3:UnemploymentRate 1.47e+01 .
 
 ex:United_States_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 1e+00 ;
@@ -7957,7 +7957,7 @@ ex:Vatican_City_CompletionRate a ex:CompletionRate ;
     ex:completionRateUpperSecondaryMale 0e+00 .
 
 ex:Vatican_City_Economy a ex:Economy ;
-    iso3:5.1 0e+00 .
+    iso3:UnemploymentRate 0e+00 .
 
 ex:Vatican_City_OutOfSchoolRate a ex:OutOfSchoolRate ;
     ex:outOfSchoolRateLowerSecondaryFemale 0e+00 ;
@@ -8108,1190 +8108,1190 @@ ex:Afghanistan_Economy a ex:Economy ;
     ex:exependitureOnEducation 3.21378e+00 ;
     ex:exependitureOnHealth 1.32422e+01 ;
     ex:hasEconomy ex:Afghanistan_Economy ;
-    iso3:11.4 2e+00 ;
-    iso3:5.1 1.112e+01 .
+    iso3:Corruption 2e+00 ;
+    iso3:UnemploymentRate 1.112e+01 .
 
 ex:Albania_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.479962e+10 ;
     ex:exependitureOnEducation 3.91665e+00 ;
     ex:exependitureOnHealth "NaN"^^xsd:double ;
     ex:hasEconomy ex:Albania_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 1.233e+01 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 1.233e+01 .
 
 ex:Algeria_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.451639e+11 ;
     ex:exependitureOnEducation 6.10036e+00 ;
     ex:exependitureOnHealth 6.243371e+00 ;
     ex:hasEconomy ex:Algeria_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 1.17e+01 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 1.17e+01 .
 
 ex:Andorra_Economy a ex:Economy ;
     dp1:grossDomesticProduct 3.155065e+09 ;
     ex:exependitureOnEducation 3.15061e+00 ;
     ex:exependitureOnHealth 6.711585e+00 ;
     ex:hasEconomy ex:Andorra_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 0e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 0e+00 .
 
 ex:Angola_Economy a ex:Economy ;
     dp1:grossDomesticProduct 6.230691e+10 ;
     ex:exependitureOnEducation 1.927457e+00 ;
     ex:exependitureOnHealth 2.53336e+00 ;
     ex:hasEconomy ex:Angola_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 6.89e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 6.89e+00 .
 
 ex:Argentina_Economy a ex:Economy ;
     dp1:grossDomesticProduct 3.83067e+11 ;
     ex:exependitureOnEducation 4.72417e+00 ;
     ex:exependitureOnHealth 9.510071e+00 ;
     ex:hasEconomy ex:Argentina_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 9.79e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 9.79e+00 .
 
 ex:Armenia_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.264546e+10 ;
     ex:exependitureOnEducation 2.56185e+00 ;
     ex:exependitureOnHealth 1.133526e+01 ;
     ex:hasEconomy ex:Armenia_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 1.699e+01 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 1.699e+01 .
 
 ex:Australia_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.330901e+12 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 9.910786e+00 ;
     ex:hasEconomy ex:Australia_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 5.27e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 5.27e+00 .
 
 ex:Austria_Economy a ex:Economy ;
     dp1:grossDomesticProduct 4.289654e+11 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 1.043403e+01 ;
     ex:hasEconomy ex:Austria_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 4.67e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 4.67e+00 .
 
 ex:Azerbaijan_Economy a ex:Economy ;
     dp1:grossDomesticProduct 4.260718e+10 ;
     ex:exependitureOnEducation 2.68108e+00 ;
     ex:exependitureOnHealth 4.03829e+00 ;
     ex:hasEconomy ex:Azerbaijan_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 5.51e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 5.51e+00 .
 
 ex:Bahrain_Economy a ex:Economy ;
     dp1:grossDomesticProduct 3.847452e+10 ;
     ex:exependitureOnEducation 2.094912e+00 ;
     ex:exependitureOnHealth 4.011475e+00 ;
     ex:hasEconomy ex:Bahrain_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 7.1e-01 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 7.1e-01 .
 
 ex:Bangladesh_Economy a ex:Economy ;
     dp1:grossDomesticProduct 3.242392e+11 ;
     ex:exependitureOnEducation 1.32632e+00 ;
     ex:exependitureOnHealth 2.483576e+00 ;
     ex:hasEconomy ex:Bangladesh_Economy ;
-    iso3:11.4 2.5e+00 ;
-    iso3:5.1 4.19e+00 .
+    iso3:Corruption 2.5e+00 ;
+    iso3:UnemploymentRate 4.19e+00 .
 
 ex:Barbados_Economy a ex:Economy ;
     dp1:grossDomesticProduct 4.3655e+09 ;
     ex:exependitureOnEducation 3.20399e+00 ;
     ex:exependitureOnHealth 6.299904e+00 ;
     ex:hasEconomy ex:Barbados_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 1.033e+01 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 1.033e+01 .
 
 ex:Belarus_Economy a ex:Economy ;
     dp1:grossDomesticProduct 6.025824e+10 ;
     ex:exependitureOnEducation 4.97948e+00 ;
     ex:exependitureOnHealth 5.86134e+00 ;
     ex:hasEconomy ex:Belarus_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 4.59e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 4.59e+00 .
 
 ex:Belgium_Economy a ex:Economy ;
     dp1:grossDomesticProduct 5.153325e+11 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 1.065605e+01 ;
     ex:hasEconomy ex:Belgium_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 5.59e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 5.59e+00 .
 
 ex:Belize_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.763696e+09 ;
     ex:exependitureOnEducation 7.13839e+00 ;
     ex:exependitureOnHealth 5.966892e+00 ;
     ex:hasEconomy ex:Belize_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 6.41e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 6.41e+00 .
 
 ex:Benin_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.565155e+10 ;
     ex:exependitureOnEducation 2.9652e+00 ;
     ex:exependitureOnHealth 2.388429e+00 ;
     ex:hasEconomy ex:Benin_Economy ;
-    iso3:11.4 3.5e+00 ;
-    iso3:5.1 2.23e+00 .
+    iso3:Corruption 3.5e+00 ;
+    iso3:UnemploymentRate 2.23e+00 .
 
 ex:Bhutan_Economy a ex:Economy ;
     dp1:grossDomesticProduct 2.409263e+09 ;
     ex:exependitureOnEducation 5.675892e+00 ;
     ex:exependitureOnHealth 3.607616e+00 ;
     ex:hasEconomy ex:Bhutan_Economy ;
-    iso3:11.4 4.5e+00 ;
-    iso3:5.1 2.34e+00 .
+    iso3:Corruption 4.5e+00 ;
+    iso3:UnemploymentRate 2.34e+00 .
 
 ex:Bolivia_Economy a ex:Economy ;
     dp1:grossDomesticProduct 3.668886e+10 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 6.92338e+00 ;
     ex:hasEconomy ex:Bolivia_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 3.5e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 3.5e+00 .
 
 ex:Botswana_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.578173e+10 ;
     ex:exependitureOnEducation 6.914369e+00 ;
     ex:exependitureOnHealth 6.048366e+00 ;
     ex:hasEconomy ex:Botswana_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 1.819e+01 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 1.819e+01 .
 
 ex:Brazil_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.444733e+12 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 9.591271e+00 ;
     ex:hasEconomy ex:Brazil_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 1.208e+01 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 1.208e+01 .
 
 ex:Brunei_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.201606e+10 ;
     ex:hasEconomy ex:Brunei_Economy ;
-    iso3:5.1 9.12e+00 .
+    iso3:UnemploymentRate 9.12e+00 .
 
 ex:Bulgaria_Economy a ex:Economy ;
     dp1:grossDomesticProduct 6.91051e+10 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 7.126114e+00 ;
     ex:hasEconomy ex:Bulgaria_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 4.34e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 4.34e+00 .
 
 ex:Burundi_Economy a ex:Economy ;
     dp1:grossDomesticProduct 3.258187e+09 ;
     ex:exependitureOnEducation 5.346684e+00 ;
     ex:exependitureOnHealth 7.990914e+00 ;
     ex:hasEconomy ex:Burundi_Economy ;
-    iso3:11.4 1.5e+00 ;
-    iso3:5.1 1.43e+00 .
+    iso3:Corruption 1.5e+00 ;
+    iso3:UnemploymentRate 1.43e+00 .
 
 ex:Cambodia_Economy a ex:Economy ;
     dp1:grossDomesticProduct 2.529125e+10 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 6.989083e+00 ;
     ex:hasEconomy ex:Cambodia_Economy ;
-    iso3:11.4 1.5e+00 ;
-    iso3:5.1 6.8e-01 .
+    iso3:Corruption 1.5e+00 ;
+    iso3:UnemploymentRate 6.8e-01 .
 
 ex:Cameroon_Economy a ex:Economy ;
     dp1:grossDomesticProduct 3.980215e+10 ;
     ex:exependitureOnEducation 3.080877e+00 ;
     ex:exependitureOnHealth 3.595395e+00 ;
     ex:hasEconomy ex:Cameroon_Economy ;
-    iso3:11.4 2.5e+00 ;
-    iso3:5.1 3.38e+00 .
+    iso3:Corruption 2.5e+00 ;
+    iso3:UnemploymentRate 3.38e+00 .
 
 ex:Canada_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.643408e+12 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 1.084448e+01 ;
     ex:hasEconomy ex:Canada_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 5.56e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 5.56e+00 .
 
 ex:Chad_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.009312e+10 ;
     ex:exependitureOnEducation 2.37246e+00 ;
     ex:exependitureOnHealth 4.353631e+00 ;
     ex:hasEconomy ex:Chad_Economy ;
-    iso3:11.4 2.5e+00 ;
-    iso3:5.1 1.89e+00 .
+    iso3:Corruption 2.5e+00 ;
+    iso3:UnemploymentRate 1.89e+00 .
 
 ex:Chile_Economy a ex:Economy ;
     dp1:grossDomesticProduct 2.5294e+11 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 9.332724e+00 ;
     ex:hasEconomy ex:Chile_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 7.09e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 7.09e+00 .
 
 ex:China_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.472273e+13 ;
     ex:exependitureOnEducation 3.54e+00 ;
     ex:exependitureOnHealth 5.350278e+00 ;
     ex:hasEconomy ex:China_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 4.32e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 4.32e+00 .
 
 ex:Colombia_Economy a ex:Economy ;
     ex:exependitureOnEducation 4.50622e+00 ;
     ex:exependitureOnHealth 7.709436e+00 ;
     ex:hasEconomy ex:Colombia_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 9.71e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 9.71e+00 .
 
 ex:Comoros_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.21969e+09 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 5.170303e+00 ;
     ex:hasEconomy ex:Comoros_Economy ;
-    iso3:11.4 2.5e+00 ;
-    iso3:5.1 4.34e+00 .
+    iso3:Corruption 2.5e+00 ;
+    iso3:UnemploymentRate 4.34e+00 .
 
 ex:Croatia_Economy a ex:Economy ;
     dp1:grossDomesticProduct 5.596658e+10 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 6.978618e+00 ;
     ex:hasEconomy ex:Croatia_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 6.93e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 6.93e+00 .
 
 ex:Cuba_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.03131e+11 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 1.134021e+01 ;
     ex:hasEconomy ex:Cuba_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 1.64e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 1.64e+00 .
 
 ex:Cyprus_Economy a ex:Economy ;
     dp1:grossDomesticProduct 2.380434e+10 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 7.009032e+00 ;
     ex:hasEconomy ex:Cyprus_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 7.27e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 7.27e+00 .
 
 ex:Denmark_Economy a ex:Economy ;
     dp1:grossDomesticProduct 3.55184e+11 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 9.955831e+00 ;
     ex:hasEconomy ex:Denmark_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 4.91e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 4.91e+00 .
 
 ex:Djibouti_Economy a ex:Economy ;
     dp1:grossDomesticProduct 3.384404e+09 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 1.798268e+00 ;
     ex:hasEconomy ex:Djibouti_Economy ;
-    iso3:11.4 2.5e+00 ;
-    iso3:5.1 1.03e+01 .
+    iso3:Corruption 2.5e+00 ;
+    iso3:UnemploymentRate 1.03e+01 .
 
 ex:Dominica_Economy a ex:Economy ;
     dp1:grossDomesticProduct 4.698704e+08 ;
     ex:exependitureOnEducation 5.57619e+00 ;
     ex:exependitureOnHealth 5.460066e+00 ;
     ex:hasEconomy ex:Dominica_Economy ;
-    iso3:11.4 4e+00 ;
-    iso3:5.1 0e+00 .
+    iso3:Corruption 4e+00 ;
+    iso3:UnemploymentRate 0e+00 .
 
 ex:Ecuador_Economy a ex:Economy ;
     dp1:grossDomesticProduct 9.880801e+10 ;
     ex:exependitureOnEducation 4.22566e+00 ;
     ex:exependitureOnHealth 7.818247e+00 ;
     ex:hasEconomy ex:Ecuador_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 3.97e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 3.97e+00 .
 
 ex:Egypt_Economy a ex:Economy ;
     dp1:grossDomesticProduct 3.630692e+11 ;
     ex:hasEconomy ex:Egypt_Economy ;
-    iso3:5.1 1.076e+01 .
+    iso3:UnemploymentRate 1.076e+01 .
 
 ex:Eritrea_Economy a ex:Economy ;
     dp1:grossDomesticProduct 2.065002e+09 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 4.458767e+00 ;
     ex:hasEconomy ex:Eritrea_Economy ;
-    iso3:11.4 2.5e+00 ;
-    iso3:5.1 5.14e+00 .
+    iso3:Corruption 2.5e+00 ;
+    iso3:UnemploymentRate 5.14e+00 .
 
 ex:Estonia_Economy a ex:Economy ;
     dp1:grossDomesticProduct 3.102997e+10 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 6.730449e+00 ;
     ex:hasEconomy ex:Estonia_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 5.11e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 5.11e+00 .
 
 ex:Eswatini_Economy a ex:Economy ;
     dp1:grossDomesticProduct 3.962493e+09 ;
     ex:exependitureOnEducation 5.64555e+00 ;
     ex:exependitureOnHealth 6.780691e+00 ;
     ex:hasEconomy ex:Eswatini_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 0e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 0e+00 .
 
 ex:Ethiopia_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.076451e+11 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 3.238086e+00 ;
     ex:hasEconomy ex:Ethiopia_Economy ;
-    iso3:11.4 3e+00 ;
-    iso3:5.1 2.08e+00 .
+    iso3:Corruption 3e+00 ;
+    iso3:UnemploymentRate 2.08e+00 .
 
 ex:Fiji_Economy a ex:Economy ;
     ex:exependitureOnEducation 5.06788e+00 ;
     ex:exependitureOnHealth 3.81607e+00 ;
     ex:hasEconomy ex:Fiji_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 4.1e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 4.1e+00 .
 
 ex:Finland_Economy a ex:Economy ;
     dp1:grossDomesticProduct 2.712339e+11 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 9.153483e+00 ;
     ex:hasEconomy ex:Finland_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 6.59e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 6.59e+00 .
 
 ex:France_Economy a ex:Economy ;
     dp1:grossDomesticProduct 2.603004e+12 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 1.105747e+01 ;
     ex:hasEconomy ex:France_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 8.43e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 8.43e+00 .
 
 ex:Gabon_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.559318e+10 ;
     ex:exependitureOnEducation 2.732324e+00 ;
     ex:exependitureOnHealth 2.768362e+00 ;
     ex:hasEconomy ex:Gabon_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 2e+01 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 2e+01 .
 
 ex:Gambia_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.90193e+09 ;
     ex:hasEconomy ex:Gambia_Economy ;
-    iso3:5.1 9.06e+00 .
+    iso3:UnemploymentRate 9.06e+00 .
 
 ex:Georgia_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.589169e+10 ;
     ex:exependitureOnEducation 3.80864e+00 ;
     ex:exependitureOnHealth 6.657443e+00 ;
     ex:hasEconomy ex:Georgia_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 1.44e+01 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 1.44e+01 .
 
 ex:Germany_Economy a ex:Economy ;
     dp1:grossDomesticProduct 3.80606e+12 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 1.169725e+01 ;
     ex:hasEconomy ex:Germany_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 3.04e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 3.04e+00 .
 
 ex:Ghana_Economy a ex:Economy ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 3.418589e+00 ;
     ex:hasEconomy ex:Ghana_Economy ;
-    iso3:11.4 3.5e+00 ;
-    iso3:5.1 4.33e+00 .
+    iso3:Corruption 3.5e+00 ;
+    iso3:UnemploymentRate 4.33e+00 .
 
 ex:Greece_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.894101e+11 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 7.837886e+00 ;
     ex:hasEconomy ex:Greece_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 1.724e+01 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 1.724e+01 .
 
 ex:Grenada_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.089204e+09 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 4.96524e+00 ;
     ex:hasEconomy ex:Grenada_Economy ;
-    iso3:11.4 4e+00 ;
-    iso3:5.1 0e+00 .
+    iso3:Corruption 4e+00 ;
+    iso3:UnemploymentRate 0e+00 .
 
 ex:Guatemala_Economy a ex:Economy ;
     dp1:grossDomesticProduct 7.760463e+10 ;
     ex:exependitureOnEducation 3.19928e+00 ;
     ex:exependitureOnHealth 6.21161e+00 ;
     ex:hasEconomy ex:Guatemala_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 2.46e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 2.46e+00 .
 
 ex:Guinea_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.568105e+10 ;
     ex:exependitureOnEducation 1.84837e+00 ;
     ex:exependitureOnHealth 3.9839e+00 ;
     ex:hasEconomy ex:Guinea_Economy ;
-    iso3:11.4 2.5e+00 ;
-    iso3:5.1 4.3e+00 .
+    iso3:Corruption 2.5e+00 ;
+    iso3:UnemploymentRate 4.3e+00 .
 
 ex:Guyana_Economy a ex:Economy ;
     dp1:grossDomesticProduct 5.471257e+09 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 4.930487e+00 ;
     ex:hasEconomy ex:Guyana_Economy ;
-    iso3:11.4 3e+00 ;
-    iso3:5.1 1.185e+01 .
+    iso3:Corruption 3e+00 ;
+    iso3:UnemploymentRate 1.185e+01 .
 
 ex:Haiti_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.3418e+10 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 4.72809e+00 ;
     ex:hasEconomy ex:Haiti_Economy ;
-    iso3:11.4 2.5e+00 ;
-    iso3:5.1 1.378e+01 .
+    iso3:Corruption 2.5e+00 ;
+    iso3:UnemploymentRate 1.378e+01 .
 
 ex:Honduras_Economy a ex:Economy ;
     dp1:grossDomesticProduct 2.382784e+10 ;
     ex:exependitureOnEducation 4.91285e+00 ;
     ex:exependitureOnHealth 7.283918e+00 ;
     ex:hasEconomy ex:Honduras_Economy ;
-    iso3:11.4 2.5e+00 ;
-    iso3:5.1 5.39e+00 .
+    iso3:Corruption 2.5e+00 ;
+    iso3:UnemploymentRate 5.39e+00 .
 
 ex:Hungary_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.550129e+11 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 6.350022e+00 ;
     ex:hasEconomy ex:Hungary_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 3.4e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 3.4e+00 .
 
 ex:Iceland_Economy a ex:Economy ;
     dp1:grossDomesticProduct 2.171467e+10 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 8.63868e+00 ;
     ex:hasEconomy ex:Iceland_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 2.84e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 2.84e+00 .
 
 ex:India_Economy a ex:Economy ;
     dp1:grossDomesticProduct 2.622984e+12 ;
     ex:exependitureOnEducation 4.40723e+00 ;
     ex:exependitureOnHealth 3.014147e+00 ;
     ex:hasEconomy ex:India_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 5.36e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 5.36e+00 .
 
 ex:Indonesia_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.058424e+12 ;
     ex:exependitureOnEducation 2.84185e+00 ;
     ex:exependitureOnHealth 2.904936e+00 ;
     ex:hasEconomy ex:Indonesia_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 4.69e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 4.69e+00 .
 
 ex:Iran_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.917183e+11 ;
     ex:hasEconomy ex:Iran_Economy ;
-    iso3:5.1 1.138e+01 .
+    iso3:UnemploymentRate 1.138e+01 .
 
 ex:Iraq_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.672244e+11 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 4.476715e+00 ;
     ex:hasEconomy ex:Iraq_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 1.282e+01 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 1.282e+01 .
 
 ex:Israel_Economy a ex:Economy ;
     dp1:grossDomesticProduct 4.019538e+11 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 7.461319e+00 ;
     ex:hasEconomy ex:Israel_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 3.86e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 3.86e+00 .
 
 ex:Italy_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.886445e+12 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 8.668569e+00 ;
     ex:hasEconomy ex:Italy_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 9.89e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 9.89e+00 .
 
 ex:Jamaica_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.381242e+10 ;
     ex:exependitureOnEducation 5.16364e+00 ;
     ex:exependitureOnHealth 6.097483e+00 ;
     ex:hasEconomy ex:Jamaica_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 8e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 8e+00 .
 
 ex:Japan_Economy a ex:Economy ;
     dp1:grossDomesticProduct 5.064873e+12 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 1.074372e+01 ;
     ex:hasEconomy ex:Japan_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 2.29e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 2.29e+00 .
 
 ex:Jordan_Economy a ex:Economy ;
     dp1:grossDomesticProduct 4.369766e+10 ;
     ex:exependitureOnEducation 2.98847e+00 ;
     ex:exependitureOnHealth 7.582469e+00 ;
     ex:hasEconomy ex:Jordan_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 1.472e+01 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 1.472e+01 .
 
 ex:Kazakhstan_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.698354e+11 ;
     ex:exependitureOnEducation 2.85697e+00 ;
     ex:exependitureOnHealth 2.787457e+00 ;
     ex:hasEconomy ex:Kazakhstan_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 4.59e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 4.59e+00 .
 
 ex:Kenya_Economy a ex:Economy ;
     dp1:grossDomesticProduct 9.884294e+10 ;
     ex:exependitureOnEducation 4.97439e+00 ;
     ex:exependitureOnHealth 4.591827e+00 ;
     ex:hasEconomy ex:Kenya_Economy ;
-    iso3:11.4 3e+00 ;
-    iso3:5.1 2.64e+00 .
+    iso3:Corruption 3e+00 ;
+    iso3:UnemploymentRate 2.64e+00 .
 
 ex:Kiribati_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.995733e+08 ;
     ex:exependitureOnEducation 1.239466e+01 ;
     ex:exependitureOnHealth 1.026414e+01 ;
     ex:hasEconomy ex:Kiribati_Economy ;
-    iso3:11.4 3.5e+00 ;
-    iso3:5.1 0e+00 .
+    iso3:Corruption 3.5e+00 ;
+    iso3:UnemploymentRate 0e+00 .
 
 ex:Kuwait_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.361968e+11 ;
     ex:exependitureOnEducation 6.49243e+00 ;
     ex:exependitureOnHealth 5.496012e+00 ;
     ex:hasEconomy ex:Kuwait_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 2.18e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 2.18e+00 .
 
 ex:Kyrgyzstan_Economy a ex:Economy ;
     dp1:grossDomesticProduct 7.735977e+09 ;
     ex:hasEconomy ex:Kyrgyzstan_Economy ;
-    iso3:5.1 6.33e+00 .
+    iso3:UnemploymentRate 6.33e+00 .
 
 ex:Laos_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.913619e+10 ;
     ex:hasEconomy ex:Laos_Economy ;
-    iso3:5.1 6.3e-01 .
+    iso3:UnemploymentRate 6.3e-01 .
 
 ex:Latvia_Economy a ex:Economy ;
     dp1:grossDomesticProduct 3.350519e+10 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 6.578142e+00 ;
     ex:hasEconomy ex:Latvia_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 6.52e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 6.52e+00 .
 
 ex:Lebanon_Economy a ex:Economy ;
     dp1:grossDomesticProduct 3.338325e+10 ;
     ex:exependitureOnEducation 2.59202e+00 ;
     ex:exependitureOnHealth 8.646615e+00 ;
     ex:hasEconomy ex:Lebanon_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 6.23e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 6.23e+00 .
 
 ex:Lesotho_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.84451e+09 ;
     ex:exependitureOnEducation 7.991712e+00 ;
     ex:exependitureOnHealth 1.126946e+01 ;
     ex:hasEconomy ex:Lesotho_Economy ;
-    iso3:11.4 3e+00 ;
-    iso3:5.1 2.341e+01 .
+    iso3:Corruption 3e+00 ;
+    iso3:UnemploymentRate 2.341e+01 .
 
 ex:Liberia_Economy a ex:Economy ;
     dp1:grossDomesticProduct 2.95e+09 ;
     ex:exependitureOnEducation 2.27039e+00 ;
     ex:exependitureOnHealth 8.470057e+00 ;
     ex:hasEconomy ex:Liberia_Economy ;
-    iso3:11.4 2.5e+00 ;
-    iso3:5.1 2.81e+00 .
+    iso3:Corruption 2.5e+00 ;
+    iso3:UnemploymentRate 2.81e+00 .
 
 ex:Libya_Economy a ex:Economy ;
     dp1:grossDomesticProduct 2.541846e+10 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth "NaN"^^xsd:double ;
     ex:hasEconomy ex:Libya_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 1.856e+01 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 1.856e+01 .
 
 ex:Liechtenstein_Economy a ex:Economy ;
     dp1:grossDomesticProduct 6.839145e+09 ;
     ex:hasEconomy ex:Liechtenstein_Economy ;
-    iso3:5.1 0e+00 .
+    iso3:UnemploymentRate 0e+00 .
 
 ex:Lithuania_Economy a ex:Economy ;
     dp1:grossDomesticProduct 5.588727e+10 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 7.006004e+00 ;
     ex:hasEconomy ex:Lithuania_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 6.35e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 6.35e+00 .
 
 ex:Luxembourg_Economy a ex:Economy ;
     dp1:grossDomesticProduct 7.326398e+10 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 5.37076e+00 ;
     ex:hasEconomy ex:Luxembourg_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 5.36e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 5.36e+00 .
 
 ex:Madagascar_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.372063e+10 ;
     ex:exependitureOnEducation 2.994859e+00 ;
     ex:exependitureOnHealth 3.687284e+00 ;
     ex:hasEconomy ex:Madagascar_Economy ;
-    iso3:11.4 2.5e+00 ;
-    iso3:5.1 1.76e+00 .
+    iso3:Corruption 2.5e+00 ;
+    iso3:UnemploymentRate 1.76e+00 .
 
 ex:Malawi_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.196185e+10 ;
     ex:exependitureOnEducation 3.71132e+00 ;
     ex:exependitureOnHealth 7.393412e+00 ;
     ex:hasEconomy ex:Malawi_Economy ;
-    iso3:11.4 2.5e+00 ;
-    iso3:5.1 5.65e+00 .
+    iso3:Corruption 2.5e+00 ;
+    iso3:UnemploymentRate 5.65e+00 .
 
 ex:Malaysia_Economy a ex:Economy ;
     dp1:grossDomesticProduct 3.366644e+11 ;
     ex:exependitureOnEducation 4.15661e+00 ;
     ex:exependitureOnHealth 3.825142e+00 ;
     ex:hasEconomy ex:Malaysia_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 3.32e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 3.32e+00 .
 
 ex:Maldives_Economy a ex:Economy ;
     dp1:grossDomesticProduct 4.030203e+09 ;
     ex:exependitureOnEducation 4.12159e+00 ;
     ex:exependitureOnHealth 8.040011e+00 ;
     ex:hasEconomy ex:Maldives_Economy ;
-    iso3:11.4 3e+00 ;
-    iso3:5.1 6.14e+00 .
+    iso3:Corruption 3e+00 ;
+    iso3:UnemploymentRate 6.14e+00 .
 
 ex:Mali_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.739376e+10 ;
     ex:exependitureOnEducation 3.484102e+00 ;
     ex:exependitureOnHealth 3.893898e+00 ;
     ex:hasEconomy ex:Mali_Economy ;
-    iso3:11.4 3e+00 ;
-    iso3:5.1 7.22e+00 .
+    iso3:Corruption 3e+00 ;
+    iso3:UnemploymentRate 7.22e+00 .
 
 ex:Malta_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.464738e+10 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 8.214443e+00 ;
     ex:hasEconomy ex:Malta_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 3.47e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 3.47e+00 .
 
 ex:Mauritania_Economy a ex:Economy ;
     dp1:grossDomesticProduct 7.778526e+09 ;
     ex:exependitureOnEducation 1.82437e+00 ;
     ex:exependitureOnHealth 3.303297e+00 ;
     ex:hasEconomy ex:Mauritania_Economy ;
-    iso3:11.4 3e+00 ;
-    iso3:5.1 9.55e+00 .
+    iso3:Corruption 3e+00 ;
+    iso3:UnemploymentRate 9.55e+00 .
 
 ex:Mauritius_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.091407e+10 ;
     ex:exependitureOnEducation 4.7193e+00 ;
     ex:exependitureOnHealth 6.199437e+00 ;
     ex:hasEconomy ex:Mauritius_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 6.67e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 6.67e+00 .
 
 ex:Mexico_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.076163e+12 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 5.433053e+00 ;
     ex:hasEconomy ex:Mexico_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 3.42e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 3.42e+00 .
 
 ex:Moldova_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.191404e+10 ;
     ex:exependitureOnEducation 6.10379e+00 ;
     ex:exependitureOnHealth 6.377946e+00 ;
     ex:hasEconomy ex:Moldova_Economy ;
-    iso3:11.4 2.5e+00 ;
-    iso3:5.1 5.47e+00 .
+    iso3:Corruption 2.5e+00 ;
+    iso3:UnemploymentRate 5.47e+00 .
 
 ex:Monaco_Economy a ex:Economy ;
     dp1:grossDomesticProduct 7.42371e+09 ;
     ex:exependitureOnEducation 1.15266e+00 ;
     ex:exependitureOnHealth 1.525117e+00 ;
     ex:hasEconomy ex:Monaco_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 0e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 0e+00 .
 
 ex:Mongolia_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.313713e+10 ;
     ex:exependitureOnEducation 4.94089e+00 ;
     ex:exependitureOnHealth 3.766078e+00 ;
     ex:hasEconomy ex:Mongolia_Economy ;
-    iso3:11.4 3e+00 ;
-    iso3:5.1 6.01e+00 .
+    iso3:Corruption 3e+00 ;
+    iso3:UnemploymentRate 6.01e+00 .
 
 ex:Montenegro_Economy a ex:Economy ;
     dp1:grossDomesticProduct 4.778582e+09 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 8.329832e+00 ;
     ex:hasEconomy ex:Montenegro_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 1.488e+01 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 1.488e+01 .
 
 ex:Morocco_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.128706e+11 ;
     ex:exependitureOnEducation 5.931357e+00 ;
     ex:exependitureOnHealth 5.308451e+00 ;
     ex:hasEconomy ex:Morocco_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 9.02e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 9.02e+00 .
 
 ex:Mozambique_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.402142e+10 ;
     ex:exependitureOnEducation 6.08442e+00 ;
     ex:exependitureOnHealth 7.833511e+00 ;
     ex:hasEconomy ex:Mozambique_Economy ;
-    iso3:11.4 2.5e+00 ;
-    iso3:5.1 3.24e+00 .
+    iso3:Corruption 2.5e+00 ;
+    iso3:UnemploymentRate 3.24e+00 .
 
 ex:Myanmar_Economy a ex:Economy ;
     dp1:grossDomesticProduct 7.618559e+10 ;
     ex:exependitureOnEducation 2.13987e+00 ;
     ex:exependitureOnHealth 4.678564e+00 ;
     ex:hasEconomy ex:Myanmar_Economy ;
-    iso3:11.4 2.5e+00 ;
-    iso3:5.1 1.58e+00 .
+    iso3:Corruption 2.5e+00 ;
+    iso3:UnemploymentRate 1.58e+00 .
 
 ex:Namibia_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.069993e+10 ;
     ex:exependitureOnEducation 8.927027e+00 ;
     ex:exependitureOnHealth 8.497005e+00 ;
     ex:hasEconomy ex:Namibia_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 2.027e+01 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 2.027e+01 .
 
 ex:Nauru_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.182234e+08 ;
     ex:exependitureOnEducation 5.596538e+00 ;
     ex:exependitureOnHealth 9.781716e+00 ;
     ex:hasEconomy ex:Nauru_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 0e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 0e+00 .
 
 ex:Nepal_Economy a ex:Economy ;
     dp1:grossDomesticProduct 3.365718e+10 ;
     ex:exependitureOnEducation 4.24e+00 ;
     ex:exependitureOnHealth 4.445151e+00 ;
     ex:hasEconomy ex:Nepal_Economy ;
-    iso3:11.4 3e+00 ;
-    iso3:5.1 1.41e+00 .
+    iso3:Corruption 3e+00 ;
+    iso3:UnemploymentRate 1.41e+00 .
 
 ex:Netherlands_Economy a ex:Economy ;
     dp1:grossDomesticProduct 9.122423e+11 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 1.013031e+01 ;
     ex:hasEconomy ex:Netherlands_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 3.2e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 3.2e+00 .
 
 ex:Nicaragua_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.262148e+10 ;
     ex:exependitureOnEducation 4.6e+00 ;
     ex:exependitureOnHealth 8.403926e+00 ;
     ex:hasEconomy ex:Nicaragua_Economy ;
-    iso3:11.4 2.5e+00 ;
-    iso3:5.1 6.84e+00 .
+    iso3:Corruption 2.5e+00 ;
+    iso3:UnemploymentRate 6.84e+00 .
 
 ex:Niger_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.367823e+10 ;
     ex:exependitureOnEducation 3.527529e+00 ;
     ex:exependitureOnHealth 5.668631e+00 ;
     ex:hasEconomy ex:Niger_Economy ;
-    iso3:11.4 3e+00 ;
-    iso3:5.1 4.7e-01 .
+    iso3:Corruption 3e+00 ;
+    iso3:UnemploymentRate 4.7e-01 .
 
 ex:Nigeria_Economy a ex:Economy ;
     dp1:grossDomesticProduct 4.322938e+11 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 3.02666e+00 ;
     ex:hasEconomy ex:Nigeria_Economy ;
-    iso3:11.4 3e+00 ;
-    iso3:5.1 8.1e+00 .
+    iso3:Corruption 3e+00 ;
+    iso3:UnemploymentRate 8.1e+00 .
 
 ex:Norway_Economy a ex:Economy ;
     dp1:grossDomesticProduct 3.62009e+11 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 1.052135e+01 ;
     ex:hasEconomy ex:Norway_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 3.35e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 3.35e+00 .
 
 ex:Oman_Economy a ex:Economy ;
     dp1:grossDomesticProduct 7.633152e+10 ;
     ex:exependitureOnEducation 5.41321e+00 ;
     ex:exependitureOnHealth 4.071902e+00 ;
     ex:hasEconomy ex:Oman_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 2.67e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 2.67e+00 .
 
 ex:Pakistan_Economy a ex:Economy ;
     dp1:grossDomesticProduct 2.636866e+11 ;
     ex:exependitureOnEducation 2.50755e+00 ;
     ex:exependitureOnHealth 3.379927e+00 ;
     ex:hasEconomy ex:Pakistan_Economy ;
-    iso3:11.4 3e+00 ;
-    iso3:5.1 4.45e+00 .
+    iso3:Corruption 3e+00 ;
+    iso3:UnemploymentRate 4.45e+00 .
 
 ex:Palau_Economy a ex:Economy ;
     dp1:grossDomesticProduct 2.683549e+08 ;
     ex:exependitureOnEducation 6.81e+00 ;
     ex:exependitureOnHealth 1.515049e+01 ;
     ex:hasEconomy ex:Palau_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 0e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 0e+00 .
 
 ex:Panama_Economy a ex:Economy ;
     dp1:grossDomesticProduct 5.29381e+10 ;
     ex:exependitureOnEducation 3.12736e+00 ;
     ex:exependitureOnHealth 7.584058e+00 ;
     ex:hasEconomy ex:Panama_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 3.9e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 3.9e+00 .
 
 ex:Paraguay_Economy a ex:Economy ;
     dp1:grossDomesticProduct 3.530424e+10 ;
     ex:exependitureOnEducation 3.46971e+00 ;
     ex:exependitureOnHealth 7.17281e+00 ;
     ex:hasEconomy ex:Paraguay_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 4.81e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 4.81e+00 .
 
 ex:Peru_Economy a ex:Economy ;
     dp1:grossDomesticProduct 2.020144e+11 ;
     ex:exependitureOnEducation 3.81996e+00 ;
     ex:exependitureOnHealth 5.215069e+00 ;
     ex:hasEconomy ex:Peru_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 3.31e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 3.31e+00 .
 
 ex:Philippines_Economy a ex:Economy ;
     dp1:grossDomesticProduct 3.614894e+11 ;
     ex:exependitureOnEducation 3.23437e+00 ;
     ex:exependitureOnHealth 4.076766e+00 ;
     ex:hasEconomy ex:Philippines_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 2.15e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 2.15e+00 .
 
 ex:Poland_Economy a ex:Economy ;
     dp1:grossDomesticProduct 5.941647e+11 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 6.446825e+00 ;
     ex:hasEconomy ex:Poland_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 3.47e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 3.47e+00 .
 
 ex:Portugal_Economy a ex:Economy ;
     dp1:grossDomesticProduct 2.312556e+11 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 9.53146e+00 ;
     ex:hasEconomy ex:Portugal_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 6.33e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 6.33e+00 .
 
 ex:Qatar_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.463736e+11 ;
     ex:exependitureOnEducation 2.80378e+00 ;
     ex:exependitureOnHealth 2.910629e+00 ;
     ex:hasEconomy ex:Qatar_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 9e-02 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 9e-02 .
 
 ex:Romania_Economy a ex:Economy ;
     dp1:grossDomesticProduct 2.487156e+11 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 5.744478e+00 ;
     ex:hasEconomy ex:Romania_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 3.98e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 3.98e+00 .
 
 ex:Russia_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.483498e+12 ;
     ex:hasEconomy ex:Russia_Economy ;
-    iso3:5.1 4.59e+00 .
+    iso3:UnemploymentRate 4.59e+00 .
 
 ex:Rwanda_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.033399e+10 ;
     ex:exependitureOnEducation 3.237074e+00 ;
     ex:exependitureOnHealth 6.410667e+00 ;
     ex:hasEconomy ex:Rwanda_Economy ;
-    iso3:11.4 3.5e+00 ;
-    iso3:5.1 1.03e+00 .
+    iso3:Corruption 3.5e+00 ;
+    iso3:UnemploymentRate 1.03e+00 .
 
 ex:Samoa_Economy a ex:Economy ;
     dp1:grossDomesticProduct 8.070272e+08 ;
     ex:exependitureOnEducation 4.70625e+00 ;
     ex:exependitureOnHealth 6.363094e+00 ;
     ex:hasEconomy ex:Samoa_Economy ;
-    iso3:11.4 4e+00 ;
-    iso3:5.1 8.36e+00 .
+    iso3:Corruption 4e+00 ;
+    iso3:UnemploymentRate 8.36e+00 .
 
 ex:Senegal_Economy a ex:Economy ;
     dp1:grossDomesticProduct 2.49109e+10 ;
     ex:exependitureOnEducation 5.348875e+00 ;
     ex:exependitureOnHealth 4.132269e+00 ;
     ex:hasEconomy ex:Senegal_Economy ;
-    iso3:11.4 3.5e+00 ;
-    iso3:5.1 6.6e+00 .
+    iso3:Corruption 3.5e+00 ;
+    iso3:UnemploymentRate 6.6e+00 .
 
 ex:Serbia_Economy a ex:Economy ;
     dp1:grossDomesticProduct 5.296013e+10 ;
     ex:exependitureOnEducation 3.61647e+00 ;
     ex:exependitureOnHealth 8.672065e+00 ;
     ex:hasEconomy ex:Serbia_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 1.269e+01 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 1.269e+01 .
 
 ex:Seychelles_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.124938e+09 ;
     ex:exependitureOnEducation 3.91459e+00 ;
     ex:exependitureOnHealth 5.190291e+00 ;
     ex:hasEconomy ex:Seychelles_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 0e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 0e+00 .
 
 ex:Singapore_Economy a ex:Economy ;
     dp1:grossDomesticProduct 3.399985e+11 ;
     ex:exependitureOnEducation 2.73621e+00 ;
     ex:exependitureOnHealth 4.081529e+00 ;
     ex:hasEconomy ex:Singapore_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 4.11e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 4.11e+00 .
 
 ex:Slovakia_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.045741e+11 ;
     ex:hasEconomy ex:Slovakia_Economy ;
-    iso3:5.1 5.56e+00 .
+    iso3:UnemploymentRate 5.56e+00 .
 
 ex:Slovenia_Economy a ex:Economy ;
     dp1:grossDomesticProduct 5.288047e+10 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 8.523865e+00 ;
     ex:hasEconomy ex:Slovenia_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 4.2e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 4.2e+00 .
 
 ex:Somalia_Economy a ex:Economy ;
     dp1:grossDomesticProduct 4.917608e+09 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth "NaN"^^xsd:double ;
     ex:hasEconomy ex:Somalia_Economy ;
-    iso3:11.4 2e+00 ;
-    iso3:5.1 1.135e+01 .
+    iso3:Corruption 2e+00 ;
+    iso3:UnemploymentRate 1.135e+01 .
 
 ex:Spain_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.281199e+12 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 9.132132e+00 ;
     ex:hasEconomy ex:Spain_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 1.396e+01 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 1.396e+01 .
 
 ex:Sudan_Economy a ex:Economy ;
     dp1:grossDomesticProduct 2.611083e+10 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 4.573566e+00 ;
     ex:hasEconomy ex:Sudan_Economy ;
-    iso3:11.4 1.5e+00 ;
-    iso3:5.1 1.653e+01 .
+    iso3:Corruption 1.5e+00 ;
+    iso3:UnemploymentRate 1.653e+01 .
 
 ex:Suriname_Economy a ex:Economy ;
     dp1:grossDomesticProduct 3.807923e+09 ;
     ex:exependitureOnEducation 6.832259e+00 ;
     ex:exependitureOnHealth 9.736996e+00 ;
     ex:hasEconomy ex:Suriname_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 7.33e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 7.33e+00 .
 
 ex:Sweden_Economy a ex:Economy ;
     dp1:grossDomesticProduct 5.376099e+11 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 1.086749e+01 ;
     ex:hasEconomy ex:Sweden_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 6.48e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 6.48e+00 .
 
 ex:Switzerland_Economy a ex:Economy ;
     dp1:grossDomesticProduct 7.479686e+11 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 1.129148e+01 ;
     ex:hasEconomy ex:Switzerland_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 4.58e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 4.58e+00 .
 
 ex:Syria_Economy a ex:Economy ;
     dp1:grossDomesticProduct 4.040501e+10 ;
     ex:hasEconomy ex:Syria_Economy ;
-    iso3:5.1 8.37e+00 .
+    iso3:UnemploymentRate 8.37e+00 .
 
 ex:Tajikistan_Economy a ex:Economy ;
     dp1:grossDomesticProduct 8.19415e+09 ;
     ex:exependitureOnEducation 5.7129e+00 ;
     ex:exependitureOnHealth 7.105294e+00 ;
     ex:hasEconomy ex:Tajikistan_Economy ;
-    iso3:11.4 2e+00 ;
-    iso3:5.1 1.102e+01 .
+    iso3:Corruption 2e+00 ;
+    iso3:UnemploymentRate 1.102e+01 .
 
 ex:Tanzania_Economy a ex:Economy ;
     dp1:grossDomesticProduct 6.240975e+10 ;
     ex:exependitureOnEducation 3.596836e+00 ;
     ex:exependitureOnHealth 3.827693e+00 ;
     ex:hasEconomy ex:Tanzania_Economy ;
-    iso3:11.4 3e+00 ;
-    iso3:5.1 1.98e+00 .
+    iso3:Corruption 3e+00 ;
+    iso3:UnemploymentRate 1.98e+00 .
 
 ex:Thailand_Economy a ex:Economy ;
     dp1:grossDomesticProduct 5.01795e+11 ;
     ex:exependitureOnEducation 2.96898e+00 ;
     ex:exependitureOnHealth 3.789121e+00 ;
     ex:hasEconomy ex:Thailand_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 7.5e-01 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 7.5e-01 .
 
 ex:Togo_Economy a ex:Economy ;
     dp1:grossDomesticProduct 7.574635e+09 ;
     ex:exependitureOnEducation 4.069143e+00 ;
     ex:exependitureOnHealth 5.726069e+00 ;
     ex:hasEconomy ex:Togo_Economy ;
-    iso3:11.4 3e+00 ;
-    iso3:5.1 2.04e+00 .
+    iso3:Corruption 3e+00 ;
+    iso3:UnemploymentRate 2.04e+00 .
 
 ex:Tonga_Economy a ex:Economy ;
     dp1:grossDomesticProduct 5.123501e+08 ;
     ex:exependitureOnEducation 7.95963e+00 ;
     ex:exependitureOnHealth 4.9815e+00 ;
     ex:hasEconomy ex:Tonga_Economy ;
-    iso3:11.4 3.5e+00 ;
-    iso3:5.1 1.12e+00 .
+    iso3:Corruption 3.5e+00 ;
+    iso3:UnemploymentRate 1.12e+00 .
 
 ex:Tunisia_Economy a ex:Economy ;
     dp1:grossDomesticProduct 3.923567e+10 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 6.958459e+00 ;
     ex:hasEconomy ex:Tunisia_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 1.602e+01 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 1.602e+01 .
 
 ex:Turkey_Economy a ex:Economy ;
     dp1:grossDomesticProduct 7.201012e+11 ;
     ex:hasEconomy ex:Turkey_Economy ;
-    iso3:5.1 1.349e+01 .
+    iso3:UnemploymentRate 1.349e+01 .
 
 ex:Turkmenistan_Economy a ex:Economy ;
     dp1:grossDomesticProduct 4.523143e+10 ;
     ex:exependitureOnEducation 3.12065e+00 ;
     ex:exependitureOnHealth 6.568625e+00 ;
     ex:hasEconomy ex:Turkmenistan_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 3.91e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 3.91e+00 .
 
 ex:Tuvalu_Economy a ex:Economy ;
     dp1:grossDomesticProduct 4.885555e+07 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 2.396181e+01 ;
     ex:hasEconomy ex:Tuvalu_Economy ;
-    iso3:11.4 3.5e+00 ;
-    iso3:5.1 0e+00 .
+    iso3:Corruption 3.5e+00 ;
+    iso3:UnemploymentRate 0e+00 .
 
 ex:Uganda_Economy a ex:Economy ;
     dp1:grossDomesticProduct 3.737203e+10 ;
     ex:exependitureOnEducation 1.53e+00 ;
     ex:exependitureOnHealth 3.825224e+00 ;
     ex:hasEconomy ex:Uganda_Economy ;
-    iso3:11.4 2.5e+00 ;
-    iso3:5.1 1.84e+00 .
+    iso3:Corruption 2.5e+00 ;
+    iso3:UnemploymentRate 1.84e+00 .
 
 ex:Ukraine_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.55582e+11 ;
     ex:exependitureOnEducation 5.4413e+00 ;
     ex:exependitureOnHealth 7.098602e+00 ;
     ex:hasEconomy ex:Ukraine_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 8.88e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 8.88e+00 .
 
 ex:Uruguay_Economy a ex:Economy ;
     dp1:grossDomesticProduct 5.362883e+10 ;
     ex:exependitureOnEducation 4.70326e+00 ;
     ex:exependitureOnHealth 9.347832e+00 ;
     ex:hasEconomy ex:Uruguay_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 8.73e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 8.73e+00 .
 
 ex:Uzbekistan_Economy a ex:Economy ;
     dp1:grossDomesticProduct 5.770719e+10 ;
     ex:exependitureOnEducation 7.00186e+00 ;
     ex:exependitureOnHealth 5.617604e+00 ;
     ex:hasEconomy ex:Uzbekistan_Economy ;
-    iso3:11.4 2.5e+00 ;
-    iso3:5.1 5.92e+00 .
+    iso3:Corruption 2.5e+00 ;
+    iso3:UnemploymentRate 5.92e+00 .
 
 ex:Vanuatu_Economy a ex:Economy ;
     dp1:grossDomesticProduct 8.547936e+08 ;
     ex:exependitureOnEducation 1.77788e+00 ;
     ex:exependitureOnHealth 3.360347e+00 ;
     ex:hasEconomy ex:Vanuatu_Economy ;
-    iso3:11.4 3e+00 ;
-    iso3:5.1 4.39e+00 .
+    iso3:Corruption 3e+00 ;
+    iso3:UnemploymentRate 4.39e+00 .
 
 ex:Venezuela_Economy a ex:Economy ;
     dp1:grossDomesticProduct 4.823593e+11 ;
     ex:hasEconomy ex:Venezuela_Economy ;
-    iso3:5.1 8.8e+00 .
+    iso3:UnemploymentRate 8.8e+00 .
 
 ex:Vietnam_Economy a ex:Economy ;
     dp1:grossDomesticProduct 2.711584e+11 ;
     ex:exependitureOnEducation 4.06197e+00 ;
     ex:exependitureOnHealth 5.249656e+00 ;
     ex:hasEconomy ex:Vietnam_Economy ;
-    iso3:11.4 "NaN"^^xsd:double ;
-    iso3:5.1 2.01e+00 .
+    iso3:Corruption "NaN"^^xsd:double ;
+    iso3:UnemploymentRate 2.01e+00 .
 
 ex:Yemen_Economy a ex:Economy ;
     dp1:grossDomesticProduct 2.258108e+10 ;
     ex:hasEconomy ex:Yemen_Economy ;
-    iso3:5.1 1.291e+01 .
+    iso3:UnemploymentRate 1.291e+01 .
 
 ex:Zambia_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.932005e+10 ;
     ex:exependitureOnEducation 4.46518e+00 ;
     ex:exependitureOnHealth 5.312203e+00 ;
     ex:hasEconomy ex:Zambia_Economy ;
-    iso3:11.4 2.5e+00 ;
-    iso3:5.1 1.143e+01 .
+    iso3:Corruption 2.5e+00 ;
+    iso3:UnemploymentRate 1.143e+01 .
 
 ex:Zimbabwe_Economy a ex:Economy ;
     dp1:grossDomesticProduct 1.676851e+10 ;
     ex:exependitureOnEducation "NaN"^^xsd:double ;
     ex:exependitureOnHealth 7.703565e+00 ;
     ex:hasEconomy ex:Zimbabwe_Economy ;
-    iso3:11.4 2.5e+00 ;
-    iso3:5.1 4.95e+00 .
+    iso3:Corruption 2.5e+00 ;
+    iso3:UnemploymentRate 4.95e+00 .
 
 ex:hasPopulationSize a owl:DatatypeProperty ;
     rdfs:domain <http://dbpedia.org/resource/Population> ;
