@@ -1,0 +1,911 @@
+
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX geo: <http://www.geonames.org/ontology#> 
+PREFIX ex: <http://example.org/educationOntology#>
+PREFIX gn: <http://www.geonames.org/ontology#>
+PREFIX schema: <http://schema.org/>
+PREFIX sdo: <http://schema.org/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX db: <http://dbpedia.org/>
+PREFIX iso3: <http://ontology.eil.utoronto.ca/ISO37120.owl#>
+
+
+#all the corruption rate of countries that were above the average rate.
+# SELECT ?country ?corruption 
+# WHERE {
+#   {
+#     SELECT (AVG(xsd:double(?corruption)) AS ?avgCorruption)
+#     WHERE {
+#       ?country a schema:Country .
+#       ?country ex:hasEconomy ?economy_data .
+#       ?economy_data iso3:11.4 ?corruption.
+#       FILTER(isNumeric(?corruption))
+#       FILTER (?corruption != "NaN"^^xsd:double)  
+#     }
+#   }
+#   ?country a schema:Country .
+#   ?country ex:hasEconomy ?economy_data .
+#   ?economy_data iso3:11.4 ?corruption.
+#   FILTER(isNumeric(?corruption))
+#   FILTER (?corruption != "NaN"^^xsd:double)  
+#   FILTER (xsd:double(?corruption) > ?avgCorruption) 
+# }
+# ORDER BY ASC(?corruption)
+
+
+#all the corruption rate of countries that were below and equal to the average rate.
+# SELECT ?country ?corruption 
+# WHERE {
+#   {
+#     SELECT (AVG(xsd:double(?corruption)) AS ?avgCorruption)
+#     WHERE {
+#       ?country a schema:Country .
+#       ?country ex:hasEconomy ?economy_data .
+#       ?economy_data iso3:11.4 ?corruption.
+#       FILTER(isNumeric(?corruption))
+#       FILTER (?corruption != "NaN"^^xsd:double)  
+#     }
+#   }
+#   ?country a schema:Country .
+#   ?country ex:hasEconomy ?economy_data .
+#   ?economy_data iso3:11.4 ?corruption.
+#   FILTER(isNumeric(?corruption))
+#   FILTER (?corruption != "NaN"^^xsd:double)  
+#   FILTER (xsd:double(?corruption) <= ?avgCorruption) 
+# }
+# ORDER BY ASC(?corruption)
+
+
+#unemployment rate of all the countries that are above the average
+# SELECT ?country ?unemploymentrate 
+# WHERE {
+#   {
+#     SELECT (AVG(xsd:double(?unemploymentrate)) AS ?avgUnemploymentRate)
+#     WHERE {
+#       ?country a schema:Country .
+#       ?country ex:hasEconomy ?economy_data .
+#       ?economy_data iso3:5.1 ?unemploymentrate .
+#       FILTER(isNumeric(?unemploymentrate))
+#       FILTER (?unemploymentrate != "NaN"^^xsd:double)  
+#     }
+#   }
+#   ?country a schema:Country .
+#   ?country ex:hasEconomy ?economy_data .
+#   ?economy_data iso3:5.1 ?unemploymentrate .
+#   FILTER(isNumeric(?unemploymentrate))
+#   FILTER (?unemploymentrate != "NaN"^^xsd:double)  
+#   FILTER (xsd:double(?unemploymentrate) > ?avgUnemploymentRate)  
+# }
+# ORDER BY ASC(?unemploymentrate)
+
+#unemployment rate below and equal to the average (this is has a lot of zero values)
+# SELECT ?country ?unemploymentrate 
+# WHERE {
+#   {
+#     SELECT (AVG(xsd:double(?unemploymentrate)) AS ?avgUnemploymentRate)
+#     WHERE {
+#       ?country a schema:Country .
+#       ?country ex:hasEconomy ?economy_data .
+#       ?economy_data iso3:5.1 ?unemploymentrate .
+#       FILTER(isNumeric(?unemploymentrate))
+#       FILTER (?unemploymentrate != "NaN"^^xsd:double)  
+#     }
+#   }
+#   ?country a schema:Country .
+#   ?country ex:hasEconomy ?economy_data .
+#   ?economy_data iso3:5.1 ?unemploymentrate .
+#   FILTER(isNumeric(?unemploymentrate))
+#   FILTER (?unemploymentrate != "NaN"^^xsd:double)  
+#   FILTER (xsd:double(?unemploymentrate) <= ?avgUnemploymentRate)  
+# }
+# ORDER BY ASC(?unemploymentrate)
+
+
+# expenditure on health above average
+# SELECT ?country ?exependitureOnHealth
+# WHERE {
+#   {
+#     SELECT (AVG(xsd:double(?exependitureOnHealth)) AS ?avgexependitureOnHealth)
+#     WHERE {
+#       ?country a schema:Country .
+#       ?country ex:hasEconomy ?economy_data .
+#       ?economy_data  ex:exependitureOnHealth ?exependitureOnHealth .
+#       FILTER(isNumeric(?exependitureOnHealth))
+#       FILTER (?exependitureOnHealth!= "NaN"^^xsd:double)  
+#     }
+#   }
+#   ?country a schema:Country .
+#   ?country ex:hasEconomy ?economy_data .
+#   ?economy_data ex:exependitureOnHealth ?exependitureOnHealth .
+#   FILTER(isNumeric(?exependitureOnHealth))
+#   FILTER (?exependitureOnHealth != "NaN"^^xsd:double)  
+#   FILTER (xsd:double(?exependitureOnHealth) > ?avgexependitureOnHealth)  
+# }
+# ORDER BY ASC(?exependitureOnHealth)
+
+# expenditure on education below average
+# SELECT ?country ?exependitureOnEducation
+# WHERE {
+#   {
+#     SELECT (AVG(xsd:double(?exependitureOnEducation)) AS ?avgexependitureOnEducation)
+#     WHERE {
+#       ?country a schema:Country .
+#       ?country ex:hasEconomy ?economy_data .
+#       ?economy_data  ex:exependitureOnEducation ?exependitureOnEducation .
+#       FILTER(isNumeric(?exependitureOnEducation))
+#       FILTER (?exependitureOnEducation!= "NaN"^^xsd:double)  
+#     }
+#   }
+#   ?country a schema:Country .
+#   ?country ex:hasEconomy ?economy_data .
+#   ?economy_data ex:exependitureOnEducation ?exependitureOnEducation .
+#   FILTER(isNumeric(?exependitureOnEducation))
+#   FILTER (?exependitureOnEducation != "NaN"^^xsd:double)  
+#   FILTER (xsd:double(?exependitureOnEducation) <= ?avgexependitureOnEducation)  
+# }
+# ORDER BY ASC(?exependitureOnEducation)
+
+# SELECT ?country ?exependitureOnEducation
+# WHERE {
+#   {
+#     SELECT (AVG(xsd:double(?exependitureOnEducation)) AS ?avgexependitureOnEducation)
+#     WHERE {
+#       ?country a schema:Country .
+#       ?country ex:hasEconomy ?economy_data .
+#       ?economy_data  ex:exependitureOnEducation ?exependitureOnEducation .
+#       FILTER(isNumeric(?exependitureOnEducation))
+#       FILTER (?exependitureOnEducation!= "NaN"^^xsd:double)  
+#     }
+#   }
+#   ?country a schema:Country .
+#   ?country ex:hasEconomy ?economy_data .
+#   ?economy_data ex:exependitureOnEducation ?exependitureOnEducation .
+#   FILTER(isNumeric(?exependitureOnEducation))
+#   FILTER (?exependitureOnEducation != "NaN"^^xsd:double)  
+#   FILTER (xsd:double(?exependitureOnEducation) < ?avgexependitureOnEducation)  
+# }
+# ORDER BY ASC(?exependitureOnEducation)
+
+# compare side by side countries, corruption rate and their expenditure on education 
+#arranged on descending order on the corrption column.
+# SELECT ?name ?corruption ?exependitureOnEducation
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name .
+#   ?country ex:hasEconomy ?economy_data .
+#   ?economy_data iso3:11.4 ?corruption .  
+#   ?economy_data ex:exependitureOnEducation ?exependitureOnEducation .
+#   FILTER(isNumeric(?corruption))
+#   FILTER(isNumeric(?exependitureOnEducation))
+#   FILTER (?corruption != "NaN"^^xsd:double)
+#   FILTER (?exependitureOnEducation != "NaN"^^xsd:double)
+# }
+# ORDER BY DESC(?corruption)
+
+# comparing completionRatePrimaryFemale and exependitureOnEducation
+# SELECT ?name ?completionRatePrimaryFemale ?exependitureOnEducation
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name .
+#   ?country ex:hasCompletionRate ?eduData .
+#   ?eduData ex:completionRatePrimaryFemale ?completionRatePrimaryFemale .
+#   ?country ex:hasEconomy ?economyData .
+#   ?economyData ex:exependitureOnEducation ?exependitureOnEducation .
+#   FILTER(isNumeric(?completionRatePrimaryFemale) && isNumeric(?exependitureOnEducation))
+# }
+# ORDER BY DESC(?exependitureOnEducation)
+
+
+
+# comparing completionRateLowerSecondaryFemale and exependitureOnEducation
+# SELECT ?name ?completionRateLowerSecondaryFemale ?exependitureOnEducation
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name .
+#   ?country ex:hasCompletionRate ?eduData .
+#   ?eduData ex:completionRateLowerSecondaryFemale ?completionRateLowerSecondaryFemale .
+#   ?country ex:hasEconomy ?economyData .
+#   ?economyData ex:exependitureOnEducation ?exependitureOnEducation .
+#   FILTER(isNumeric(?completionRateLowerSecondaryFemale) && isNumeric(?exependitureOnEducation))
+# }
+# ORDER BY DESC(?exependitureOnEducation)
+
+
+# comparing completionRateLowerSecondaryFemale and exependitureOnEducation
+# SELECT ?name ?completionRateLowerSecondaryMale ?exependitureOnEducation
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name .
+#   ?country ex:hasCompletionRate ?eduData .
+#   ?eduData ex:completionRateLowerSecondaryMale ?completionRateLowerSecondaryMale .
+#   ?country ex:hasEconomy ?economyData .
+#   ?economyData ex:exependitureOnEducation ?exependitureOnEducation .
+#   FILTER(isNumeric(?completionRateLowerSecondaryMale) && isNumeric(?exependitureOnEducation))
+# }
+# ORDER BY DESC(?exependitureOnEducation)
+
+
+# comparing completionRateUpperSecondaryMale and exependitureOnEducation
+# SELECT ?name?completionRateUpperSecondaryMale ?exependitureOnEducation
+# WHERE {
+#   ?country a schema:Country .
+#   ?country ex:hasCompletionRate ?eduData .
+#   ?eduData ex:completionRateUpperSecondaryMale ?completionRateUpperSecondaryMale .
+#   ?country ex:hasEconomy ?economyData .
+#   ?economyData ex:exependitureOnEducation ?exependitureOnEducation .
+#   FILTER(isNumeric(?completionRateUpperSecondaryMale) && isNumeric(?exependitureOnEducation))
+# }
+# ORDER BY DESC(?exependitureOnEducation)
+
+# comparing completionRateLowerPrimaryMale and exependitureOnEducation
+# SELECT ?name ?completionRatePrimaryMale ?exependitureOnEducation
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name .
+#   ?country ex:hasCompletionRate ?eduData .
+#   ?eduData ex:completionRatePrimaryMale ?completionRatePrimaryMale .
+#   ?country ex:hasEconomy ?economyData .
+#   ?economyData ex:exependitureOnEducation ?exependitureOnEducation .
+#   FILTER(isNumeric(?completionRatePrimaryMale) && isNumeric(?exependitureOnEducation))
+# }
+# ORDER BY DESC(?exependitureOnEducation)
+
+# comparing completionRatePrimaryMale and gdp
+# SELECT ?name ?completionRatePrimaryMale ?gdp
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name .
+#   ?country ex:hasCompletionRate ?eduData .
+#   ?eduData ex:completionRatePrimaryMale ?completionRatePrimaryMale .
+#   ?country ex:hasEconomy ?economyData .
+#   ?economyData db:grossDomesticProduct ?gdp.
+#   FILTER(isNumeric(?completionRatePrimaryMale) && isNumeric(?gdp))
+# }
+# ORDER BY DESC(?gdp)
+
+# comparing completionRateUpperSecondaryFemale and gdp
+# SELECT ?name ?completionRateUpperSecondaryFemale ?gdp
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name .
+#   ?country ex:hasCompletionRate ?eduData .
+#   ?eduData ex:completionRateUpperSecondaryFemale ?completionRateUpperSecondaryFemale .
+#   ?country ex:hasEconomy ?economyData .
+#   ?economyData db:grossDomesticProduct ?gdp.
+#   FILTER(isNumeric(?completionRateUpperSecondaryFemale) && isNumeric(?gdp))
+# }
+# ORDER BY DESC(?gdp)
+
+# comparing completionRateLowerSecondaryFemale and gdp
+# SELECT ?name ?completionRateLowerSecondaryFemale ?gdp
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name .
+#   ?country ex:hasCompletionRate ?eduData .
+#   ?eduData ex:completionRateLowerSecondaryFemale ?completionRateLowerSecondaryFemale .
+#   ?country ex:hasEconomy ?economyData .
+#   ?economyData db:grossDomesticProduct ?gdp.
+#   FILTER(isNumeric(?completionRateLowerSecondaryFemale) && isNumeric(?gdp))
+# }
+# ORDER BY DESC(?gdp)
+
+
+# comparing completionRateLowerSecondaryFemale and gdp
+# SELECT ?name ?completionRateUpperSecondaryMale ?gdp
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name .
+#   ?country ex:hasCompletionRate ?eduData .
+#   ?eduData ex:completionRateUpperSecondaryMale ?completionRateUpperSecondaryMale .
+#   ?country ex:hasEconomy ?economyData .
+#   ?economyData db:grossDomesticProduct ?gdp.
+#   FILTER(isNumeric(?completionRateUpperSecondaryMale) && isNumeric(?gdp))
+# }
+# ORDER BY DESC(?gdp)
+
+# comparing completionRateLowerSecondaryFemale and gdp
+# SELECT ?name ?completionRateLowerSecondaryMale ?gdp
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name.
+#   ?country ex:hasCompletionRate ?eduData .
+#   ?eduData ex:completionRateLowerSecondaryMale ?completionRateLowerSecondaryMale .
+#   ?country ex:hasEconomy ?economyData .
+#   ?economyData db:grossDomesticProduct ?gdp.
+#   FILTER(isNumeric(?completionRateLowerSecondaryMale) && isNumeric(?gdp))
+# }
+# ORDER BY DESC(?gdp)
+
+
+# comparing completionRateUpperSecondaryFemale and gdp
+# SELECT ?name ?completionRateUpperSecondaryFemale ?gdp
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name .
+#   ?country ex:hasCompletionRate ?eduData .
+#   ?eduData ex:completionRateUpperSecondaryFemale ?completionRateUpperSecondaryFemale .
+#   ?country ex:hasEconomy ?economyData .
+#   ?economyData db:grossDomesticProduct ?gdp.
+#   FILTER(isNumeric(?completionRateUpperSecondaryFemale) && isNumeric(?gdp))
+# }
+
+# comparing completionRateLowerSecondaryFemale and agRate
+# SELECT ?name ?completionRateLowerSecondaryFemale ?agRate
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name.
+#   ?country ex:hasCompletionRate ?eduData .
+#   ?eduData ex:completionRateLowerSecondaryFemale ?completionRateLowerSecondaryFemale .
+#   ?country ex:hasSector ?sector .
+#   ?sector  ex:agricultureRate ?agRate
+#   FILTER(isNumeric(?completionRateLowerSecondaryFemale) && isNumeric(?agRate))
+# }
+# ORDER BY DESC(?completionRateLowerSecondaryFemale)
+# # ORDER BY DESC(?gdp)
+
+# comparing completionRateLowerSecondaryMale and agRate
+# SELECT ?name ?completionRateLowerSecondaryMale ?agRate
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name.
+#   ?country ex:hasCompletionRate ?eduData .
+#   ?eduData ex:completionRateLowerSecondaryMale ?completionRateLowerSecondaryMale .
+#   ?country ex:hasSector ?sector .
+#   ?sector  ex:agricultureRate ?agRate
+#   FILTER(isNumeric(?completionRateLowerSecondaryMale) && isNumeric(?agRate))
+# }
+# ORDER BY DESC(?completionRateLowerSecondaryMale)
+
+# comparing completionRateUpperSecondaryFemale and agRate
+# SELECT ?name ?completionRateUpperSecondaryFemale ?agRate
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name .
+#   ?country ex:hasCompletionRate ?eduData .
+#   ?eduData ex:completionRateUpperSecondaryFemale ?completionRateUpperSecondaryFemale .
+#   ?country ex:hasSector ?sector .
+#   ?sector  ex:agricultureRate ?agRate
+#   FILTER(isNumeric(?completionRateUpperSecondaryFemale) && isNumeric(?agRate))
+# }
+#ORDER BY DESC(?completionRateUpperSecondaryFemale)
+
+# comparing completionRateUpperSecondaryMale and agRate
+# SELECT ?name ?completionRateUpperSecondaryMale ?agRate
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name .
+#   ?country ex:hasCompletionRate ?eduData .
+#   ?eduData ex:completionRateUpperSecondaryMale ?completionRateUpperSecondaryMale .
+#   ?country ex:hasSector ?sector .
+#   ?sector  ex:agricultureRate ?agRate
+#   FILTER(isNumeric(?completionRateUpperSecondaryMale) && isNumeric(?agRate))
+# }
+
+# comparing completionRateUpperSecondaryFemale and agRate
+# SELECT ?name ?completionRateUpperSecondaryFemale ?agRate
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name .
+#   ?country ex:hasCompletionRate ?eduData .
+#   ?eduData ex:completionRateUpperSecondaryFemale ?completionRateUpperSecondaryFemale .
+#   ?country ex:hasSector ?sector .
+#   ?sector  ex:agricultureRate ?agRate
+#   FILTER(isNumeric(?completionRateUpperSecondaryFemale) && isNumeric(?agRate))
+# }
+# # ORDER BY DESC(?completionRateUpperSecondaryFemale)
+
+# comparing completionRatePrimaryMale and agRate
+# SELECT ?name ?completionRatePrimaryMale ?agRate
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name .
+#   ?country ex:hasCompletionRate ?eduData .
+#   ?eduData ex:completionRatePrimaryMale ?completionRatePrimaryMale .
+#   ?country ex:hasSector ?sector .
+#   ?sector  ex:agricultureRate ?agRate
+#   FILTER(isNumeric(?completionRatePrimaryMale) && isNumeric(?agRate))
+# }
+# ORDER BY DESC(?completionRatePrimaryMale)
+
+# comparing completionRateLowerSecondaryFemale and indRate
+# SELECT ?name ?completionRateLowerSecondaryFemale ?indRate
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name .
+#   ?country ex:hasCompletionRate ?eduData .
+#   ?eduData ex:completionRateLowerSecondaryFemale ?completionRateLowerSecondaryFemale .
+#   ?country ex:hasSector ?sector .
+#   ?sector  ex:industryeRate ?indRate
+#   FILTER(isNumeric(?completionRateLowerSecondaryFemale) && isNumeric(?indRate))
+# }
+
+# ORDER BY DESC(?completionRateLowerSecondaryFemale)
+
+
+# comparing completionRateLowerSecondaryMale and indRate
+# SELECT ?country ?completionRateLowerSecondaryMale ?indRate
+# WHERE {
+#   ?country a schema:Country .
+#   ?country ex:hasCompletionRate ?eduData .
+#   ?eduData ex:completionRateLowerSecondaryMale ?completionRateLowerSecondaryMale .
+#   ?country ex:hasSector ?sector .
+#   ?sector ex:industryeRate ?indRate
+#   FILTER(isNumeric(?completionRateLowerSecondaryMale) && isNumeric(?indRate))
+# }
+# ORDER BY DESC(?completionRateLowerSecondaryMale)
+
+
+# comparing completionRateUpperSecondaryFemale and indRate
+# SELECT ?country ?completionRateUpperSecondaryFemale ?indRate
+# WHERE {
+#   ?country a schema:Country .
+#   ?
+#   ?country ex:hasCompletionRate ?eduData .
+#   ?eduData ex:completionRateUpperSecondaryFemale ?completionRateUpperSecondaryFemale .
+#   ?country ex:hasSector ?sector .
+#   ?sector  ex:industryeRate ?indRate
+#   FILTER(isNumeric(?completionRateUpperSecondaryFemale) && isNumeric(?indRate))
+# }
+# ORDER BY DESC(?completionRateUpperSecondaryFemale)
+
+# comparing completionRateUpperSecondaryMale and indRate
+# SELECT ?country ?completionRateUpperSecondaryMale ?indRate
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name .
+#   ?country ex:hasCompletionRate ?eduData .
+#   ?eduData ex:completionRateUpperSecondaryMale ?completionRateUpperSecondaryMale .
+#   ?country ex:hasSector ?sector .
+#   ?sector  ex:industryeRate ?indRate
+#   FILTER(isNumeric(?completionRateUpperSecondaryMale) && isNumeric(?indRate))
+# }
+#ORDER BY DESC(?completionRateUpperSecondaryMale)
+
+# comparing completionRateUpperSecondaryFemale and indRate
+# SELECT ?name ?completionRateUpperSecondaryFemale ?indRate
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name .
+#   ?country ex:hasCompletionRate ?eduData .
+#   ?eduData ex:completionRateUpperSecondaryFemale ?completionRateUpperSecondaryFemale .
+#   ?country ex:hasSector ?sector .
+#   ?sector  ex:industryeRate ?indRate
+#   FILTER(isNumeric(?completionRateUpperSecondaryFemale) && isNumeric(?indRate))
+# }
+# ORDER BY DESC(?completionRateUpperSecondaryFemale)
+
+# comparing completionRatePrimaryMale and indRate
+# SELECT ?name ?completionRatePrimaryMale ?indRate
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name .
+#   ?country ex:hasCompletionRate ?eduData .
+#   ?eduData ex:completionRatePrimaryMale ?completionRatePrimaryMale .
+#   ?country ex:hasSector ?sector .
+#   ?sector  ex:industryeRate ?indRate
+#   FILTER(isNumeric(?completionRatePrimaryMale) && isNumeric(?indRate))
+# }
+# ORDER BY DESC(?completionRatePrimaryMale)
+
+# comparing ccompletionRateLowerSecondaryFemale and serviceRate
+# SELECT ?name ?completionRateLowerSecondaryFemale ?serviceRate
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name .
+#   ?country ex:hasCompletionRate ?eduData .
+#   ?eduData ex:completionRateLowerSecondaryFemale ?completionRateLowerSecondaryFemale .
+#   ?country ex:hasSector ?sector .
+#   ?sector  ex:serviceRate ?serviceRate
+#   FILTER(isNumeric(?completionRateLowerSecondaryFemale) && isNumeric(?serviceRate))
+# }
+# ORDER BY DESC(?completionRateLowerSecondaryFemale)
+
+
+# comparing completionRateLowerSecondaryMale and serviceRate
+# SELECT ?name ?completionRateLowerSecondaryMale ?serviceRate
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name.
+#   ?country ex:hasCompletionRate ?eduData .
+#   ?eduData ex:completionRateLowerSecondaryMale ?completionRateLowerSecondaryMale .
+#   ?country ex:hasSector ?sector .
+#   ?sector ex:serviceRate ?serviceRate
+#   FILTER(isNumeric(?completionRateLowerSecondaryMale) && isNumeric(?serviceRate))
+# }
+# ORDER BY DESC(?completionRateLowerSecondaryMale)
+
+# comparing outOfSchoolRateUpperSecondaryFemale and serviceRate
+# SELECT ?name ?outOfSchoolRateUpperSecondaryFemale ?serviceRate
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name .
+#   ?country ex:hasOutOfSchoolRate ?eduData .
+#   ?eduData ex:outOfSchoolRateUpperSecondaryFemale ?outOfSchoolRateUpperSecondaryFemale .
+#   ?country ex:hasSector ?sector .
+#   ?sector  ex:serviceRate ?serviceRate
+#   FILTER(isNumeric(?outOfSchoolRateUpperSecondaryFemale) && isNumeric(?serviceRate))
+# }
+# ORDER BY DESC(?outOfSchoolRateUpperSecondaryFemale)
+
+# comparing outOfSchoolRateUpperSecondaryMale and serviceRate
+# SELECT ?country ?outOfSchoolRateUpperSecondaryMale ?serviceRate
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name .
+#   ?country ex:hasOutOfSchoolRate ?eduData .
+#   ?eduData ex:outOfSchoolRateUpperSecondaryMale ?outOfSchoolRateUpperSecondaryMale .
+#   ?country ex:hasSector ?sector .
+#   ?sector  ex:serviceRate ?serviceRate
+#   FILTER(isNumeric(?outOfSchoolRateUpperSecondaryMale) && isNumeric(?serviceRate))
+# }
+# ORDER BY DESC(?outOfSchoolRateUpperSecondaryMale)
+
+
+# comparing outOfSchoolRateUpperSecondaryFemale and serviceRate
+# SELECT ?name ?outOfSchoolRateUpperSecondaryFemale ?serviceRate
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name .
+#   ?country ex:hasOutOfSchoolRate ?eduData .
+#   ?eduData ex:outOfSchoolRateUpperSecondaryFemale ?outOfSchoolRateUpperSecondaryFemale .
+#   ?country ex:hasSector ?sector .
+#   ?sector  ex:serviceRate ?serviceRate
+#   FILTER(isNumeric(?outOfSchoolRateUpperSecondaryFemale) && isNumeric(?serviceRate))
+# }
+# ORDER BY DESC(?outOfSchoolRateUpperSecondaryFemale)
+
+# comparing outOfSchoolRateLowerSecondaryMale and serviceRate
+# SELECT ?name ?outOfSchoolRateLowerSecondaryMale ?serviceRate
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name .
+#   ?country ex:hasOutOfSchoolRate ?eduData .
+#   ?eduData ex:outOfSchoolRateLowerSecondaryMale ?outOfSchoolRateLowerSecondaryMale .
+#   ?country ex:hasSector ?sector .
+#   ?sector ex:serviceRate ?serviceRate
+#   FILTER(isNumeric(?outOfSchoolRateLowerSecondaryMale) && isNumeric(?serviceRate))
+# }
+# ORDER BY DESC(?outOfSchoolRateLowerSecondaryMale)
+
+
+# comparing outOfSchoolRateUpperSecondaryFemale and indRate
+# SELECT ?name ?outOfSchoolRateUpperSecondaryFemale ?indRate
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name .
+#   ?country ex:hasOutOfSchoolRate?eduData .
+#   ?eduData ex:outOfSchoolRateUpperSecondaryFemale ?outOfSchoolRateUpperSecondaryFemale .
+#   ?country ex:hasSector ?sector .
+#   ?sector  ex:industryeRate ?indRate
+#   FILTER(isNumeric(?outOfSchoolRateUpperSecondaryFemale) && isNumeric(?indRate))
+# }
+# ORDER BY DESC(?outOfSchoolRateUpperSecondaryFemale)
+
+
+# comparing outOfSchoolRatePrimaryMale and indRate
+# SELECT ?name ?outOfSchoolRatePrimaryMale ?indRate
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name .
+#   ?country ex:hasOutOfSchoolRate ?eduData .
+#   ?eduData ex:outOfSchoolRatePrimaryMale ?outOfSchoolRatePrimaryMale .
+#   ?country ex:hasSector ?sector .
+#   ?sector  ex:industryeRate ?indRate
+#   FILTER(isNumeric(?outOfSchoolRatePrimaryMale) && isNumeric(?indRate))
+# }
+# ORDER BY DESC(?outOfSchoolRatePrimaryMale)
+
+
+# comparing outOfSchoolRateUpperSecondaryFemale and agRate
+# SELECT ?name ?outOfSchoolRateUpperSecondaryFemale ?agRate
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name .
+#   ?country ex:hasOutOfSchoolRate ?eduData .
+#   ?eduData ex:outOfSchoolRateUpperSecondaryFemale ?outOfSchoolRateUpperSecondaryFemale .
+#   ?country ex:hasSector ?sector .
+#   ?sector  ex:agricultureRate ?agRate
+#   FILTER(isNumeric(?outOfSchoolRateUpperSecondaryFemale) && isNumeric(?agRate))
+# }
+# ORDER BY DESC(?outOfSchoolRateUpperSecondaryFemale)
+
+
+# comparing outOfSchoolRateLowerSecondaryMale and agRate
+# SELECT ?name ?outOfSchoolRateLowerSecondaryMale ?agRate
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name .
+#   ?country ex:hasOutOfSchoolRate ?eduData .
+#   ?eduData ex:outOfSchoolRateLowerSecondaryMale ?outOfSchoolRateLowerSecondaryMale .
+#   ?country ex:hasSector ?sector .
+#   ?sector  ex:agricultureRate ?agRate
+#   FILTER(isNumeric(?outOfSchoolRateLowerSecondaryMale) && isNumeric(?agRate))
+# }
+# ORDER BY DESC(?outOfSchoolRateLowerSecondaryMale)
+
+# comparing outOfSchoolRateLowerSecondaryFemale and exependitureOnEducation
+# SELECT ?name ?outOfSchoolRateLowerSecondaryFemale ?exependitureOnEducation
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name.
+#   ?country ex:hasOutOfSchoolRate?eduData .
+#   ?eduData ex:outOfSchoolRateLowerSecondaryFemale ?outOfSchoolRateLowerSecondaryFemale .
+#   ?country ex:hasEconomy ?economy_data .
+#   ?economy_data  ex:exependitureOnEducation ?exependitureOnEducation
+#   FILTER(isNumeric(?outOfSchoolRateLowerSecondaryFemale) && isNumeric(?exependitureOnEducation))
+# }
+# ORDER BY DESC(?outOfSchoolRateLowerSecondaryFemale)
+
+# comparing outOfSchoolRateUpperSecondaryMale and exependitureOnEducation
+# SELECT ?country ?outOfSchoolRateUpperSecondaryMale ?exependitureOnEducation
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name .
+#   ?country ex:hasOutOfSchoolRate?eduData .
+#   ?eduData ex:outOfSchoolRateUpperSecondaryMale ?outOfSchoolRateUpperSecondaryMale .
+#   ?country ex:hasEconomy ?economy_data .
+#   ?economy_data  ex:exependitureOnEducation ?exependitureOnEducation
+#   FILTER(isNumeric(?outOfSchoolRateUpperSecondaryMale) && isNumeric(?exependitureOnEducation))
+# }
+# ORDER BY DESC(?outOfSchoolRateUpperSecondaryMale)
+
+
+# SELECT ?name ?outOfSchoolRateUpperSecondaryFemale ?exependitureOnEducation
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name.
+#   ?country ex:hasOutOfSchoolRate ?eduData .
+#   ?eduData ex:outOfSchoolRateUpperSecondaryFemale ?outOfSchoolRateUpperSecondaryFemale .
+#   ?country ex:hasEconomy ?economy_data .
+#   ?economy_data  ex:exependitureOnEducation ?exependitureOnEducation
+#   FILTER(isNumeric(?outOfSchoolRateUpperSecondaryFemale) && isNumeric(?exependitureOnEducation))
+# }
+# ORDER BY DESC(?outOfSchoolRateUpperSecondaryFemale)
+
+# SELECT ?name ?outOfSchoolRateLowerSecondaryMale ?exependitureOnEducation
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name .
+#   ?country ex:hasOutOfSchoolRate ?eduData .
+#   ?eduData ex:outOfSchoolRateLowerSecondaryMale ?outOfSchoolRateLowerSecondaryMale .
+#   ?country ex:hasEconomy ?economy_data .
+#   ?economy_data  ex:exependitureOnEducation ?exependitureOnEducation
+#   FILTER(isNumeric(?outOfSchoolRateLowerSecondaryMale) && isNumeric(?exependitureOnEducation))
+# }
+# ORDER BY DESC(?outOfSchoolRateLowerSecondaryMale)
+
+
+
+# SELECT ?name ?outOfSchoolRateUpperSecondaryFemale ?exependitureOnHealth
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name .
+#   ?country ex:hasOutOfSchoolRate ?eduData .
+#   ?eduData ex:outOfSchoolRateUpperSecondaryFemale ?outOfSchoolRateUpperSecondaryFemale .
+#   ?country ex:hasEconomy ?economy_data .
+#   ?economy_data  ex:exependitureOnHealth ?exependitureOnHealth
+#   FILTER(isNumeric(?outOfSchoolRateUpperSecondaryFemale) && isNumeric(?exependitureOnHealth))
+# }
+# ORDER BY DESC(?outOfSchoolRateUpperSecondaryFemale)
+
+# SELECT ?name ?outOfSchoolRateLowerSecondaryMale ?exependitureOnHealth
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name .
+#   ?country ex:hasOutOfSchoolRate ?eduData .
+#   ?eduData ex:outOfSchoolRateLowerSecondaryMale ?outOfSchoolRateLowerSecondaryMale .
+#   ?country ex:hasEconomy ?economy_data .
+#   ?economy_data  ex:exependitureOnHealth ?exependitureOnHealth
+#   FILTER(isNumeric(?outOfSchoolRateLowerSecondaryMale) && isNumeric(?exependitureOnHealth))
+# }
+# ORDER BY DESC(?outOfSchoolRateLowerSecondaryMale)
+
+
+
+
+
+
+# SELECT ?name ?outOfSchoolRateLowerSecondaryFemale ?corruption
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name .
+#   ?country ex:hasOutOfSchoolRate?eduData .
+#   ?eduData ex:outOfSchoolRateLowerSecondaryFemale ?outOfSchoolRateLowerSecondaryFemale .
+#   ?country ex:hasEconomy ?economy_data .
+#   ?economy_data  iso3:11.4 ?corruption
+#   FILTER(isNumeric(?outOfSchoolRateLowerSecondaryFemale) && isNumeric(?corruption))
+# }
+# ORDER BY DESC(?outOfSchoolRateLowerSecondaryFemale)
+
+# SELECT ?name ?outOfSchoolRateUpperSecondaryMale ?corruption
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name .
+#   ?country ex:hasOutOfSchoolRate?eduData .
+#   ?eduData ex:outOfSchoolRateUpperSecondaryMale ?outOfSchoolRateUpperSecondaryMale .
+#   ?country ex:hasEconomy ?economy_data .
+#   ?economy_data  iso3:11.4 ?corruption
+#   FILTER(isNumeric(?outOfSchoolRateUpperSecondaryMale) && isNumeric(?corruption))
+# }
+# ORDER BY DESC(?outOfSchoolRateUpperSecondaryMale)
+
+
+#  SELECT ?name ?outOfSchoolRateUpperSecondaryFemale ?exependitureOnHealth
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name .
+#   ?country ex:hasOutOfSchoolRate ?eduData .
+#   ?eduData ex:outOfSchoolRateUpperSecondaryFemale ?outOfSchoolRateUpperSecondaryFemale .
+#   ?country ex:hasEconomy ?economy_data .
+#   ?economy_data  ex:exependitureOnHealth ?exependitureOnHealth
+#   FILTER(isNumeric(?outOfSchoolRateUpperSecondaryFemale) && isNumeric(?exependitureOnHealth))
+# }
+# ORDER BY DESC(?outOfSchoolRateUpperSecondaryFemale)
+
+# SELECT ?name ?outOfSchoolRateLowerSecondaryMale ?exependitureOnHealth
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name .
+#   ?country ex:hasOutOfSchoolRate ?eduData .
+#   ?eduData ex:outOfSchoolRateLowerSecondaryMale ?outOfSchoolRateLowerSecondaryMale .
+#   ?country ex:hasEconomy ?economy_data .
+#   ?economy_data  ex:exependitureOnHealth ?exependitureOnHealth
+#   FILTER(isNumeric(?outOfSchoolRateLowerSecondaryMale) && isNumeric(?exependitureOnHealth))
+# }
+# ORDER BY DESC(?outOfSchoolRateLowerSecondaryMale)
+
+
+# SELECT ?name ?outOfSchoolRateLowerSecondaryFemale ?corruption
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name .
+#   ?country ex:hasOutOfSchoolRate?eduData .
+#   ?eduData ex:outOfSchoolRateLowerSecondaryFemale ?outOfSchoolRateLowerSecondaryFemale .
+#   ?country ex:hasEconomy ?economy_data .
+#   ?economy_data  iso3:11.4 ?corruption
+#   FILTER(isNumeric(?outOfSchoolRateLowerSecondaryFemale) && isNumeric(?corruption))
+# }
+# ORDER BY DESC(?outOfSchoolRateLowerSecondaryFemale)
+
+# SELECT ?name ?outOfSchoolRateUpperSecondaryMale ?corruption
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name .
+#   ?country ex:hasOutOfSchoolRate?eduData .
+#   ?eduData ex:outOfSchoolRateUpperSecondaryMale ?outOfSchoolRateUpperSecondaryMale .
+#   ?country ex:hasEconomy ?economy_data .
+#   ?economy_data  iso3:11.4 ?corruption
+#   FILTER(isNumeric(?outOfSchoolRateUpperSecondaryMale) && isNumeric(?corruption))
+# }
+# ORDER BY DESC(?outOfSchoolRateUpperSecondaryMale)
+
+
+# SELECT ?name ?outOfSchoolRateUpperSecondaryFemale ?corruption
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name .
+#   ?country ex:hasOutOfSchoolRate ?eduData .
+#   ?eduData ex:outOfSchoolRateUpperSecondaryFemale ?outOfSchoolRateUpperSecondaryFemale .
+#   ?country ex:hasEconomy ?economy_data .
+#   ?economy_data  iso3:11.4 ?corruption
+#   FILTER(isNumeric(?outOfSchoolRateUpperSecondaryFemale) && isNumeric(?corruption))
+# }
+#ORDER BY DESC(?outOfSchoolRateUpperSecondaryFemale)
+
+
+
+# SELECT ?name?outOfSchoolRateLowerSecondaryMale ?corruption
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name .
+#   ?country ex:hasOutOfSchoolRate ?eduData .
+#   ?eduData ex:outOfSchoolRateLowerSecondaryMale ?outOfSchoolRateLowerSecondaryMale .
+#   ?country ex:hasEconomy ?economy_data .
+#   ?economy_data  iso3:11.4 ?corruption
+#   FILTER(isNumeric(?outOfSchoolRateLowerSecondaryMale) && isNumeric(?corruption))
+# }
+# ORDER BY DESC(?outOfSchoolRateLowerSecondaryMale)
+
+
+
+
+
+# SELECT ?name ?outOfSchoolRateLowerSecondaryFemale ?gdp
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name .
+#   ?country ex:hasOutOfSchoolRate?eduData .
+#   ?eduData ex:outOfSchoolRateLowerSecondaryFemale ?outOfSchoolRateLowerSecondaryFemale .
+#   ?country ex:hasEconomy ?economy_data .
+#   ?economy_data  db:grossDomesticProduct ?gdp
+#   FILTER(isNumeric(?outOfSchoolRateLowerSecondaryFemale) && isNumeric(?gdp))
+# }
+# ORDER BY DESC(?outOfSchoolRateLowerSecondaryFemale)
+
+# SELECT ?name ?outOfSchoolRateUpperSecondaryMale ?gdp
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name .
+#   ?country ex:hasOutOfSchoolRate?eduData .
+#   ?eduData ex:outOfSchoolRateUpperSecondaryMale ?outOfSchoolRateUpperSecondaryMale .
+#   ?country ex:hasEconomy ?economy_data .
+#   ?economy_data  db:grossDomesticProduct ?gdp
+#   FILTER(isNumeric(?outOfSchoolRateUpperSecondaryMale) && isNumeric(?gdp))
+# }
+# ORDER BY DESC(?outOfSchoolRateUpperSecondaryMale)
+
+
+# SELECT ?name ?outOfSchoolRateUpperSecondaryFemale ?gdp
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name .
+#   ?country ex:hasOutOfSchoolRate ?eduData .
+#   ?eduData ex:outOfSchoolRateUpperSecondaryFemale ?outOfSchoolRateUpperSecondaryFemale .
+#   ?country ex:hasEconomy ?economy_data .
+#   ?economy_data  db:grossDomesticProduct ?gdp
+#   FILTER(isNumeric(?outOfSchoolRateUpperSecondaryFemale) && isNumeric(?gdp))
+# }
+#  ORDER BY DESC(?outOfSchoolRateUpperSecondaryFemale)
+
+# SELECT ?name ?outOfSchoolRateLowerSecondaryMale ?gdp
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name.
+#   ?country ex:hasOutOfSchoolRate ?eduData .
+#   ?eduData ex:outOfSchoolRateLowerSecondaryMale ?outOfSchoolRateLowerSecondaryMale .
+#   ?country ex:hasEconomy ?economy_data .
+#   ?economy_data  db:grossDomesticProduct ?gdp
+#   FILTER(isNumeric(?outOfSchoolRateLowerSecondaryMale) && isNumeric(?gdp))
+# }
+# ORDER BY DESC(?outOfSchoolRateLowerSecondaryMale)
+
+# SELECT ?name ?outOfSchoolRateLowerSecondaryFemale ?unemploymentrate 
+# WHERE {
+  
+#   ?country a schema:Country .
+#   ?country gn:name ?name.
+#   ?country ex:hasOutOfSchoolRate?eduData .
+#   ?eduData ex:outOfSchoolRateLowerSecondaryFemale ?outOfSchoolRateLowerSecondaryFemale .
+#   ?country ex:hasEconomy ?economy_data .
+#   ?economy_data  iso3:5.1?unemploymentrate 
+#   FILTER(isNumeric(?outOfSchoolRateLowerSecondaryFemale) && isNumeric(?unemploymentrate ))
+# }
+# ORDER BY DESC(?outOfSchoolRateLowerSecondaryFemale)
+
+# SELECT ?name ?outOfSchoolRateUpperSecondaryMale ?unemploymentrate 
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name .
+#   ?country ex:hasOutOfSchoolRate?eduData .
+#   ?eduData ex:outOfSchoolRateUpperSecondaryMale ?outOfSchoolRateUpperSecondaryMale .
+#   ?country ex:hasEconomy ?economy_data .
+#   ?economy_data  iso3:5.1?unemploymentrate 
+#   FILTER(isNumeric(?outOfSchoolRateUpperSecondaryMale) && isNumeric(?unemploymentrate ))
+# }
+# ORDER BY DESC(?outOfSchoolRateUpperSecondaryMale)
+
+
+# SELECT ?name ?outOfSchoolRateUpperSecondaryFemale ?unemploymentrate 
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name .
+#   ?country ex:hasOutOfSchoolRate ?eduData .
+#   ?eduData ex:outOfSchoolRateUpperSecondaryFemale ?outOfSchoolRateUpperSecondaryFemale .
+#   ?country ex:hasEconomy ?economy_data .
+#   ?economy_data  iso3:5.1?unemploymentrate 
+#   FILTER(isNumeric(?outOfSchoolRateUpperSecondaryFemale) && isNumeric(?unemploymentrate ))
+# }
+# ORDER BY DESC(?outOfSchoolRateUpperSecondaryFemale)
+
+# SELECT ?name ?outOfSchoolRateLowerSecondaryMale ?unemploymentrate 
+# WHERE {
+#   ?country a schema:Country .
+#   ?country gn:name ?name .
+#   ?country ex:hasOutOfSchoolRate ?eduData .
+#   ?eduData ex:outOfSchoolRateLowerSecondaryMale ?outOfSchoolRateLowerSecondaryMale .
+#   ?country ex:hasEconomy ?economy_data .
+#   ?economy_data  iso3:5.1?unemploymentrate 
+#   FILTER(isNumeric(?outOfSchoolRateLowerSecondaryMale) && isNumeric(?unemploymentrate ))
+# }
+# ORDER BY DESC(?outOfSchoolRateLowerSecondaryMale)
+
